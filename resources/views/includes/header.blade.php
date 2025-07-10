@@ -18,7 +18,7 @@
         <i class="bi bi-telephone-fill me-2" style="font-size: 1rem;"></i>
         <span>Office Hours: Mon-Fri 9AM-5PM</span>
       </div>
-      <a href="/checkout" class="btn btn-primary">File Now</a>
+      <a href="/checkoutpage" class="btn btn-primary">File Now</a>
     </div>
   </div>
 </header>

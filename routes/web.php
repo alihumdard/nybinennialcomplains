@@ -20,3 +20,6 @@ Route::get('/', function () {
 Route::get('/checkoutpage', function () {
     return view('pages.checkoutpage');
 });
+Route::get('/confirmation', function () {
+    return view('pages.confirmation');
+});
