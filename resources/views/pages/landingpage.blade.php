@@ -78,9 +78,10 @@ body {
 <!-- How it Works -->
 <section class="py-5 bg-light" style="margin: 40px 0px;">
     <div class="container text-center mb-5">
-        <h2 class="fw-bold mb-3">How It Works</h2>
-        <p class="text-muted">Simple 3-step process to get your business compliant</p>
-    </div>
+  <h2 class="fw-bold mb-3 fs-2 fs-md-1">How It Works</h2>
+  <p class="text-muted fs-6 fs-md-5">Simple 3-step process to get your business compliant</p>
+</div>
+
     <div class="container d-flex flex-wrap justify-content-center gap-5">
         <div class="text-center" style="max-width: 320px;">
             <div class="icon-circle"><i class="bi bi-file-earmark-text"></i></div>
@@ -102,31 +103,32 @@ body {
 
 <!-- Risks -->
 <section class="py-5 bg-danger bg-opacity-10">
-    <div class="container bg-white p-4 rounded-4">
-        <div class="d-flex align-items-center mb-3">
-            <i class="bi bi-exclamation-triangle-fill text-danger me-2" style="font-size: 2rem;"></i>
-            <h2 class="text-danger fw-bold mb-0">Risks of Non-Compliance</h2>
-        </div>
-        <div class="row">
-            <div class="col-md-6 mb-4 mb-md-0">
-                <h3 class="fw-semibold mb-2">Immediate Consequences:</h3>
-                <ul class="list-unstyled">
-                    <li>Loss of good standing with NY State</li>
-                    <li>Inability to conduct business legally</li>
-                    <li>Potential fines and penalties</li>
-                </ul>
-            </div>
-            <div class="col-md-6">
-                <h3 class="fw-semibold mb-2">Long-term Risks:</h3>
-                <ul class="list-unstyled">
-                    <li>Administrative dissolution of business</li>
-                    <li>Loss of limited liability protection</li>
-                    <li>Complications with banking and contracts</li>
-                </ul>
-            </div>
-        </div>
+  <div class="container bg-white p-4 rounded-4">
+    <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start text-center text-md-start mb-3">
+      <i class="bi bi-exclamation-triangle-fill text-danger me-0 me-md-2 mb-2 mb-md-0" style="font-size: 2rem;"></i>
+      <h2 class="text-danger fw-bold mb-0">Risks of Non-Compliance</h2>
     </div>
+    <div class="row text-center text-md-start">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <h3 class="fw-semibold mb-2">Immediate Consequences:</h3>
+        <ul class="list-unstyled">
+          <li>Loss of good standing with NY State</li>
+          <li>Inability to conduct business legally</li>
+          <li>Potential fines and penalties</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h3 class="fw-semibold mb-2">Long-term Risks:</h3>
+        <ul class="list-unstyled">
+          <li>Administrative dissolution of business</li>
+          <li>Loss of limited liability protection</li>
+          <li>Complications with banking and contracts</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
+
 
 <!-- FAQ -->
 <section class="py-5">
