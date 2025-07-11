@@ -1,24 +1,20 @@
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>@yield('title' , 'Urban Media')</title>
-    @include('includes.head')
-</head>
-
-<body>
-    @include('includes.header')
-    <div class="flex">
-        <!-- @include('includes.sidebar') -->
-        @yield('content')
-    </div>
-    @include('includes.footer')
-
-    <!-- Import Js Files -->
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     @include('includes.script')
+</head>
+<body class="flex min-h-screen bg-gray-100">
 
-    @stack('scripts')
+    {{-- Sidebar --}}
+    @include('includes.sidebar')
+
+    {{-- Main content --}}
+    <main class="flex overflow-auto">
+        @yield('content')
+    </main>
+
 </body>
-
 </html>

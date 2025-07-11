@@ -78,10 +78,9 @@ body {
 <!-- How it Works -->
 <section class="py-5 bg-light" style="margin: 40px 0px;">
     <div class="container text-center mb-5">
-  <h2 class="fw-bold mb-3 fs-2 fs-md-1">How It Works</h2>
-  <p class="text-muted fs-6 fs-md-5">Simple 3-step process to get your business compliant</p>
-</div>
-
+        <h2 class="fw-bold mb-3">How It Works</h2>
+        <p class="text-muted">Simple 3-step process to get your business compliant</p>
+    </div>
     <div class="container d-flex flex-wrap justify-content-center gap-5">
         <div class="text-center" style="max-width: 320px;">
             <div class="icon-circle"><i class="bi bi-file-earmark-text"></i></div>
