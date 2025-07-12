@@ -26,7 +26,22 @@
     background-color: var(--light-bg);
     min-height: 100vh;
 }
+ .container-fluid {
+        padding: 0px 40px;
+    }
 
+@media (max-width: 1020px) {
+      .main-content{
+        width: 100vw;
+    }
+    .navbar {
+     display: none;
+    }
+    .container-fluid {
+        margin: 2rem 5px;
+        padding: 0px 13px;
+    }
+}
 /* Form specific styles */
 .form-card {
     background: white;
@@ -86,14 +101,14 @@
 @section('content')
 <div class="main-content">
     <!-- Header -->
-    <nav class="bg-white border-bottom">
+    <nav class="navbar bg-white border-bottom">
         <div class="container-fluid" style="padding: 1rem 2rem;">
            <h5 class="mb-0 fw-semibold" style="font-size: 24px;">New Business Submission</h5>
         </div>
     </nav>
 
     <!-- Form Content -->
-    <div class="container-fluid py-4" style="padding: 0px 40px;">
+    <div class="container-fluid py-4" style="">
         <div class="card form-card">
             <form id="businessSubmissionForm">
                 <!-- Basic Information Section -->
