@@ -114,6 +114,35 @@
             <h2 class="text-xl md:text-2xl font-bold tracking-wide">Admin Panel</h2>
         </div>
 
+        <!-- Navigation Links -->
+        <nav>
+            <ul class="space-y-2">
+                <li>
+                    <a href="{{ route('dashboard') }}"
+                        class="flex items-center gap-3 px-4 py-2 rounded-md transition-all
+                        {{ request()->routeIs('dashboard') ? 'bg-blue-100 text-blue-700 font-semibold' : 'text-gray-700 hover:bg-gray-100 hover:text-blue-600' }}">
+                        <i class="bi bi-grid"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('dashboard') }}"
+                        class="flex items-center gap-3 px-4 py-2 rounded-md transition-all
+                        {{ request()->routeIs('profile') ? 'bg-blue-100 text-blue-700 font-semibold' : 'text-gray-700 hover:bg-gray-100 hover:text-blue-600' }}">
+                        <i class="bi bi-plus-circle"></i>
+                        <span>Add Data</span>
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class="flex items-center gap-3 px-4 py-2 rounded-md transition-all
+                        {{ request()->routeIs('settings') ? 'bg-blue-100 text-blue-700 font-semibold' : 'text-gray-700 hover:bg-gray-100 hover:text-blue-600' }}">
+                        <i class="bi bi-funnel"></i>
+                        <span>Setting</span>
+                    </a>
+                </li>
+            </ul>
+
         <!-- Sidebar Navigation -->
         <nav class="mt-6 md:mt-8 px-2 md:px-4 space-y-1 md:space-y-2">
             <a href="{{ route('dashboard') }}"
@@ -135,6 +164,7 @@
                 <i class="fas fa-cog mr-2 md:mr-3 text-[#4361ee] group-hover:text-[#4361ee] text-sm md:text-base"></i>
                 <span class="text-sm md:text-base">Settings</span>
             </a>
+
         </nav>
     </aside>
 
