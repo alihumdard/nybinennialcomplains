@@ -23,6 +23,3 @@ Route::get('/acount', function () {
     return view('pages.admin.acount');
 })->name('acount');
 
-Route::get('/filter', function () {
-    return view('pages.admin.filter');
-})->name('filter');
