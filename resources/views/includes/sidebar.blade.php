@@ -23,7 +23,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('acount') }}"
+                    <a href="{{ route('dashboard') }}"
                         class="flex items-center gap-3 px-4 py-2 rounded-md transition-all
                         {{ request()->routeIs('profile') ? 'bg-blue-100 text-blue-700 font-semibold' : 'text-gray-700 hover:bg-gray-100 hover:text-blue-600' }}">
                         <i class="bi bi-plus-circle"></i>
