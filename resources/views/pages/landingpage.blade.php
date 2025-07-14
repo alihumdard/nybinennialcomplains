@@ -71,7 +71,7 @@ body {
         <h1 class="fw-bold mb-3">Biennial Statement Filing Required by NY State Law</h1>
         <p class="fw-semibold mb-4" style="color: #F5F5F5; padding: 20px 0px;">Your business has been identified as past
             due.</p>
-        <a href="/checkoutpage" class="btn btn-light text-primary fw-bold">File Now - $125</a>
+        <a href="{{ route('checkout') }}" class="btn btn-light text-primary fw-bold">File Now - $125</a>
     </div>
 </section>
 
