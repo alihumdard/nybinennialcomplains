@@ -38,7 +38,6 @@
   }
 </style>
 
-<!-- Sticky Step Progress Bar -->
 <div class="sticky-top bg-white z-3 mb-4 py-3" style="z-index: 1050;">
   <div class="container bg-light rounded-pill shadow-sm px-4 py-3 d-flex align-items-center justify-content-between">
     <div class="d-flex align-items-center">
@@ -58,65 +57,62 @@
 </div>
 
 <div class="container py-5">
-  <form id="checkoutForm">
+  <form id="checkoutForm" method="POST" action="{{ route('submission.update', $submission->dos_id) }}">
+    @csrf
     
-    <!-- Business Information -->
     <div class="card mb-4">
       <div class="card-header text-navy-900 fw-bold">Business Information</div>
       <div class="card-body row g-4">
         <div class="col-md-6">
           <label class="form-label">Business Name</label>
-          <input type="text" name="businessName" class="form-control" required />
+          <input type="text" name="business_name" class="form-control" value="{{ $submission->business_name ?? '' }}" required />
         </div>
         <div class="col-md-6">
           <label class="form-label">DOS ID Number</label>
-          <input type="text" name="dosId" class="form-control" required />
+          <input type="text" name="dos_id" class="form-control" value="{{ $submission->dos_id ?? '' }}" readonly required />
         </div>
         <div class="col-md-6">
           <label class="form-label">Entity Type</label>
-          <select name="entityType" class="form-select">
-            <option value="corporation">Corporation</option>
-            <option value="llc">LLC</option>
+          <select name="entity_type" class="form-select">
+            <option value="corporation" {{ ($submission->entity_type ?? '') == 'DOMESTIC BUSINESS CORPORATION' ? 'selected' : '' }}>Corporation</option>
+            <option value="llc" {{ ($submission->entity_type ?? '') == 'DOMESTIC LIMITED LIABILITY COMPANY' ? 'selected' : '' }}>LLC</option>
           </select>
         </div>
       </div>
     </div>
 
-    <!-- CEO/Manager Info -->
     <div class="card mb-4">
       <div class="card-header text-navy-900 fw-bold">CEO/Manager Information</div>
       <div class="card-body row g-4">
         <div class="col-md-6">
           <label class="form-label">Full Name</label>
-          <input type="text" name="ceoName" class="form-control" required />
+          <input type="text" name="ceo_name" class="form-control" value="{{ $submission->ceo_name ?? '' }}" required />
         </div>
         <div class="col-md-6">
           <label class="form-label">Title</label>
-          <input type="text" name="ceoTitle" class="form-control" required />
+          <input type="text" name="ceo_title" class="form-control" value="" required />
         </div>
       </div>
     </div>
 
-    <!-- Principal Address -->
     <div class="card mb-4">
       <div class="card-header text-navy-900 fw-bold">Principal Office Address</div>
       <div class="card-body row g-4">
         <div class="col-12">
           <label class="form-label">Street Address</label>
-          <input type="text" name="principalAddress" class="form-control" required />
+          <input type="text" name="dos_process_address_1" class="form-control" value="{{ $submission->dos_process_address_1 ?? '' }}" required />
         </div>
         <div class="col-md-6">
           <label class="form-label">City</label>
-          <input type="text" name="principalCity" class="form-control" required />
+          <input type="text" name="dos_process_city" class="form-control" value="{{ $submission->dos_process_city ?? '' }}" required />
         </div>
         <div class="col-md-6">
           <label class="form-label">ZIP Code</label>
-          <input type="text" name="principalZip" class="form-control" required />
+          <input type="text" name="dos_process_zip" class="form-control" value="{{ $submission->dos_process_zip ?? '' }}" required />
         </div>
       </div>
     </div>
 
-    <!-- Board of Directors -->
     <div class="card mb-4">
       <div class="card-header text-navy-900 fw-bold">Board of Directors (if Corporation)</div>
       <div class="card-body row g-4">
@@ -131,7 +127,6 @@
       </div>
     </div>
 
-    <!-- Declaration -->
     <div class="card mb-4">
       <div class="card-header text-navy-900 fw-bold">Declaration & Signature</div>
       <div class="card-body row g-4">
@@ -154,18 +149,15 @@
       </div>
     </div>
 
-    <!-- Payment Section -->
     <div class="card mb-4">
       <div class="card-header text-navy-900 fw-bold">Payment</div>
       <div class="card-body row g-4">
 
-        <!-- Base Fee -->
         <div class="col-12">
           <p class="mb-0">Base Filing Fee:</p>
           <h5 class="text-primary fw-bold">$125.00</h5>
         </div>
 
-        <!-- Optional Services -->
         <div class="col-12">
           <label class="form-label fw-semibold">Optional Services:</label>
           <div class="form-check mb-2">
@@ -178,7 +170,6 @@
           </div>
         </div>
 
-        <!-- Card Info -->
         <div class="col-12">
           <label class="form-label">Card Number</label>
           <input type="text" name="cardNumber" class="form-control" placeholder="1234 5678 9012 3456" required />
@@ -196,7 +187,6 @@
           <input type="text" name="nameOnCard" class="form-control" required />
         </div>
 
-        <!-- Total & Submit -->
         <div class="col-12 mt-4">
           <div class="d-flex justify-content-between align-items-center">
             <h5>Total:</h5>
@@ -208,20 +198,16 @@
             </button>
           </div>
         </div>
-
       </div>
     </div>
-
   </form>
 </div>
 
-<!-- Script -->
 <script>
   const printedCheckbox = document.getElementById('printedCopy');
   const certificateCheckbox = document.getElementById('certificate');
   const totalAmount = document.getElementById('totalAmount');
   const submitTotal = document.getElementById('submitTotal');
-  const form = document.getElementById('checkoutForm');
 
   function calculateTotal() {
     let total = 125;
@@ -233,11 +219,7 @@
 
   printedCheckbox.addEventListener('change', calculateTotal);
   certificateCheckbox.addEventListener('change', calculateTotal);
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    window.location.href = "/confirmation";
-  });
+  
 </script>
 
 @include('includes.footer')

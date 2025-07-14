@@ -59,11 +59,6 @@
                 class="w-full bg-[#229a76] hover:bg-green-700 text-white font-semibold py-3 rounded-lg transition duration-200">
                 Sign In
             </button>
-
-            <p class="text-center text-sm text-gray-600 mt-6">
-                Don't have an account?
-                <a href="{{ route('register') }}" class="text-[#229a76] hover:underline font-medium">Register</a>
-            </p>
         </form>
     </div>
 </body>
