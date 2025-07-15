@@ -3,6 +3,11 @@
 @include('includes.script')
 <body class="bg-light">
   <div class="container py-5">
+    @if(session('success'))
+        <div class="alert alert-success fs-5 text-center" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
     <div class="bg-white rounded-4 shadow p-5 text-center">
       
       <!-- Success Icon & Heading -->
