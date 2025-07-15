@@ -13,7 +13,7 @@ class PageController extends Controller
         if ($request->has('dos_id')) {
             $submission = Submission::where('dos_id', $request->input('dos_id'))->first();
         }
-        
+
         return view('pages.landingpage', compact('submission'));
     }
 
@@ -29,6 +29,9 @@ class PageController extends Controller
 
     public function showCheckoutWithData(Submission $submission)
     {
+         if ($submission->is_paid) {
+            return redirect()->route('confirmation')->with('success', 'This filing has already been paid and processed successfully.');
+        }
         return view('pages.checkoutpage', compact('submission'));
     }
 }

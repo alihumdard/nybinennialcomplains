@@ -4,8 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FilingController;
 use App\Http\Controllers\ImportController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\SubmissionActionsController;
 use App\Http\Controllers\SubmissionController;
@@ -15,7 +17,7 @@ Route::get('/checkout', [PageController::class, 'checkout'])->name('checkout');
 Route::get('/confirmation', [PageController::class, 'confirmation'])->name('confirmation');
 Route::get('/submission/{submission}/pdf', [PDFController::class, 'download'])->name('submission.pdf');
 Route::get('/checkout/{submission:dos_id}', [PageController::class, 'showCheckoutWithData'])->name('checkout.with_data');
-Route::post('/checkout/{submission:dos_id}', [SubmissionController::class, 'update'])->name('submission.update');
+Route::post('/filing/{submission:dos_id}/process', [FilingController::class, 'processFiling'])->name('filing.process');
 
 Route::middleware('guest')->group(function () {
     Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');

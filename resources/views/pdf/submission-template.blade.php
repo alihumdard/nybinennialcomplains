@@ -8,7 +8,7 @@
         .container { border: 2px solid black; padding: 15px; }
         .header { text-align: center; font-weight: bold; font-size: 14px; margin-bottom: 10px; }
         .instruction { font-weight: bold; text-align: center; margin-bottom: 15px; }
-        .info-box { border: 1px solid black; padding: 5px; margin-bottom: 10px; }
+        .info-box { border: 1px solid black; padding: 5px; margin-bottom: 10px; min-height: 80px; }
         .info-box table { width: 100%; border-collapse: collapse; }
         .info-box td { padding: 2px 5px; }
         .address-box { float: left; width: 60%; font-size: 11px; line-height: 1.4; padding: 10px; }
@@ -58,9 +58,12 @@
             @endif
             {{ $submission->dos_process_city }}, {{ $submission->dos_process_state }} {{ $submission->dos_process_zip }}
         </div>
+        
+        @if ($qrCode)
         <div class="qr-box">
-           <img src="data:image/svg+xml;base64,{{ base64_encode($qrCode) }}" alt="QR Code" style="width: 120px; height: 120px;">
+            <img src="data:image/svg+xml;base64,{{ $qrCode }}" alt="QR Code" style="width: 120px; height: 120px;">
         </div>
+        @endif
         <div class="clear"></div>
     </div>
 
@@ -83,15 +86,22 @@
 
     <p class="section-header">STEP 3. PAYMENT INFORMATION</p>
     <div class="content-box">
-        Check enclosed for $100
+        @if($submission->is_paid)
+            <strong style="color: green;">PAID:</strong> Payment for this filing has been successfully processed. Thank you.
+        @else
+            <strong>PENDING:</strong> Check enclosed for $100
+        @endif
     </div>
-
-    <p class="section-header">STEP 4. I authorize an electronic signature on behalf of the limited liability company.</p>
-    <p class="section-header" style="margin-top: 15px; background-color: #aae0aaff;">STEP 5: File Online (Recommended)</p>
+    
+    @if($url)
+    <p class="section-header" style="margin-top: 15px; background-color: #aae0aaff;">STEP 4: File Online (Recommended)</p>
     <div class="content-box" style="text-align: center; padding: 15px;">
         <p style="font-size: 11px; margin: 0;">For faster processing, click the link below to complete your filing online.</p>
         <a href="{{ $url }}" style="font-size: 12px; font-weight: bold; color: #0000ee;">{{ $url }}</a>
     </div>
+    @endif
+
+    <p class="section-header">STEP 5. I authorize an electronic signature on behalf of the limited liability company.</p>
     <div class="signature-box">
         <table>
             <tr>

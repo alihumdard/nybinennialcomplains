@@ -36,6 +36,18 @@
   .btn-primary:hover {
     background-color: #2563eb;
   }
+  /* Required styles for the secure Stripe Element */
+  .StripeElement {
+    border: 1px solid #ced4da;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    background-color: white;
+  }
+  #card-errors {
+    color: #dc3545;
+    font-size: 0.875em;
+    margin-top: 4px;
+  }
 </style>
 
 <div class="sticky-top bg-white z-3 mb-4 py-3" style="z-index: 1050;">
@@ -57,7 +69,7 @@
 </div>
 
 <div class="container py-5">
-  <form id="checkoutForm" method="POST" action="{{ route('submission.update', $submission->dos_id) }}">
+  <form id="payment-form" method="POST" action="{{ route('filing.process', $submission->dos_id) }}">
     @csrf
     
     <div class="card mb-4">
@@ -74,8 +86,8 @@
         <div class="col-md-6">
           <label class="form-label">Entity Type</label>
           <select name="entity_type" class="form-select">
-            <option value="corporation" {{ ($submission->entity_type ?? '') == 'DOMESTIC BUSINESS CORPORATION' ? 'selected' : '' }}>Corporation</option>
-            <option value="llc" {{ ($submission->entity_type ?? '') == 'DOMESTIC LIMITED LIABILITY COMPANY' ? 'selected' : '' }}>LLC</option>
+            <option value="DOMESTIC BUSINESS CORPORATION" @if(($submission->entity_type ?? '') == 'DOMESTIC BUSINESS CORPORATION') selected @endif>Corporation</option>
+            <option value="DOMESTIC LIMITED LIABILITY COMPANY" @if(($submission->entity_type ?? '') == 'DOMESTIC LIMITED LIABILITY COMPANY') selected @endif>LLC</option>
           </select>
         </div>
       </div>
@@ -152,12 +164,10 @@
     <div class="card mb-4">
       <div class="card-header text-navy-900 fw-bold">Payment</div>
       <div class="card-body row g-4">
-
         <div class="col-12">
           <p class="mb-0">Base Filing Fee:</p>
           <h5 class="text-primary fw-bold">$125.00</h5>
         </div>
-
         <div class="col-12">
           <label class="form-label fw-semibold">Optional Services:</label>
           <div class="form-check mb-2">
@@ -169,31 +179,23 @@
             <label class="form-check-label" for="certificate">Request Certificate of Existence – $25</label>
           </div>
         </div>
-
         <div class="col-12">
-          <label class="form-label">Card Number</label>
-          <input type="text" name="cardNumber" class="form-control" placeholder="1234 5678 9012 3456" required />
+            <label class="form-label">Card Details</label>
+            <div id="card-element" class="form-control"></div>
+            <div id="card-errors" role="alert"></div>
         </div>
-        <div class="col-md-6">
-          <label class="form-label">Expiry Date</label>
-          <input type="text" name="expiryDate" class="form-control" placeholder="MM/YY" required />
-        </div>
-        <div class="col-md-6">
-          <label class="form-label">CVV</label>
-          <input type="text" name="cvv" class="form-control" placeholder="123" required />
-        </div>
+        <input type="hidden" name="stripeToken" id="stripeToken">
         <div class="col-12">
           <label class="form-label">Name on Card</label>
           <input type="text" name="nameOnCard" class="form-control" required />
         </div>
-
         <div class="col-12 mt-4">
           <div class="d-flex justify-content-between align-items-center">
             <h5>Total:</h5>
             <h5 class="fw-bold text-success" id="totalAmount">$125.00</h5>
           </div>
           <div class="text-center mt-3">
-            <button type="submit" class="btn btn-primary px-4 py-2">
+            <button type="submit" id="submit-button" class="btn btn-primary px-4 py-2">
               Submit & Pay Now – <span id="submitTotal">$125.00</span>
             </button>
           </div>
@@ -203,23 +205,57 @@
   </form>
 </div>
 
+<script src="https://js.stripe.com/v3/"></script>
 <script>
-  const printedCheckbox = document.getElementById('printedCopy');
-  const certificateCheckbox = document.getElementById('certificate');
-  const totalAmount = document.getElementById('totalAmount');
-  const submitTotal = document.getElementById('submitTotal');
+document.addEventListener('DOMContentLoaded', function() {
+    // Stripe JS
+    const stripe = Stripe('{{ env('STRIPE_KEY') }}');
+    const elements = stripe.elements();
+    const cardElement = elements.create('card');
+    cardElement.mount('#card-element');
 
-  function calculateTotal() {
-    let total = 125;
-    if (printedCheckbox.checked) total += 25;
-    if (certificateCheckbox.checked) total += 25;
-    totalAmount.textContent = `$${total}.00`;
-    submitTotal.textContent = `$${total}.00`;
-  }
+    const form = document.getElementById('payment-form');
+    const submitButton = document.getElementById('submit-button');
+    const cardErrors = document.getElementById('card-errors');
+    const stripeTokenInput = document.getElementById('stripeToken');
 
-  printedCheckbox.addEventListener('change', calculateTotal);
-  certificateCheckbox.addEventListener('change', calculateTotal);
-  
+    form.addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        // This confirmation is the only change
+        if (confirm('Are you sure you want to proceed with the payment?')) {
+            submitButton.disabled = true;
+            cardErrors.textContent = '';
+
+            const { token, error } = await stripe.createToken(cardElement);
+
+            if (error) {
+                cardErrors.textContent = error.message;
+                submitButton.disabled = false;
+            } else {
+                stripeTokenInput.value = token.id;
+                form.submit();
+            }
+        }
+    });
+
+    // Your Price Calculation JS (Unchanged)
+    const printedCheckbox = document.getElementById('printedCopy');
+    const certificateCheckbox = document.getElementById('certificate');
+    const totalAmount = document.getElementById('totalAmount');
+    const submitTotal = document.getElementById('submitTotal');
+
+    function calculateTotal() {
+        let total = 125;
+        if (printedCheckbox.checked) total += 25;
+        if (certificateCheckbox.checked) total += 25;
+        totalAmount.textContent = `$${total}.00`;
+        submitTotal.textContent = `$${total}.00`;
+    }
+
+    if(printedCheckbox) printedCheckbox.addEventListener('change', calculateTotal);
+    if(certificateCheckbox) certificateCheckbox.addEventListener('change', calculateTotal);
+});
 </script>
 
 @include('includes.footer')
