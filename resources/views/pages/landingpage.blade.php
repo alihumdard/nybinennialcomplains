@@ -65,17 +65,22 @@ body {
 }
 </style>
 
-<!-- Hero Section -->
 <section class="text-white py-5 text-center" style="background: linear-gradient(to bottom right, #003366, #0072CE);">
     <div class="container">
         <h1 class="fw-bold mb-3">Biennial Statement Filing Required by NY State Law</h1>
         <p class="fw-semibold mb-4" style="color: #F5F5F5; padding: 20px 0px;">Your business has been identified as past
             due.</p>
-        <a href="{{ route('checkout') }}" class="btn btn-light text-primary fw-bold">File Now - $125</a>
+        
+        @if ($submission)
+            <a href="{{ route('checkout.with_data', $submission->dos_id) }}" class="btn btn-light text-primary fw-bold">File Now - $125</a>
+        @else
+            <button type="button" class="btn btn-light text-primary fw-bold" data-bs-toggle="modal" data-bs-target="#infoModal">
+                File Now - $125
+            </button>
+        @endif
     </div>
 </section>
 
-<!-- How it Works -->
 <section class="py-5 bg-light" style="margin: 40px 0px;">
     <div class="container text-center mb-5">
         <h2 class="fw-bold mb-3">How It Works</h2>
@@ -100,7 +105,6 @@ body {
     </div>
 </section>
 
-<!-- Risks -->
 <section class="py-5 bg-danger bg-opacity-10">
   <div class="container bg-white p-4 rounded-4">
     <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start text-center text-md-start mb-3">
@@ -129,7 +133,6 @@ body {
 </section>
 
 
-<!-- FAQ -->
 <section class="py-5">
   <div class="container text-center mb-4">
     <h2 class="fw-bold mb-3">Frequently Asked Questions</h2>
@@ -137,14 +140,83 @@ body {
   </div>
   <div class="container">
     <div class="accordion" id="faqAccordion">
-      <!-- Dynamic content inserted via JavaScript -->
+      
+      <div class="accordion-item border-0 shadow-sm rounded mb-3">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button collapsed fw-semibold bg-white text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            <i class="bi bi-question-circle me-2 text-primary"></i>
+            What is a Biennial Statement?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-secondary">
+            A Biennial Statement is a required filing that NY corporations and LLCs must submit every two years to maintain good standing.
+          </div>
+        </div>
+      </div>
+      
+      <div class="accordion-item border-0 shadow-sm rounded mb-3">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed fw-semibold bg-white text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <i class="bi bi-question-circle me-2 text-primary"></i>
+            What happens if I don't file?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-secondary">
+            Failure to file can result in dissolution of your business, loss of good standing, fines, and more.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item border-0 shadow-sm rounded mb-3">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed fw-semibold bg-white text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            <i class="bi bi-question-circle me-2 text-primary"></i>
+            How long does processing take?
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-secondary">
+            You will receive your filing confirmation within 48 business hours.
+          </div>
+        </div>
+      </div>
+      
+      <div class="accordion-item border-0 shadow-sm rounded mb-3">
+        <h2 class="accordion-header" id="headingFour">
+          <button class="accordion-button collapsed fw-semibold bg-white text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            <i class="bi bi-question-circle me-2 text-primary"></i>
+            Is this service official?
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-secondary">
+            We are a private filing service authorized to submit documents on your behalf.
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-
-
-@include('includes.footer')
+<div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="infoModalLabel">Information</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        A valid DOS ID was not found in the URL. Please contact the administrator to request access to the checkout page and ensure a valid DOS ID is provided.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -169,32 +241,36 @@ body {
 
     const container = document.getElementById("faqAccordion");
 
-    faqs.forEach((faq, index) => {
-      const card = document.createElement("div");
-      card.className = "accordion-item border-0 shadow-sm rounded mb-3";
+    if (container) {
+        faqs.forEach((faq, index) => {
+          const card = document.createElement("div");
+          card.className = "accordion-item border-0 shadow-sm rounded mb-3";
 
-      card.innerHTML = `
-        <h2 class="accordion-header" id="heading${index}">
-          <button class="accordion-button collapsed fw-semibold bg-white text-dark" type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapse${index}"
-                  aria-expanded="false"
-                  aria-controls="collapse${index}">
-            <i class="bi bi-question-circle me-2 text-primary"></i>
-            ${faq.question}
-          </button>
-        </h2>
-        <div id="collapse${index}" class="accordion-collapse collapse"
-             aria-labelledby="heading${index}" data-bs-parent="#faqAccordion">
-          <div class="accordion-body text-secondary">
-            ${faq.answer}
-          </div>
-        </div>
-      `;
+          card.innerHTML = `
+            <h2 class="accordion-header" id="heading${index}">
+              <button class="accordion-button collapsed fw-semibold bg-white text-dark" type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapse${index}"
+                      aria-expanded="false"
+                      aria-controls="collapse${index}">
+                <i class="bi bi-question-circle me-2 text-primary"></i>
+                ${faq.question}
+              </button>
+            </h2>
+            <div id="collapse${index}" class="accordion-collapse collapse"
+                 aria-labelledby="heading${index}" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-secondary">
+                ${faq.answer}
+              </div>
+            </div>
+          `;
 
-      container.appendChild(card);
-    });
+          container.appendChild(card);
+        });
+    }
   });
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+@include('includes.footer')
+
+

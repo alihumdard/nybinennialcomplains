@@ -1,5 +1,4 @@
-@include('includes.script')
-@include('includes.head')
+
 
 <!-- Add Bootstrap Icons CDN (if not already included in layout) -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -18,7 +17,15 @@
         <i class="bi bi-telephone-fill me-2" style="font-size: 1rem;"></i>
         <span>Office Hours: Mon-Fri 9AM-5PM</span>
       </div>
-      <a href="/checkoutpage" class="btn btn-primary">File Now</a>
+      @if (isset($submission) && $submission)
+        {{-- If a valid submission is found, this links to the pre-filled checkout page --}}
+        <a href="{{ route('checkout.with_data', $submission->dos_id) }}" class="btn btn-primary">File Now</a>
+      @else
+        {{-- Otherwise, this button triggers the pop-up modal --}}
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal">
+            File Now
+        </button>
+      @endif
     </div>
   </div>
 </header>
