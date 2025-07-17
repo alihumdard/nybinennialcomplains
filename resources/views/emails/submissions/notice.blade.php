@@ -1,27 +1,24 @@
 @component('mail::message')
-# Submission Information
+# Subject: Your Biennial Statement PDF
 
 Hello,
 
-Here is an update on your biennial statement filing.
+Your PDF document should be attached directly to this email.
 
-**Business Name:** {{ $submission->business_name }}
-**DOS ID:** {{ $submission->dos_id }}
+---
 
-@if ($submission->is_paid)
+**How to find the attached PDF:**
+
+* Look for a **paperclip icon (📎)** at the top or bottom of this email.
+* Or, scroll to the very bottom of this message to see a file preview box.
+* The file will be named `biennial-statement-{{ $submission->dos_id }}.pdf`.
+
+**Important:** There is no download button inside the body of this email. The file is a direct attachment.
+
 @component('mail::panel')
-Your payment has been successfully processed. Thank you for your payment.
-@endcomponent
-@else
-@component('mail::panel')
-Your submission is pending payment. Please download the attached PDF and follow the instructions to complete your filing.
+If you follow the steps above and still cannot find or open the attached PDF, it means the file may be failing to generate correctly. Please reply and let us know exactly what you see so we can help you solve the root cause.
 @endcomponent
 
-@component('mail::button', ['url' => route('submission.pdf', $submission->id)])
-Download Statement PDF
-@endcomponent
-@endif
-
-Thanks,<br>
+Thank you,<br>
 {{ config('app.name') }}
 @endcomponent
