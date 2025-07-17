@@ -1,5 +1,14 @@
 
-
+<style>
+  header{
+    padding: 0px 40px;
+  }
+   @media (max-width: 576px) {
+    header{
+      padding: 0px;
+    }
+   }
+</style>
 <!-- Add Bootstrap Icons CDN (if not already included in layout) -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
