@@ -1,6 +1,15 @@
 <!-- Add this in your head section if not already included -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
+<style>
+  footer{
+    padding: 0px 40px;
+  }
+   @media (max-width: 576px) {
+    footer{
+      padding: 0px;
+    }
+   }
+</style>
 <footer class="text-white py-5" style="background: #1e3a8a">
   <div class="container">
     <div class="row gx-5 gy-4">
