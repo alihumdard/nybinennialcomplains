@@ -43,3 +43,6 @@ Route::middleware('auth')->group(function () {
         Route::post('/submissions/bulk-mail', [SubmissionActionsController::class, 'sendBulkMail'])->name('submissions.bulk-mail');
     });
 });
+   Route::get('/form', function () {
+            return view('pages.contact');
+        })->name('form');
