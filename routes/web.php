@@ -46,3 +46,6 @@ Route::middleware('auth')->group(function () {
    Route::get('/form', function () {
             return view('pages.contact');
         })->name('form');
+          Route::get('/faq', function () {
+            return view('pages.faq');
+        })->name('faq');
