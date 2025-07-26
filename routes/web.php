@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FilingController;
 use App\Http\Controllers\ImportController;
@@ -18,7 +19,11 @@ Route::get('/confirmation', [PageController::class, 'confirmation'])->name('conf
 Route::get('/submission/{submission}/pdf', [PDFController::class, 'download'])->name('submission.pdf');
 Route::get('/checkout/{submission:dos_id}', [PageController::class, 'showCheckoutWithData'])->name('checkout.with_data');
 Route::post('/filing/{submission:dos_id}/process', [FilingController::class, 'processFiling'])->name('filing.process');
+Route::get('/form', function () {
+    return view('pages.contact');
+})->name('form');
 
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.submit');
 Route::middleware('guest')->group(function () {
     Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
     Route::post('login', [AuthController::class, 'login']);
@@ -30,6 +35,7 @@ Route::middleware('guest')->group(function () {
     Route::get('reset-password', [ForgotPasswordController::class, 'showResetForm'])->name('password.reset.form');
     Route::post('reset-password', [ForgotPasswordController::class, 'reset'])->name('password.update');
 });
+
 
 Route::middleware('auth')->group(function () {
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
