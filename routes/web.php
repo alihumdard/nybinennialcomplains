@@ -13,6 +13,14 @@ use App\Http\Controllers\PDFController;
 use App\Http\Controllers\SubmissionActionsController;
 use App\Http\Controllers\SubmissionController;
 
+
+Route::get('lang/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'es'])) {
+        session()->put('locale', $locale);
+    }
+    return redirect()->back();
+})->name('lang.switch');
+
 Route::get('/', [PageController::class, 'landing'])->name('home');
 Route::get('/checkout', [PageController::class, 'checkout'])->name('checkout');
 Route::get('/confirmation', [PageController::class, 'confirmation'])->name('confirmation');
