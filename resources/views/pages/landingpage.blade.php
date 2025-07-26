@@ -189,9 +189,7 @@
     }
 
     .btn-action {
-        background-color: var(--accent-color);
-        border-color: var(--accent-color);
-        color: var(--primary-blue); /* Text color contrasting accent */
+        color: #005f99;
         padding: .7rem 1.5rem;
         border-radius: 50px;
         font-size: 1.2rem;
@@ -324,80 +322,37 @@
         background-color: #5a6268;
         border-color: #545b62;
     }
+.cta-btn {
+      background-color:  #F5A81C;
+      color: white;
+      font-weight: 600;
+      font-size: 14px;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
 
+    .cta-btn:hover {
+      background-color: #df950bff;
+    }
 </style>
 
 <section class="text-white text-center hero-section">
     <div class="container">
         <h1 class="fw-bold mb-3">Biennial Statement Filing Required by NY State Law</h1>
-        <p class="fw-semibold mb-4" style="padding: 20px 0px;">Your business has been identified as past due. Act now to maintain compliance.</p>
+        <p class="fw-semibold mb-4" style="padding: 20px 0px;">Avoid the administrative dissolution of your company — stay compliant and in Good Standing with New York State. </p>
 
         @if ($submission)
             <a href="{{ route('checkout.with_data', $submission->dos_id) }}" class="btn btn-action">File Now - $125</a>
         @else
-            <button type="button" class="btn btn-action" data-bs-toggle="modal" data-bs-target="#infoModal">
-                File Now - $125
-            </button>
+            <button class="cta-btn">FILE YOUR BIENNIAL STATEMENT NOW</button>
         @endif
     </div>
 </section>
 
----
 
-<section class="how-it-works-section">
-    <div class="container text-center mb-5">
-        <h2 class="mb-3" style="font-size: xx-large; font-weight: 800;">How It Works</h2>
-        <p class="text-muted" style="font-size: large; font-weight: 400;">Our simple, streamlined process makes compliance effortless.</p>
-    </div>
-    <div class="container d-flex flex-wrap justify-content-center gap-5" style="font-size: large; font-weight: 800;">
-        <div class="text-center" style="max-width: 350px;">
-            <div class="icon-circle"><i class="bi bi-file-earmark-check"></i></div>
-            <h3 class="fw-semibold mb-2">1. Review & Complete</h3>
-            <p class="" style="font-weight: 300;">Quickly review your existing business details and fill in any required updated information with ease.</p>
-        </div>
-        <div class="text-center" style="max-width: 350px;">
-            <div class="icon-circle"><i class="bi bi-credit-card-2-front"></i></div>
-            <h3 class="fw-semibold mb-2">2. Secure Payment</h3>
-            <p class="" style="font-weight: 300;">Complete your transaction with confidence using our encrypted and secure online payment gateway.</p>
-        </div>
-        <div class="text-center" style="max-width: 350px;">
-            <div class="icon-circle"><i class="bi bi-envelope-check"></i></div>
-            <h3 class="fw-semibold mb-2">3. Receive Confirmation</h3>
-            <p class="" style="font-weight: 300;">Get your official filing receipt sent directly to your email, typically within 48 business hours.</p>
-        </div>
-    </div>
-</section>
 
----
-
-<section class="risk-section">
-    <div class="container">
-        <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start text-center text-md-start mb-4">
-            <i class="bi bi-exclamation-triangle-fill me-0 me-md-3 mb-3 mb-md-0"></i>
-            <h2 class="fw-bold mb-0">Risks of Non-Compliance</h2>
-        </div>
-        <div class="row text-center text-md-start">
-            <div class="col-md-6 mb-4 mb-md-0">
-                <h3 class="fw-semibold mb-3">Immediate Consequences:</h3>
-                <ul class="list-unstyled">
-                    <li><i class="bi bi-x-circle-fill"></i>Loss of good standing with NY State</li>
-                    <li><i class="bi bi-x-circle-fill"></i>Inability to conduct business legally</li>
-                    <li><i class="bi bi-x-circle-fill"></i>Potential fines and penalties</li>
-                </ul>
-            </div>
-            <div class="col-md-6">
-                <h3 class="fw-semibold mb-3">Long-term Risks:</h3>
-                <ul class="list-unstyled">
-                    <li><i class="bi bi-x-circle-fill"></i>Administrative dissolution of business</li>
-                    <li><i class="bi bi-x-circle-fill"></i>Loss of limited liability protection</li>
-                    <li><i class="bi bi-x-circle-fill"></i>Complications with banking and contracts</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
----
 
 <section class="faq-section">
     <div class="container text-center mb-5">
