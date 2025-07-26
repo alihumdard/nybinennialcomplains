@@ -20,7 +20,9 @@
 
     <!-- Nav Links (Desktop) -->
     <div class="d-none d-sm-flex align-items-center gap-5 nav-links">
-      <a href="#">Home</a>
+      <a href="#">
+        {{ __('en.home') }}
+      </a>
       <a href="#">Contact Us</a>
       <a href="#">Faq</a>
       

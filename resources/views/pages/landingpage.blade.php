@@ -126,7 +126,7 @@ h1, h2, h3, h4, h5 {
 
 .notice-content {
     flex: 2;
-    background: #f8f9fa;
+    background: #f8f9fa; 
     min-width: 300px;
     padding: 3rem;
 }
