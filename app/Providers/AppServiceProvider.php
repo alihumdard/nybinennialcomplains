@@ -25,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        App::setLocale(Session::get('locale', config('app.locale')));
+        // This method should be empty for our purposes.
+        // The SetLocale middleware will handle the language switching.
     }
 }
