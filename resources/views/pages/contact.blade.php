@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact Section</title>
+  <title>{{ __('Contact Section') }}</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
   @include('includes.header')
@@ -18,50 +18,50 @@
     <div class="contact-section">
       <div class="row g-5 align-items-start">
         <div class="col-lg-6">
-          <h3 class="fw-bold mb-4">Send A Message</h3>
+          <h3 class="fw-bold mb-4">{{ __('Send A Message') }}</h3>
           
           @if(session('success'))
             <div class="alert alert-success rounded-3">
-                {{ session('success') }}
+                {{ __('Thank you for your message! We will get back to you shortly.') }}
             </div>
           @endif
 
           <form method="POST" action="{{ route('contact.submit') }}">
             @csrf
             <div class="mb-3">
-              <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Name" value="{{ old('name') }}" required />
+              <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="{{ __('Name') }}" value="{{ old('name') }}" required />
               @error('name')
                   <div class="invalid-feedback">{{ $message }}</div>
               @enderror
             </div>
             <div class="mb-3">
-              <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="E-mail" value="{{ old('email') }}" required />
+              <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="{{ __('E-mail') }}" value="{{ old('email') }}" required />
               @error('email')
                   <div class="invalid-feedback">{{ $message }}</div>
               @enderror
             </div>
             <div class="mb-4">
-              <textarea name="message" class="form-control @error('message') is-invalid @enderror" rows="6" placeholder="Your Message" required>{{ old('message') }}</textarea>
+              <textarea name="message" class="form-control @error('message') is-invalid @enderror" rows="6" placeholder="{{ __('Your Message') }}" required>{{ old('message') }}</textarea>
               @error('message')
                   <div class="invalid-feedback">{{ $message }}</div>
               @enderror
             </div>
-            <button type="submit" class="btn btn-yellow">Send A Message</button>
+            <button type="submit" class="btn btn-yellow">{{ __('Send A Message') }}</button>
           </form>
         </div>
 
         <div class="col-lg-6 ps-lg-5">
-          <div class="section-label">Quick Contact</div>
-          <h2 class="contact-heading">Have Questions?<br>Get in Touch!</h2>
+          <div class="section-label">{{ __('Quick Contact') }}</div>
+          <h2 class="contact-heading">{!! __('Have Questions?') !!}<br>{!! __('Get in Touch!') !!}</h2>
           <p class="contact-desc">
-            Our compliance specialists are available to answer your questions and guide you through the filing process.
+            {{ __('Our compliance specialists are available to answer your questions and guide you through the filing process.') }}
           </p>
           <div class="email-box">
             <div class="email-icon">
               <i class="bi bi-envelope-fill text-dark"></i>
             </div>
             <div class="email-text">
-              <small>Write email</small><br />
+              <small>{{ __('Write email') }}</small><br />
               <a href="mailto:info@boicomplianceservices.com">info@boicomplianceservices.com</a>
             </div>
           </div>
@@ -70,7 +70,22 @@
     </div>
   </div>
 </section>
-
+<div class="modal fade" id="dosIdRequiredModal" tabindex="-1" aria-labelledby="dosIdRequiredModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="dosIdRequiredModalLabel" style="color: var(--primary-blue);">Action Required</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Invalid DOS ID or DOS ID Not available. Please contact admin.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 @include('includes.footer')
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

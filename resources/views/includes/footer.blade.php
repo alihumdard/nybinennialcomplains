@@ -5,28 +5,28 @@
       <!-- Logo Column -->
       <div class="col-12 col-md-4 text-center text-md-start">
         <img src="/assets/images/logo.png" alt="BOL Logo" class="img-fluid mb-3" style="max-width: 180px;">
-        <p class="small text-muted">Your trusted compliance partner in New York.</p>
+        <p class="small text-muted">{{ __('Your trusted compliance partner in New York.') }}</p>
       </div>
 
       <!-- Pages Links -->
       <div class="col-6 col-md-4 text-dark">
-        <h5 class="text-uppercase mb-3">Pages</h5>
+        <h5 class="text-uppercase mb-3">{{ __('Pages') }}</h5>
         <ul class="list-unstyled">
           <li class="mb-2">
-            <a href="#" class="text-dark text-decoration-none">Home</a>
+            <a href="{{ route('home') }}" class="text-dark text-decoration-none">{{ __('Home') }}</a>
           </li>
           <li class="mb-2">
-            <a href="#" class="text-dark text-decoration-none">Contact Us</a>
+            <a href="{{ route('form') }}" class="text-dark text-decoration-none">{{ __('Contact Us') }}</a>
           </li>
           <li>
-            <a href="#" class="text-dark text-decoration-none">FAQ's</a>
+            <a href="{{ route('faq') }}" class="text-dark text-decoration-none">{{ __('Faq') }}</a>
           </li>
         </ul>
       </div>
 
       <!-- Contact Info -->
       <div class="col-6 col-md-4">
-        <h5 class="text-uppercase mb-3 text-dark">Contact Us</h5>
+        <h5 class="text-uppercase mb-3 text-dark">{{ __('Contact Us') }}</h5>
         <ul class="list-unstyled">
           <li class="mb-2">
             <a href="mailto:info@bolcomplianceservices.com" class="text-dark text-decoration-none d-flex align-items-center">
@@ -48,7 +48,7 @@
 
     <!-- Copyright -->
     <div class="text-center small text-muted">
-      © 2023 <strong>BOL Compliance Services</strong>. All rights reserved.
+      {!! __('© :year :name. All rights reserved.', ['year' => date('Y'), 'name' => '<strong>BOL Compliance Services</strong>']) !!}
     </div>
   </div>
 </footer>
