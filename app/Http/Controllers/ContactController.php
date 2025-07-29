@@ -26,7 +26,8 @@ class ContactController extends Controller
         Mail::raw($body, function ($message) use ($toEmail, $subject, $validated) {
             $message->to($toEmail)
                     ->subject($subject)
-                    ->from($validated['email'], $validated['name']);
+                    ->from('development@oraclesforce.com', $validated['name']) // ✅ Use your domain's email
+                    ->replyTo($validated['email'], $validated['name']);       // ✅ User's email here
         });
 
         return redirect()->route('form')->with('success', 'Thank you for your message! We will get back to you shortly.');
