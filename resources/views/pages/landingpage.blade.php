@@ -299,11 +299,12 @@
 <div class="container notice-container py-5">
   <div class=" notice-card g-5 align-items-center">
     <!-- Image Section -->
-    <div class="col-12 col-md-6">
-      <div class="notice-image text-center text-md-start">
-        <img src="/assets/images/map.jpg" alt="New York State Compliance Notice" class="img-fluid rounded shadow-sm w-100" style="max-width: 500px;" />
-      </div>
-    </div>
+    <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start">
+  <div class="notice-image w-100" style="max-width: 500px;">
+    <img src="/assets/images/map.jpg" alt="New York State Compliance Notice" class="img-fluid rounded shadow-sm w-100" />
+  </div>
+</div>
+
 
     <!-- Content Section -->
     <div class="col-12 col-md-6">
