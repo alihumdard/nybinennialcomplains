@@ -97,82 +97,116 @@
     }
 
     /* Notice Card Section */
-    .notice-container {
-        padding: 4rem 1rem;
-        background: var(--bg-light);
-    }
+  .notice-container {
+  padding: 4rem 1rem;
+  background: #f0f4f8;
+}
 
-    .notice-card {
-        display: flex;
-        flex-wrap: wrap;
-        max-width: 1300px;
-        margin: 0 auto;
-        background: white;
-        border-radius: 10px;
-        overflow: hidden;
-    }
+.notice-card {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
 
-    .notice-image {
-        flex: 1;
-        min-width: 300px;
-        padding: 2rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #f8f9fa;
-    }
+.notice-image {
+  flex: 1;
+  min-width: 420px;
+  padding: 40px 0px;
+  background: white;
+  display: flex;
+  justify-content: center;
+}
 
-    .notice-image img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 6px;
-    }
+.notice-image img {
+  max-width: 100%;
+  height: auto;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+}
 
-    .notice-content {
-        flex: 2;
-        background: #f8f9fa;
-        min-width: 300px;
-        padding: 3rem;
-    }
+.notice-content {
+  flex: 2;
+  background: #ffffff;
+  min-width: 320px;
+  padding: 3rem 2rem;
+}
 
-    .notice-title {
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: var(--primary-blue);
-        margin-bottom: 1.5rem;
-        padding-bottom: 1rem;
-        border-bottom: 3px solid var(--border-color);
-    }
+.notice-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0a58ca;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid #dee2e6;
+  padding-bottom: 1rem;
+}
 
-    .highlight {
-        font-weight: 600;
-        margin-bottom: 1.5rem;
-        color: var(--text-dark);
-    }
+.highlight {
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #212529;
+  background: #fff3cd;
+  padding: 1rem;
+  border-left: 5px solid #ffc107;
+  border-radius: 6px;
+}
 
-    .consequences {
-        background: var(--bg-light);
-        border-left: 4px solid var(--primary-blue);
-        padding: 1.5rem;
-        margin: 2rem 0;
-        border-radius: 6px;
-    }
+.notice-content p {
+  margin-bottom: 1rem;
+  color: #495057;
+  line-height: 1.7;
+  font-size: 1rem;
+}
 
-    .consequences h5 {
-        color: var(--primary-blue);
-        font-weight: 700;
-        margin-bottom: 1rem;
-    }
+.consequences {
+  background: #f8f9fa;
+  border-left: 5px solid #0a58ca;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+}
 
-    .consequences ul {
-        padding-left: 1.5rem;
-        margin: 0;
-    }
+.consequences h5 {
+  color: #0a58ca;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
 
-    .consequences li {
-        margin-bottom: 0.75rem;
-        list-style-type: disc;
-    }
+.consequences ul {
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.consequences li {
+  margin-bottom: 0.75rem;
+  color: #343a40;
+}
+
+.btn-wrapper {
+  margin-top: 2rem;
+}
+
+.cta-btn {
+  background-color: #0d6efd;
+  color: #ffffff;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 6px 16px rgba(13, 110, 253, 0.2);
+}
+
+.cta-btn:hover {
+  background-color: #0b5ed7;
+  cursor: pointer;
+}
+
 
     /* Responsive Adjustments */
     @media (max-width: 992px) {
@@ -266,7 +300,7 @@
 <div class="notice-container">
     <div class="notice-card">
         <div class="notice-image">
-            <img src="/assets/images/Capture.png" alt="New York State Compliance Notice">
+            <img src="/assets/images/map.jpg" alt="New York State Compliance Notice">
         </div>
         <div class="notice-content">
             <div class="notice-title">
@@ -308,6 +342,35 @@
         </div>
     </div>
 </div>
+
+<section class="how-it-works text-center py-5 bg-light">
+    <div class="container">
+        <h3 class="mb-4">{{ __('How Our Service Works') }}</h3>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="p-4 border rounded bg-white h-100">
+                    <i class="bi bi-file-earmark-text-fill fs-2 text-primary mb-2"></i>
+                    <h5 class="fw-semibold">{{ __('Step 1: Submit Info') }}</h5>
+                    <p class="text-muted">{{ __('Provide your business details through our secure online form.') }}</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 border rounded bg-white h-100">
+                    <i class="bi bi-gear-fill fs-2 text-primary mb-2"></i>
+                    <h5 class="fw-semibold">{{ __('Step 2: We File for You') }}</h5>
+                    <p class="text-muted">{{ __('Our team prepares and submits your Biennial Statement.') }}</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 border rounded bg-white h-100">
+                    <i class="bi bi-check2-circle fs-2 text-primary mb-2"></i>
+                    <h5 class="fw-semibold">{{ __('Step 3: Get Confirmation') }}</h5>
+                    <p class="text-muted">{{ __('Receive official filing confirmation by email within 48 hours.') }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <div class="modal fade" id="dosIdRequiredModal" tabindex="-1" aria-labelledby="dosIdRequiredModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
