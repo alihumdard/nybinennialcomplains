@@ -1,94 +1,214 @@
-<footer class="text-white py-5" style="background: #eeeeee;">
+<footer class="py-5" style="background: linear-gradient(to right, #f5f5f5, #ffffff);">
     <div class="container">
         <div class="row gy-4 align-items-start">
 
             <!-- Logo Column -->
             <div class="col-12 col-md-4 text-center text-md-start">
-                <img src="/assets/images/logo.png" alt="BOL Logo" class="img-fluid mb-3" style="max-width: 180px;">
-                <p class="small text-muted mb-0">{{ __('Your trusted compliance partner in New York.') }}</p>
+                <div class="footer-brand mb-4">
+                    <img src="/assets/images/logo.png" alt="BOL Logo" class="img-fluid" style="max-width: 180px; filter: brightness(0.8);">
+                </div>
+                <p class="small text-muted mb-3">{{ __('Your trusted compliance partner in New York.') }}</p>
+                <div class="d-flex justify-content-center justify-content-md-start gap-3">
+                    <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                </div>
             </div>
 
             <!-- Pages Links -->
             <div class="col-12 col-md-4 text-center text-md-start">
-                <h5 class="text-uppercase mb-3 text-dark">{{ __('Pages') }}</h5>
-                <ul class="list-unstyled mb-0">
+                <h5 class="footer-heading mb-4">{{ __('Quick Links') }}</h5>
+                <ul class="footer-links">
                     <li class="mb-2">
-                        <a href="{{ route('home') }}" class="text-dark text-decoration-none">{{ __('Home') }}</a>
+                        <a href="{{ route('home') }}" class="footer-link">
+                            <i class="bi bi-chevron-right me-1"></i> {{ __('Home') }}
+                        </a>
                     </li>
                     <li class="mb-2">
-                        <a href="{{ route('form') }}" class="text-dark text-decoration-none">{{ __('Contact Us') }}</a>
+                        <a href="{{ route('form') }}" class="footer-link">
+                            <i class="bi bi-chevron-right me-1"></i> {{ __('Contact Us') }}
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="{{ route('faq') }}" class="footer-link">
+                            <i class="bi bi-chevron-right me-1"></i> {{ __('FAQs') }}
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="#" class="footer-link">
+                            <i class="bi bi-chevron-right me-1"></i> {{ __('Privacy Policy') }}
+                        </a>
                     </li>
                     <li>
-                        <a href="{{ route('faq') }}" class="text-dark text-decoration-none">{{ __('Faq') }}</a>
+                        <a href="#" class="footer-link">
+                            <i class="bi bi-chevron-right me-1"></i> {{ __('Terms of Service') }}
+                        </a>
                     </li>
                 </ul>
             </div>
 
             <!-- Contact Info -->
             <div class="col-12 col-md-4 text-center text-md-start">
-                <h5 class="text-uppercase mb-3 text-dark">{{ __('Contact Us') }}</h5>
-
-                <ul class="list-unstyled mb-0">
-                    <li class="mb-2">
-                        <a href="mailto:info@bolcomplianceservices.com"
-                            class="text-dark text-decoration-none d-inline-flex align-items-center justify-content-center justify-content-md-start">
-                            <i class="bi bi-envelope me-2"></i> info@bolcomplianceservices.com
-                        </a>
+                <h5 class="footer-heading mb-4">{{ __('Contact Information') }}</h5>
+                <ul class="footer-contact">
+                    <li class="mb-3 d-flex align-items-start">
+                        <i class="bi bi-geo-alt-fill me-2 mt-1"></i>
+                        <span>123 Business Ave, Suite 456<br>New York, NY 10001</span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-center">
+                        <i class="bi bi-telephone-fill me-2"></i>
+                        <a href="tel:+12125551234" class="footer-link">+1 (212) 555-1234</a>
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <i class="bi bi-envelope-fill me-2"></i>
+                        <a href="mailto:info@bolcomplianceservices.com" class="footer-link">info@bolcomplianceservices.com</a>
                     </li>
                 </ul>
-
-                <!-- Social Media Icons -->
-                <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-3">
-                    <a href="#" class="text-dark fs-5"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="text-dark fs-5"><i class="bi bi-twitter-x"></i></a>
-                    <a href="#" class="text-dark fs-5"><i class="bi bi-linkedin"></i></a>
-                </div>
             </div>
 
         </div>
 
-        <hr class="my-4 bg-light">
+        <hr class="footer-divider my-4">
 
         <!-- Copyright -->
-        <div class="text-center small text-muted">
-            {!! __('© :year :name. All rights reserved.', ['year' => date('Y'), 'name' => '<strong>BOL Compliance
-                Services</strong>']) !!}
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                <p class="small text-muted mb-0">
+                    {!! __('© :year :name. All rights reserved.', ['year' => date('Y'), 'name' => '<strong>BOL Compliance Services</strong>']) !!}
+                </p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <p class="small text-muted mb-0">
+                    {{ __('Compliance solutions for New York businesses') }}
+                </p>
+            </div>
         </div>
     </div>
 </footer>
 
-<!-- Bootstrap Icons CDN -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
 <style>
-footer a {
-    transition: color 0.3s ease;
+/* Footer Styles */
+footer {
+    background: linear-gradient(to right, #f5f5f5, #ffffff);
+    color: #555;
+    position: relative;
+    overflow: hidden;
 }
 
-footer a:hover {
-    color: #f5a81c !important;
-}
-
-footer h5 {
+.footer-heading {
+    color: #004080;
+    font-weight: 700;
     letter-spacing: 0.5px;
-    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
 }
 
-hr {
-    opacity: 0.1;
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: #F5A81C;
+    text-align: center;
 }
 
-@media (max-width: 575.98px) {
-    footer ul {
-        padding-left: 0;
-    }
+.text-md-start .footer-heading::after {
+    left: 0;
+    transform: none;
+}
 
-    footer h5 {
-        font-size: 1.1rem;
-    }
+.footer-links {
+    list-style: none;
+    padding-left: 0;
+}
 
-    footer .bi {
-        font-size: 1.25rem !important;
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-link {
+    color: #555;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 0.95rem;
+}
+
+.footer-link:hover {
+    color: #F5A81C !important;
+    transform: translateX(5px);
+}
+
+.footer-link i {
+    color: #F5A81C;
+    font-size: 0.8rem;
+}
+
+.footer-contact {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-contact i {
+    color: #004080;
+    font-size: 1rem;
+    min-width: 20px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(0, 64, 128, 0.1);
+    color: #004080;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.social-icon:hover {
+    background: #F5A81C;
+    color: white !important;
+    transform: translateY(-3px);
+}
+
+.footer-divider {
+    border-color: rgba(0, 64, 128, 0.1);
+    border-width: 1px;
+    margin: 2rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+    .footer-heading::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-brand {
+        text-align: center;
+    }
+    
+    .footer-links, .footer-contact {
+        text-align: center;
+    }
+    
+    .footer-link {
+        justify-content: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .footer-heading {
+        font-size: 1.2rem;
     }
 }
 </style>
