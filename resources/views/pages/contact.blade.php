@@ -172,7 +172,6 @@
                 <p class="contact-desc mb-4">
                     {{ __('Our experts are here to guide you through every step — from idea to implementation. Reach out anytime, and let’s make something great together.') }}
                 </p>
-
                 <!-- Email -->
                 <div class="contact-info-box d-flex align-items-start gap-3 p-3 mb-3 shadow-sm">
                     <div
