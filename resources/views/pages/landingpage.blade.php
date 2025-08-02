@@ -123,7 +123,7 @@
 }
 
 .notice-image img {
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
   /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
 }
@@ -296,52 +296,59 @@
         @endif
     </div>
 </section>
-
-<div class="notice-container">
-    <div class="notice-card">
-        <div class="notice-image">
-            <img src="/assets/images/map.jpg" alt="New York State Compliance Notice">
-        </div>
-        <div class="notice-content">
-            <div class="notice-title">
-                {{ __('NOTICE OF NON-COMPLIANCE WITH BIENNIAL STATEMENT') }}
-            </div>
-
-            <p class="highlight">
-                {{ __('You Are Receiving This Notice Because Your Business Has Been Identified as Past Due.') }}
-            </p>
-
-            <p>
-                {{ __('According to public records maintained by the New York Department of State – Division of Corporations, your business has not submitted its required Biennial Statement.') }}
-            </p>
-
-            <p>
-                {{ __('To bring your business into compliance, the Biennial Statement must be filed immediately.') }}
-            </p>
-
-            <p>
-                {{ __('Pursuant to Section 408 of the New York Business Corporation Law and Section 301(e) of the New York Limited Liability Company Law, all domestic and authorized foreign corporations and LLCs must file a Biennial Statement every two years with the New York Department of State.') }}
-            </p>
-
-            <div class="consequences">
-                <h5>{{ __('Failure to comply may result in:') }}</h5>
-                <ul>
-                    <li>{{ __('Risk of involuntary dissolution by the state') }}</li>
-                    <li>{{ __('Suspension of business entity status') }}</li>
-                    <li>{{ __('Loss of ability to receive legal and tax documents') }}</li>
-                    <li>{{ __('Loss of ability to conduct transactions, secure loans, or enter into contracts') }}</li>
-                </ul>
-            </div>
-
-            <div class="mt-4">
-                {{-- This button now opens the modal --}}
-                <button type="button" class="btn cta-btn" data-bs-toggle="modal" data-bs-target="#dosIdRequiredModal">
-                    {{ __('FILE YOUR BIENNIAL STATEMENT NOW') }}
-                </button>
-            </div>
-        </div>
+<div class="container notice-container py-5">
+  <div class=" notice-card g-5 align-items-center">
+    <!-- Image Section -->
+    <div class="col-12 col-md-6">
+      <div class="notice-image text-center text-md-start">
+        <img src="/assets/images/map.jpg" alt="New York State Compliance Notice" class="img-fluid rounded shadow-sm w-100" style="max-width: 500px;" />
+      </div>
     </div>
+
+    <!-- Content Section -->
+    <div class="col-12 col-md-6">
+      <div class="notice-content px-md-3">
+        <h4 class="notice-title fw-bold mb-3 text-danger">
+          {{ __('NOTICE OF NON-COMPLIANCE WITH BIENNIAL STATEMENT') }}
+        </h4>
+
+        <p class="highlight fw-semibold text-dark">
+          {{ __('You Are Receiving This Notice Because Your Business Has Been Identified as Past Due.') }}
+        </p>
+
+        <p class="text-muted">
+          {{ __('According to public records maintained by the New York Department of State – Division of Corporations, your business has not submitted its required Biennial Statement.') }}
+        </p>
+
+        <p class="text-muted">
+          {{ __('To bring your business into compliance, the Biennial Statement must be filed immediately.') }}
+        </p>
+
+        <p class="text-muted">
+          {{ __('Pursuant to Section 408 of the New York Business Corporation Law and Section 301(e) of the New York Limited Liability Company Law, all domestic and authorized foreign corporations and LLCs must file a Biennial Statement every two years with the New York Department of State.') }}
+        </p>
+
+        <div class="consequences mt-4">
+          <h5 class="fw-semibold">{{ __('Failure to comply may result in:') }}</h5>
+          <ul class="list-unstyled ps-3">
+            <li class="mb-2"><i class="bi bi-x-circle-fill text-danger me-2"></i>{{ __('Risk of involuntary dissolution by the state') }}</li>
+            <li class="mb-2"><i class="bi bi-x-circle-fill text-danger me-2"></i>{{ __('Suspension of business entity status') }}</li>
+            <li class="mb-2"><i class="bi bi-x-circle-fill text-danger me-2"></i>{{ __('Loss of ability to receive legal and tax documents') }}</li>
+            <li class="mb-2"><i class="bi bi-x-circle-fill text-danger me-2"></i>{{ __('Loss of ability to conduct transactions, secure loans, or enter into contracts') }}</li>
+          </ul>
+        </div>
+
+        <div class="mt-4 text-center text-md-start">
+          <button type="button" class="btn btn-danger px-4 py-2 shadow-sm" data-bs-toggle="modal" data-bs-target="#dosIdRequiredModal">
+            {{ __('FILE YOUR BIENNIAL STATEMENT NOW') }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
 
 <section class="how-it-works text-center py-5 bg-light">
     <div class="container">

@@ -24,7 +24,6 @@
                 </ul>
             </div>
 
-
             <!-- Contact Info -->
             <div class="col-12 col-md-4 text-center text-md-start">
                 <h5 class="text-uppercase mb-3 text-dark">{{ __('Contact Us') }}</h5>
