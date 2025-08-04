@@ -1,4 +1,4 @@
-<footer class="py-5" style="background: linear-gradient(to right, #f5f5f5, #ffffff);">
+<footer class="py-5" style="background: linear-gradient(to right, #e6e6f1ff, rgba(217, 218, 240, 1));">
     <div class="container">
         <div class="row gy-4 align-items-start">
 
@@ -94,6 +94,7 @@ footer {
     color: #555;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .footer-heading {
