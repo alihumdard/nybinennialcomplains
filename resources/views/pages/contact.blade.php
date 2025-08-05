@@ -182,21 +182,7 @@
                         <small class="text-muted">{{ __('Email us at') }}</small><br />
                         <a href="mailto:info@boicomplianceservices.com"
                             class="text-decoration-none fw-semibold text-dark">
-                            info@boicomplianceservices.com
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Phone -->
-                <div class="contact-info-box d-flex align-items-start gap-3 p-3 shadow-sm">
-                    <div
-                        class="icon-wrapper bg-success text-white rounded-circle d-flex align-items-center justify-content-center">
-                        <i class="bi bi-telephone-fill fs-5"></i>
-                    </div>
-                    <div>
-                        <small class="text-muted">{{ __('Call us') }}</small><br />
-                        <a href="tel:+923001234567" class="text-decoration-none fw-semibold text-dark">
-                            +92 300 1234567
+                           info@nybiennialcompliance .com
                         </a>
                     </div>
                 </div>

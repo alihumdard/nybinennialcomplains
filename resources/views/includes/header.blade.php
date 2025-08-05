@@ -130,7 +130,7 @@
       <div class="d-none d-sm-flex align-items-center gap-5 nav-links">
         <a href="{{ route('home') }}">{{ __('Home') }}</a>
         <a href="{{ route('form') }}">{{ __('Contact Us') }}</a>
-        <a href="{{ route('faq') }}">{{ __('Faq') }}</a>
+        <a href="{{ route('faq') }}">{{ __('FAQ') }}</a>
 
         <div class="nav-item dropdown">
           <a class="dropdown-toggle" href="#" id="navbarDropdownLangDesktop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
