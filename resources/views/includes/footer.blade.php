@@ -113,8 +113,6 @@ footer {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 50px;
-    height: 2px;
     background: #F5A81C;
     text-align: center;
 }
