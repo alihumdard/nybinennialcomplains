@@ -140,9 +140,15 @@ footer {
 
             <!-- Logo Column -->
             <div class="col-12 col-md-4 text-center text-md-start">
-                <div class="footer-brand mb-4">
-                    <img src="/assets/images/logo.png" alt="BOL Logo" class="img-fluid" style="max-width: 180px; filter: brightness(0.8);">
-                </div>
+                <div class="footer-brand mb-4 text-center text-md-start">
+  <img 
+    src="/assets/images/logo.png" 
+    alt="BOL Logo" 
+    class="img-fluid mx-auto mx-md-0 d-block" 
+    style="max-width: 180px; filter: brightness(0.8);"
+  >
+</div>
+
                 <p class="small text-muted mb-3">{{ __('Your trusted compliance partner in New York.') }}</p>
                 <div class="d-flex justify-content-center justify-content-md-start gap-3">
                     <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
