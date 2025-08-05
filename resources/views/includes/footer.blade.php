@@ -62,7 +62,7 @@
                     </li>
                     <li class="d-flex align-items-center">
                         <i class="bi bi-envelope-fill me-2"></i>
-                        <a href="mailto:info@bolcomplianceservices.com" class="footer-link">info@bolcomplianceservices.com</a>
+                        <a href="mailto:info@bolcomplianceservices.com" class="footer-link">info@nybiennialcompliance .com</a>
                     </li>
                 </ul>
             </div>
