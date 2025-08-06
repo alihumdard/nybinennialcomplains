@@ -144,14 +144,6 @@
                         <img src="/assets/images/logo.png" alt="BOL Logo" class="img-fluid mx-auto mx-md-0 d-block"
                             style="max-width: 180px; filter: brightness(0.8);">
                     </div>
-
-                    <p class="small text-muted mb-3">{{ __('Your trusted compliance partner in New York.') }}</p>
-                    <div class="d-flex justify-content-center justify-content-md-start gap-3">
-                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
-                    </div>
                 </div>
 
                 <!-- Pages Links -->
