@@ -54,7 +54,7 @@
             <div class="md:flex">
                 <!-- Image Section -->
                 <div class="md:flex-shrink-0 p-6 flex items-center justify-center md:w-[40%]">
-                    <img class="h-auto w-full max-w-xl object-cover rounded-lg" src="/assets/images/map.png" alt="New York State Compliance Notice">
+                    <img class="h-auto w-full max-w-xl object-cover rounded-lg" src="/assets/images/map1.jpg" alt="New York State Compliance Notice">
                 </div>
                 
                 <!-- Content Section -->

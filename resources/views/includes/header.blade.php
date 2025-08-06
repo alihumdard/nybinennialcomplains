@@ -137,8 +137,8 @@
             <i class="bi bi-translate"></i> {{ strtoupper(app()->getLocale()) }}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownLangDesktop">
-            <li><a class="dropdown-item" href="{{ route('lang.switch', 'en') }}">{{ __('English (EN)') }}</a></li>
-            <li><a class="dropdown-item" href="{{ route('lang.switch', 'es') }}">{{ __('Español (ES)') }}</a></li>
+            <li><a class="dropdown-item" href="{{ route('lang.switch', 'en') }}">{{ __('Switch to english') }}</a></li>
+            <li><a class="dropdown-item" href="{{ route('lang.switch', 'es') }}">{{ __('Switch to spanish') }}</a></li>
           </ul>
         </div>
       </div>
@@ -161,8 +161,8 @@
       <a href="{{ route('faq') }}">{{ __('Faq') }}</a>
 
       <div class="mt-3">
-        <a href="{{ route('lang.switch', 'en') }}" class="d-flex align-items-center gap-2"><i class="bi bi-globe"></i> {{ __('English (EN)') }}</a>
-        <a href="{{ route('lang.switch', 'es') }}" class="d-flex align-items-center gap-2"><i class="bi bi-globe"></i> {{ __('Español (ES)') }}</a>
+        <a href="{{ route('lang.switch', 'en') }}" class="d-flex align-items-center gap-2"><i class="bi bi-globe"></i> {{ __('Switch to english') }}</a>
+        <a href="{{ route('lang.switch', 'es') }}" class="d-flex align-items-center gap-2"><i class="bi bi-globe"></i> {{ __('Switch to spanish') }}</a>
       </div>
 
       <a href="{{ route('file.statement') }}" class="btn cta-btn w-100 mt-3">{{ __('FILE YOUR BIENNIAL STATEMENT NOW') }}</a>
