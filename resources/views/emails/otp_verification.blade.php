@@ -101,28 +101,28 @@
             <div><i class="fas fa-lock otp-lock"></i></div>
             <div class="welcome-section">
                 <div class="app-name">
-                    --- APP NAME ---
+                    {{ __('--- APP NAME ---') }}
                 </div>
                 <div class="welcome-text">
-                    Thanks for signing up !
+                    {{ __('Thanks for signing up !') }}
                 </div>
 
                 <div class="verify-text">
-                    Please Verify Your Email Address
+                    {{ __('Please Verify Your Email Address') }}
                 </div>
                 <div class="email-icon">
                     <i class="fas fa-envelope-open"></i>
                 </div>
 
             </div>
-            <h2>Hello, {{Auth()->User()->name ?? 'Dear'}}</h2>
-            <p>Your One-Time Password for verification is:</p>
+            <h2>{{ __('Hello,') }} {{Auth()->User()->name ?? 'Dear'}}</h2>
+            <p>{{ __('Your One-Time Password for verification is:') }}</p>
             <div class="otp-code">{{ $otp }}</div>
-            <p class="mt-4">Please use this OTP to complete your verification.</p>
+            <p class="mt-4">{{ __('Please use this OTP to complete your verification.') }}</p>
         </div>
         <div class="footer-text">
-            <p>If you did not request this OTP, please <a href="#">contact us</a> immediately.</p>
-            <p>Thank you,<br>The Influencer Team</p>
+            <p>{{ __('If you did not request this OTP, please') }} <a href="#">{{ __('contact us') }}</a> {{ __('immediately.') }}</p>
+            <p>{{ __('Thank you,') }}<br>{{ __('The Influencer Team') }}</p>
         </div>
     </div>
 

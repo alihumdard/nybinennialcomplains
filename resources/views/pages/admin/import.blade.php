@@ -59,7 +59,7 @@
 <div class="main-content">
     <nav class="navbar bg-white border-bottom">
         <div>
-            <h5 class="mb-0 fw-semibold">Import Business Submissions</h5>
+            <h5 class="mb-0 fw-semibold">{{ __('Import Business Submissions') }}</h5>
         </div>
     </nav>
 
@@ -81,11 +81,11 @@
                 <div class="upload-box" id="upload-box">
                     <input type="file" name="csv_file" id="file-upload-input" accept=".csv">
                     <div class="icon"><i class="bi bi-cloud-arrow-up-fill"></i></div>
-                    <p>Click to browse or drag and drop your CSV file here.</p>
+                    <p>{{ __('Click to browse or drag and drop your CSV file here.') }}</p>
                 </div>
                 <div id="file-name-display" class="file-name text-center"></div>
                 <div class="text-center mt-4">
-                    <button type="submit" class="btn btn-primary px-5">Import Data</button>
+                    <button type="submit" class="btn btn-primary px-5">{{ __('Import Data') }}</button>
                 </div>
             </form>
         </div>

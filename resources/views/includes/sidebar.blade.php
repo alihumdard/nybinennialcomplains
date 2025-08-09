@@ -105,7 +105,7 @@
         </button>
 
         <div class="bg-[#4361ee] text-white p-4 md:p-6 rounded-b-2xl shadow-inner">
-            <h2 class="text-xl md:text-2xl font-bold tracking-wide">Admin Panel</h2>
+            <h2 class="text-xl md:text-2xl font-bold tracking-wide">{{ __('Admin Panel') }}</h2>
         </div>
 
         <nav class="mt-6 md:mt-8 px-2 md:px-4 space-y-1 md:space-y-2">
@@ -113,20 +113,20 @@
                 class="sidebar-link flex items-center w-full px-3 py-2 md:px-4 md:py-3 rounded-lg text-gray-700 hover:bg-blue-100 hover:text-[#4361ee] transition-all duration-200 group {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
                 <i
                     class="fas fa-tachometer-alt mr-2 md:mr-3 text-[#4361ee] group-hover:text-[#4361ee] text-sm md:text-base"></i>
-                <span class="text-sm md:text-base">Dashboard</span>
+                <span class="text-sm md:text-base">{{ __('Dashboard') }}</span>
             </a>
 
             <a href="{{ route('admin.import.form') }}"
                 class="sidebar-link flex items-center w-full px-3 py-2 md:px-4 md:py-3 rounded-lg text-gray-700 hover:bg-blue-100 hover:text-[#4361ee] transition-all duration-200 group">
                 <i
                     class="fas fa-plus-circle mr-2 md:mr-3 text-[#4361ee] group-hover:text-[#4361ee] text-sm md:text-base"></i>
-                <span class="text-sm md:text-base">Add Data</span>
+                <span class="text-sm md:text-base">{{ __('Add Data') }}</span>
             </a>
 
             <a href="#"
                 class="sidebar-link flex items-center w-full px-3 py-2 md:px-4 md:py-3 rounded-lg text-gray-700 hover:bg-blue-100 hover:text-[#4361ee] transition-all duration-200 group">
                 <i class="fas fa-cog mr-2 md:mr-3 text-[#4361ee] group-hover:text-[#4361ee] text-sm md:text-base"></i>
-                <span class="text-sm md:text-base">Settings</span>
+                <span class="text-sm md:text-base">{{ __('Settings') }}</span>
             </a>
         </nav>
     </aside>
