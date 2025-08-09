@@ -27,17 +27,17 @@
 </head>
 <body>
 <div class="container">
-    <div class="header">2019 - BIENNIAL STATEMENT INSTRUCTION FORM</div>
-    <div class="header" style="font-size: 11px;">(New York LLCs)</div>
-    <div class="instruction">IMPORTANT! FOLLOW INSTRUCTIONS EXACTLY WHEN COMPLETING THIS FORM. PLEASE PRINT.</div>
+    <div class="header">{{ __('2019 - BIENNIAL STATEMENT INSTRUCTION FORM') }}</div>
+    <div class="header" style="font-size: 11px;">{{ __('(New York LLCs)') }}</div>
+    <div class="instruction">{{ __('IMPORTANT! FOLLOW INSTRUCTIONS EXACTLY WHEN COMPLETING THIS FORM. PLEASE PRINT.') }}</div>
 
     <div class="info-box">
         <table>
             <tr>
-                <td>Customer ID Number</td>
-                <td>Notice Date</td>
-                <td>DOS ID Number</td>
-                <td>Formation Date</td>
+                <td>{{ __('Customer ID Number') }}</td>
+                <td>{{ __('Notice Date') }}</td>
+                <td>{{ __('DOS ID Number') }}</td>
+                <td>{{ __('Formation Date') }}</td>
             </tr>
             <tr style="font-weight: bold;">
                 <td>{{-- Placeholder --}}</td>
@@ -49,7 +49,7 @@
     </div>
 
     <div class="info-box">
-        <div style="padding: 5px;">Business Address</div>
+        <div style="padding: 5px;">{{ __('Business Address') }}</div>
         <div class="address-box">
             {{ $submission->business_name }}<br>
             {{ $submission->dos_process_address_1 }}<br>
@@ -67,50 +67,50 @@
         <div class="clear"></div>
     </div>
 
-    <p class="section-header">STEP 1. Verify the accuracy of the pre-printed business information.</p>
+    <p class="section-header">{{ __('STEP 1. Verify the accuracy of the pre-printed business information.') }}</p>
     <div class="content-box">
         <table>
             <tr>
-                <td style="width: 50%;">LLC Name: <strong>{{ $submission->business_name }}</strong></td>
-                <td>DOS ID Number: <strong>{{ $submission->dos_id }}</strong></td>
+                <td style="width: 50%;">{{ __('LLC Name:') }} <strong>{{ $submission->business_name }}</strong></td>
+                <td>{{ __('DOS ID Number:') }} <strong>{{ $submission->dos_id }}</strong></td>
             </tr>
              <tr>
-                <td>Formation Date: <strong>{{ \Carbon\Carbon::parse($submission->initial_dos_filing_date)->format('m/d/Y') }}</strong></td>
-                <td>Filing Year: <strong>{{ date('Y') }}</strong></td>
+                <td>{{ __('Formation Date:') }} <strong>{{ \Carbon\Carbon::parse($submission->initial_dos_filing_date)->format('m/d/Y') }}</strong></td>
+                <td>{{ __('Filing Year:') }} <strong>{{ date('Y') }}</strong></td>
             </tr>
         </table>
     </div>
 
-    <p class="section-header">STEP 2. Service of Process information (if applicable)</p>
+    <p class="section-header">{{ __('STEP 2. Service of Process information (if applicable)') }}</p>
     <div class="content-box">{{ $submission->dos_process_name }}</div>
 
-    <p class="section-header">STEP 3. PAYMENT INFORMATION</p>
+    <p class="section-header">{{ __('STEP 3. PAYMENT INFORMATION') }}</p>
     <div class="content-box">
         @if($submission->is_paid)
-            <strong style="color: green;">PAID:</strong> Payment for this filing has been successfully processed. Thank you.
+            <strong style="color: green;">{{ __('PAID:') }}</strong>{{ __(' Payment for this filing has been successfully processed. Thank you.') }}
         @else
-            <strong>PENDING:</strong> Check enclosed for $100
+            <strong>{{ __('PENDING:') }}</strong>{{ __(' Check enclosed for $100') }}
         @endif
     </div>
     
     @if($url)
-    <p class="section-header" style="margin-top: 15px; background-color: #aae0aaff;">STEP 4: File Online (Recommended)</p>
+    <p class="section-header" style="margin-top: 15px; background-color: #aae0aaff;">{{ __('STEP 4: File Online (Recommended)') }}</p>
     <div class="content-box" style="text-align: center; padding: 15px;">
-        <p style="font-size: 11px; margin: 0;">For faster processing, click the link below to complete your filing online.</p>
+        <p style="font-size: 11px; margin: 0;">{{ __('For faster processing, click the link below to complete your filing online.') }}</p>
         <a href="{{ $url }}" style="font-size: 12px; font-weight: bold; color: #0000ee;">{{ $url }}</a>
     </div>
     @endif
 
-    <p class="section-header">STEP 5. I authorize an electronic signature on behalf of the limited liability company.</p>
+    <p class="section-header">{{ __('STEP 5. I authorize an electronic signature on behalf of the limited liability company.') }}</p>
     <div class="signature-box">
         <table>
             <tr>
-                <td class="signature-line" style="width: 50%;">Signature (to be signed by an authorized member/manager) *REQUIRED*</td>
-                <td class="signature-line" style="width: 50%;">Print Name Clearly</td>
+                <td class="signature-line" style="width: 50%;">{{ __('Signature (to be signed by an authorized member/manager) *REQUIRED*') }}</td>
+                <td class="signature-line" style="width: 50%;">{{ __('Print Name Clearly') }}</td>
             </tr>
             <tr>
-                <td class="signature-line">Title</td>
-                <td class="signature-line">Email Address</td>
+                <td class="signature-line">{{ __('Title') }}</td>
+                <td class="signature-line">{{ __('Email Address') }}</td>
             </tr>
         </table>
     </div>

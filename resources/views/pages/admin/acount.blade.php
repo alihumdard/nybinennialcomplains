@@ -103,7 +103,7 @@
     <!-- Header -->
     <nav class="navbar bg-white border-bottom">
         <div class="container-fluid" style="padding: 1rem 2rem;">
-           <h5 class="mb-0 fw-semibold" style="font-size: 24px;">New Business Submission</h5>
+           <h5 class="mb-0 fw-semibold" style="font-size: 24px;">{{ __('New Business Submission') }}</h5>
         </div>
     </nav>
 
@@ -113,22 +113,22 @@
             <form id="businessSubmissionForm">
                 <!-- Basic Information Section -->
                 <div class="form-section">
-                    <h6 class="form-section-title">Basic Information</h6>
+                    <h6 class="form-section-title">{{ __('Basic Information') }}</h6>
                     <div class="row g-3">
                         <div class="col-md-6">
-                            <label for="businessName" class="form-label required-field">Business Name</label>
+                            <label for="businessName" class="form-label required-field">{{ __('Business Name') }}</label>
                             <input type="text" class="form-control" id="businessName" required>
                         </div>
                         <div class="col-md-6">
-                            <label for="dosId" class="form-label required-field">DOS ID</label>
+                            <label for="dosId" class="form-label required-field">{{ __('DOS ID') }}</label>
                             <input type="text" class="form-control" id="dosId" required>
                         </div>
                         <div class="col-md-6">
-                            <label for="email" class="form-label required-field">Email</label>
+                            <label for="email" class="form-label required-field">{{ __('Email') }}</label>
                             <input type="email" class="form-control" id="email" required>
                         </div>
                         <div class="col-md-6">
-                            <label for="phone" class="form-label">Phone Number</label>
+                            <label for="phone" class="form-label">{{ __('Phone Number') }}</label>
                             <input type="tel" class="form-control" id="phone">
                         </div>
                     </div>
@@ -136,31 +136,31 @@
 
                 <!-- Business Details Section -->
                 <div class="form-section">
-                    <h6 class="form-section-title">Business Details</h6>
+                    <h6 class="form-section-title">{{ __('Business Details') }}</h6>
                     <div class="row g-3">
                         <div class="col-md-6">
-                            <label for="businessType" class="form-label required-field">Business Type</label>
+                            <label for="businessType" class="form-label required-field">{{ __('Business Type') }}</label>
                             <select class="form-select" id="businessType" required>
-                                <option value="" selected disabled>Select business type</option>
-                                <option value="LLC">LLC</option>
-                                <option value="Corporation">Corporation</option>
-                                <option value="Sole Proprietorship">Sole Proprietorship</option>
-                                <option value="Partnership">Partnership</option>
+                                <option value="" selected disabled>{{ __('Select business type') }}</option>
+                                <option value="LLC">{{ __('LLC') }}</option>
+                                <option value="Corporation">{{ __('Corporation') }}</option>
+                                <option value="Sole Proprietorship">{{ __('Sole Proprietorship') }}</option>
+                                <option value="Partnership">{{ __('Partnership') }}</option>
                             </select>
                         </div>
                         <div class="col-md-6">
-                            <label for="industry" class="form-label required-field">Industry</label>
+                            <label for="industry" class="form-label required-field">{{ __('Industry') }}</label>
                             <select class="form-select" id="industry" required>
-                                <option value="" selected disabled>Select industry</option>
-                                <option value="Technology">Technology</option>
-                                <option value="Healthcare">Healthcare</option>
-                                <option value="Finance">Finance</option>
-                                <option value="Retail">Retail</option>
-                                <option value="Manufacturing">Manufacturing</option>
+                                <option value="" selected disabled>{{ __('Select industry') }}</option>
+                                <option value="Technology">{{ __('Technology') }}</option>
+                                <option value="Healthcare">{{ __('Healthcare') }}</option>
+                                <option value="Finance">{{ __('Finance') }}</option>
+                                <option value="Retail">{{ __('Retail') }}</option>
+                                <option value="Manufacturing">{{ __('Manufacturing') }}</option>
                             </select>
                         </div>
                         <div class="col-12">
-                            <label for="businessAddress" class="form-label required-field">Business Address</label>
+                            <label for="businessAddress" class="form-label required-field">{{ __('Business Address') }}</label>
                             <textarea class="form-control" id="businessAddress" rows="2" required></textarea>
                         </div>
                     </div>
@@ -168,36 +168,36 @@
 
                 <!-- Submission Details Section -->
                 <div class="form-section">
-                    <h6 class="form-section-title">Submission Details</h6>
+                    <h6 class="form-section-title">{{ __('Submission Details') }}</h6>
                     <div class="row g-3">
                         <div class="col-md-6">
-                            <label for="submissionDate" class="form-label required-field">Submission Date</label>
+                            <label for="submissionDate" class="form-label required-field">{{ __('Submission Date') }}</label>
                             <input type="date" class="form-control" id="submissionDate" required>
                         </div>
                         <div class="col-md-6">
-                            <label for="status" class="form-label required-field">Status</label>
+                            <label for="status" class="form-label required-field">{{ __('Status') }}</label>
                             <select class="form-select" id="status" required>
-                                <option value="Pending" selected>Pending</option>
-                                <option value="Approved">Approved</option>
-                                <option value="Under Review">Under Review</option>
-                                <option value="Rejected">Rejected</option>
+                                <option value="Pending" selected>{{ __('Pending') }}</option>
+                                <option value="Approved">{{ __('Approved') }}</option>
+                                <option value="Under Review">{{ __('Under Review') }}</option>
+                                <option value="Rejected">{{ __('Rejected') }}</option>
                             </select>
                         </div>
                         <div class="col-md-6">
-                            <label class="form-label required-field">Payment Status</label>
+                            <label class="form-label required-field">{{ __('Payment Status') }}</label>
                             <div class="d-flex gap-3">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="paymentStatus" id="paid" value="Paid" checked>
-                                    <label class="form-check-label" for="paid">Paid</label>
+                                    <label class="form-check-label" for="paid">{{ __('Paid') }}</label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="paymentStatus" id="unpaid" value="Unpaid">
-                                    <label class="form-check-label" for="unpaid">Unpaid</label>
+                                    <label class="form-check-label" for="unpaid">{{ __('Unpaid') }}</label>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <label for="amount" class="form-label">Amount (USD)</label>
+                            <label for="amount" class="form-label">{{ __('Amount (USD)') }}</label>
                             <input type="number" class="form-control" id="amount" step="0.01">
                         </div>
                     </div>
@@ -205,18 +205,18 @@
 
                 <!-- Documents Section -->
                 <div class="form-section">
-                    <h6 class="form-section-title">Documents</h6>
+                    <h6 class="form-section-title">{{ __('Documents') }}</h6>
                     <div class="row g-3">
                         <div class="col-12">
-                            <label for="businessLicense" class="form-label">Business License</label>
+                            <label for="businessLicense" class="form-label">{{ __('Business License') }}</label>
                             <input type="file" class="form-control" id="businessLicense">
                         </div>
                         <div class="col-12">
-                            <label for="taxDocument" class="form-label">Tax Document</label>
+                            <label for="taxDocument" class="form-label">{{ __('Tax Document') }}</label>
                             <input type="file" class="form-control" id="taxDocument">
                         </div>
                         <div class="col-12">
-                            <label for="additionalDocuments" class="form-label">Additional Documents</label>
+                            <label for="additionalDocuments" class="form-label">{{ __('Additional Documents') }}</label>
                             <input type="file" class="form-control" id="additionalDocuments" multiple>
                         </div>
                     </div>
@@ -224,8 +224,8 @@
 
                 <!-- Form Actions -->
                 <div class="form-actions">
-                    <button type="button" class="btn btn-outline-secondary">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-outline-secondary">{{ __('Cancel') }}</button>
+                    <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
                 </div>
             </form>
         </div>

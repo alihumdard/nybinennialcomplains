@@ -54,7 +54,7 @@
   <div class="container bg-light rounded-pill shadow-sm px-4 py-3 d-flex align-items-center justify-content-between">
     <div class="d-flex align-items-center">
       <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold me-2" style="width: 32px; height: 32px;">1</div>
-      <div class="fw-semibold">File Your Statement</div>
+      <div class="fw-semibold">{{ __('File Your Statement') }}</div>
     </div>
     <div class="flex-grow-1 mx-3">
       <div class="progress" style="height: 4px;">
@@ -63,7 +63,7 @@
     </div>
     <div class="d-flex align-items-center">
       <div class="rounded-circle bg-secondary bg-opacity-10 text-secondary d-flex align-items-center justify-content-center fw-bold me-2" style="width: 32px; height: 32px;">2</div>
-      <div class="text-secondary">Confirmation</div>
+      <div class="text-secondary">{{ __('Confirmation') }}</div>
     </div>
   </div>
 </div>
@@ -73,18 +73,18 @@
     @csrf
     
     <div class="card mb-4">
-      <div class="card-header text-navy-900 fw-bold">Business Information</div>
+      <div class="card-header text-navy-900 fw-bold">{{ __('Business Information') }}</div>
       <div class="card-body row g-4">
         <div class="col-md-6">
-          <label class="form-label">Business Name</label>
+          <label class="form-label">{{ __('Business Name') }}</label>
           <input type="text" name="business_name" class="form-control" value="{{ $submission->business_name ?? '' }}" required />
         </div>
         <div class="col-md-6">
-          <label class="form-label">DOS ID Number</label>
+          <label class="form-label">{{ __('DOS ID Number') }}</label>
           <input type="text" name="dos_id" class="form-control" value="{{ $submission->dos_id ?? '' }}" readonly required />
         </div>
         <div class="col-md-6">
-          <label class="form-label">Entity Type</label>
+          <label class="form-label">{{ __('Entity Type') }}</label>
           <select name="entity_type" class="form-select">
             <option value="DOMESTIC BUSINESS CORPORATION" @if(($submission->entity_type ?? '') == 'DOMESTIC BUSINESS CORPORATION') selected @endif>Corporation</option>
             <option value="DOMESTIC LIMITED LIABILITY COMPANY" @if(($submission->entity_type ?? '') == 'DOMESTIC LIMITED LIABILITY COMPANY') selected @endif>LLC</option>
@@ -94,67 +94,67 @@
     </div>
 
     <div class="card mb-4">
-      <div class="card-header text-navy-900 fw-bold">CEO/Manager Information</div>
+      <div class="card-header text-navy-900 fw-bold">{{ __('CEO/Manager Information') }}</div>
       <div class="card-body row g-4">
         <div class="col-md-6">
-          <label class="form-label">Full Name</label>
+          <label class="form-label">{{ __('Full Name') }}</label>
           <input type="text" name="ceo_name" class="form-control" value="{{ $submission->ceo_name ?? '' }}" required />
         </div>
         <div class="col-md-6">
-          <label class="form-label">Title</label>
+          <label class="form-label">{{ __('Title') }}</label>
           <input type="text" name="ceo_title" class="form-control" value="" required />
         </div>
       </div>
     </div>
 
     <div class="card mb-4">
-      <div class="card-header text-navy-900 fw-bold">Principal Office Address</div>
+      <div class="card-header text-navy-900 fw-bold">{{ __('Principal Office Address') }}</div>
       <div class="card-body row g-4">
         <div class="col-12">
-          <label class="form-label">Street Address</label>
+          <label class="form-label">{{ __('Street Address') }}</label>
           <input type="text" name="dos_process_address_1" class="form-control" value="{{ $submission->dos_process_address_1 ?? '' }}" required />
         </div>
         <div class="col-md-6">
-          <label class="form-label">City</label>
+          <label class="form-label">{{ __('City') }}</label>
           <input type="text" name="dos_process_city" class="form-control" value="{{ $submission->dos_process_city ?? '' }}" required />
         </div>
         <div class="col-md-6">
-          <label class="form-label">ZIP Code</label>
+          <label class="form-label">{{ __('ZIP Code') }}</label>
           <input type="text" name="dos_process_zip" class="form-control" value="{{ $submission->dos_process_zip ?? '' }}" required />
         </div>
       </div>
     </div>
 
     <div class="card mb-4">
-      <div class="card-header text-navy-900 fw-bold">Board of Directors (if Corporation)</div>
+      <div class="card-header text-navy-900 fw-bold">{{ __('Board of Directors (if Corporation)') }}</div>
       <div class="card-body row g-4">
         <div class="col-md-6">
-          <label class="form-label">Director Name</label>
+          <label class="form-label">{{ __('Director Name') }}</label>
           <input type="text" name="directorName" class="form-control" />
         </div>
         <div class="col-md-6">
-          <label class="form-label">Position</label>
+          <label class="form-label">{{ __('Position') }}</label>
           <input type="text" name="directorPosition" class="form-control" />
         </div>
       </div>
     </div>
 
     <div class="card mb-4">
-      <div class="card-header text-navy-900 fw-bold">Declaration & Signature</div>
+      <div class="card-header text-navy-900 fw-bold">{{ __('Declaration & Signature') }}</div>
       <div class="card-body row g-4">
         <div class="col-md-6">
-          <label class="form-label">Your Name</label>
+          <label class="form-label">{{ __('Your Name') }}</label>
           <input type="text" name="declarantName" class="form-control" required />
         </div>
         <div class="col-md-6">
-          <label class="form-label">Date</label>
+          <label class="form-label">{{ __('Date') }}</label>
           <input type="date" name="declarationDate" class="form-control" required />
         </div>
         <div class="col-12">
           <div class="form-check">
             <input class="form-check-input" type="checkbox" required id="agreeTerms" />
             <label class="form-check-label" for="agreeTerms">
-              I declare that the information provided is true and correct.
+              {{ __('I declare that the information provided is true and correct.') }}
             </label>
           </div>
         </div>
@@ -162,41 +162,41 @@
     </div>
 
     <div class="card mb-4">
-      <div class="card-header text-navy-900 fw-bold">Payment</div>
+      <div class="card-header text-navy-900 fw-bold">{{ __('Payment') }}</div>
       <div class="card-body row g-4">
         <div class="col-12">
-          <p class="mb-0">Base Filing Fee:</p>
+          <p class="mb-0">{{ __('Base Filing Fee:') }}</p>
           <h5 class="text-primary fw-bold">$125.00</h5>
         </div>
         <div class="col-12">
-          <label class="form-label fw-semibold">Optional Services:</label>
+          <label class="form-label fw-semibold">{{ __('Optional Services:') }}</label>
           <div class="form-check mb-2">
             <input class="form-check-input" type="checkbox" id="printedCopy" name="addPrintedCopy" />
-            <label class="form-check-label" for="printedCopy">Add Printed Copy – $25</label>
+            <label class="form-check-label" for="printedCopy">{{ __('Add Printed Copy – $25') }}</label>
           </div>
           <div class="form-check">
             <input class="form-check-input" type="checkbox" id="certificate" name="addCertificate" />
-            <label class="form-check-label" for="certificate">Request Certificate of Existence – $25</label>
+            <label class="form-check-label" for="certificate">{{ __('Request Certificate of Existence – $25') }}</label>
           </div>
         </div>
         <div class="col-12">
-            <label class="form-label">Card Details</label>
+            <label class="form-label">{{ __('Card Details') }}</label>
             <div id="card-element" class="form-control"></div>
             <div id="card-errors" role="alert"></div>
         </div>
         <input type="hidden" name="stripeToken" id="stripeToken">
         <div class="col-12">
-          <label class="form-label">Name on Card</label>
+          <label class="form-label">{{ __('Name on Card') }}</label>
           <input type="text" name="nameOnCard" class="form-control" required />
         </div>
         <div class="col-12 mt-4">
           <div class="d-flex justify-content-between align-items-center">
-            <h5>Total:</h5>
-            <h5 class="fw-bold text-success" id="totalAmount">$125.00</h5>
+            <h5>{{ __('Total:') }}</h5>
+            <h5 class="fw-bold text-success" id="totalAmount">{{ __('$125.00') }}</h5>
           </div>
           <div class="text-center mt-3">
             <button type="submit" id="submit-button" class="btn btn-primary px-4 py-2">
-              Submit & Pay Now – <span id="submitTotal">$125.00</span>
+              {{ __('Submit & Pay Now – ') }}<span id="submitTotal">$125.00</span>
             </button>
           </div>
         </div>

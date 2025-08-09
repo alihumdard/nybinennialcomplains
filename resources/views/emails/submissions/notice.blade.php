@@ -16,9 +16,9 @@ Your PDF document should be attached directly to this email.
 **Important:** There is no download button inside the body of this email. The file is a direct attachment.
 
 @component('mail::panel')
-If you follow the steps above and still cannot find or open the attached PDF, it means the file may be failing to generate correctly. Please reply and let us know exactly what you see so we can help you solve the root cause.
+{{ __('If you follow the steps above and still cannot find or open the attached PDF, it means the file may be failing to generate correctly. Please reply and let us know exactly what you see so we can help you solve the root cause.') }}
 @endcomponent
 
-Thank you,<br>
+{{ __('Thank you,') }}<br>
 {{ config('app.name') }}
 @endcomponent
