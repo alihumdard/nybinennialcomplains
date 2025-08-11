@@ -31,10 +31,10 @@
 
     <!-- Hero Section -->
     <section class="bg-gradient-to-r from-[#004080] to-[#002b58] text-white py-8 md:py-10 px-4 text-center">
-        <div class="max-w-4xl mx-auto">
-            <h1 class="font-['Montserrat'] font-bold text-2xl md:text-4xl mb-4 md:mb-6">{{ __('Biennial Statement Filing Required by NY State Law') }}</h1>
-            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90">
-                {{ __('Avoid the administrative dissolution of your company — stay compliant and in Good Standing with New York State.') }}
+        <div class="">
+            <h1 class="font-['Montserrat'] max-w-xl mx-auto font-bold text-2xl md:text-4xl mb-4 md:mb-6">{{ __('Biennial Statement Filing Required by NY State Law') }}</h1>
+            <p class="text-lg md:text-lg mb-8 max-w-lg mx-auto opacity-90">
+                {{ __('Avoid the administrative dissolution of your company stay compliant and in Good Standing with New York State.') }}
             </p>
             @if ($submission)
                 <a href="{{ route('checkout.with_data', $submission->dos_id) }}" class="bg-[#F5A81C] hover:bg-[#e69500] text-white font-semibold py-3 px-8 rounded-md shadow-lg transition-all duration-300 transform hover:-translate-y-1 uppercase tracking-wide">
@@ -49,8 +49,11 @@
     </section>
 
     <!-- Notice Container -->
-    <div class="bg-gradient-to-b from-[#f0f4f8] to-white py-8 md:py-16 px-4">
-        <div class="mx-auto bg-white rounded-xl shadow-md overflow-hidden mx-60">
+    <div class=" py-8 md:py-16 px-4 bg-white">
+        <div class="mx-auto bg-white rounded-xl shadow-sm overflow-hidden mx-60">
+            <h4 class="font-['Montserrat'] font-bold text-xl text-center pt-5 md:text-2xl mb-4 text-red-600">
+                {{ __('NOTICE OF NON-COMPLIANCE WITH BIENNIAL STATEMENT') }}
+            </h4>
             <div class="md:flex">
                 <!-- Image Section -->
                 <div class="md:flex-shrink-0 p-6 flex items-center justify-center md:w-[40%]">
@@ -59,9 +62,6 @@
                 
                 <!-- Content Section -->
                 <div class="p-6 md:p-8">
-                    <h4 class="font-['Montserrat'] font-bold text-xl md:text-2xl mb-4 text-red-600 border-b pb-2">
-                        {{ __('NOTICE OF NON-COMPLIANCE WITH BIENNIAL STATEMENT') }}
-                    </h4>
 
                     <div class="bg-yellow-50 border-l-4 border-[#F5A81C] p-4 mb-4">
                         <p class="font-semibold">
@@ -92,7 +92,7 @@
                     </div>
 
                     <div class="text-center md:text-left">
-                        <button type="button" class="bg-[#F5A81C] hover:bg-[#e69500] text-white font-semibold py-2 px-6 rounded-md shadow transition-all duration-300" data-bs-toggle="modal" data-bs-target="#dosIdRequiredModal">
+                        <button type="button" class="bg-[#F5A81C] hover:bg-[#e69500] text-white font-semibold py-2 px-6 rounded-md transition-all duration-300" data-bs-toggle="modal" data-bs-target="#dosIdRequiredModal">
                             {{ __('FILE YOUR BIENNIAL STATEMENT NOW') }}
                         </button>
                     </div>
@@ -106,7 +106,7 @@
         <div class="max-w-6xl mx-auto">
             <h3 class="font-['Montserrat'] font-bold text-2xl md:text-3xl text-center mb-8 md:mb-12 relative pb-2">
                 {{ __('Follow These Steps to Submit Your Biennial Report') }}
-                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-[#F5A81C] rounded-full"></span>
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[75%] h-1 bg-[#F5A81C] rounded-full"></span>
             </h3>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -115,9 +115,9 @@
                     <div class="text-[#004080] text-4xl mb-4 transition-all duration-300 hover:scale-110">
                         <i class="bi bi-file-earmark-text-fill"></i>
                     </div>
-                    <h5 class="font-['Montserrat'] font-bold text-lg mb-2">{{ __('Step 1: Submit Info') }}</h5>
+                    <h5 class="font-['Montserrat'] font-bold text-lg mb-2">{{ __('Step 1: Submit Required Entity Information') }}</h5>
                     <p class="text-gray-600">
-                        {{ __('Provide your business details through our secure online form. Takes just 2 minutes.') }}
+                        {{ __('Complete the secure form with your official business details as registered with the New York Department of State. Estimated completion time: 2 minutes.') }}
                     </p>
                 </div>
 
@@ -126,7 +126,7 @@
                     <div class="text-[#004080] text-4xl mb-4 transition-all duration-300 hover:scale-110">
                         <i class="bi bi-gear-fill"></i>
                     </div>
-                    <h5 class="font-['Montserrat'] font-bold text-lg mb-2">{{ __('Step 2: We File for You') }}</h5>
+                    <h5 class="font-['Montserrat'] font-bold text-lg mb-2">{{ __('Step 2: Processing and Submission') }}</h5>
                     <p class="text-gray-600">
                         {{ __('Our experts prepare and submit your Biennial Statement to NY Department of State.') }}
                     </p>

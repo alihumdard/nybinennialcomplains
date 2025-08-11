@@ -194,23 +194,7 @@
 
 
             </div>
-
-            <hr class="footer-divider my-4">
-
-            <!-- Copyright -->
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    <p class="small text-muted mb-0">
-                        {!! __('© :year :name. All rights reserved.', ['year' => date('Y'), 'name' => '<strong>BOL
-                            Compliance Services</strong>']) !!}
-                    </p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <p class="small text-muted mb-0">
-                        {{ __('Compliance solutions for New York businesses') }}
-                    </p>
-                </div>
-            </div>
+           
         </div>
     </footer>
 </body>
