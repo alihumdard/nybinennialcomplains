@@ -116,15 +116,21 @@
             display: none !important
         }
     }
+
+    .logo-wider {
+        width: 120px;
+        height: auto;
+        /* Adjust as needed */
+    }
     </style>
 </head>
 
 <body>
 
     <header class="bg-white border-bottom shadow-sm">
-        <div class="container d-flex justify-content-between align-items-center py-2" style="max-width: 1200px;">
+        <div class="container d-flex justify-content-between align-items-center" style="max-width: 1200px;">
             <a href="{{ route('home') }}" class="d-flex align-items-center text-decoration-none">
-                <img src="/assets/images/logo.png" alt="Logo" />
+                <img src="/assets/images/logo.png" alt="Logo" class="logo-wider" />
             </a>
 
             <div class="d-none d-sm-flex align-items-center gap-5 nav-links">
@@ -134,15 +140,15 @@
                 <div class="nav-item dropdown">
                     <a class="dropdown-toggle" href="#" id="navbarDropdownLangDesktop" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-translate"></i> {{ 'Disponible en españo' }}
+                        🌐 {{ 'Disponible en Español' }}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownLangDesktop">
                         @if(app()->getLocale() == 'en')
-                        <li><a class="dropdown-item"
-                                href="{{ route('lang.switch', 'es') }}">{{ __('spanish') }}</a></li>
-                        @else
-                        <li><a class="dropdown-item"
-                                href="{{ route('lang.switch', 'en') }}">{{ __(' english') }}</a></li>
+                        <li><a class="dropdown-item" href="{{ route('lang.switch', 'es') }}">{{ __('spanish') }}</a>
+                        </li>
+                        @else   
+                        <li><a class="dropdown-item" href="{{ route('lang.switch', 'en') }}">{{ __(' english') }}</a>
+                        </li>
                         @endif
                     </ul>
                 </div>
@@ -177,6 +183,9 @@
                 class="btn cta-btn w-100 mt-3">{{ __('FILE YOUR BIENNIAL STATEMENT NOW') }}</a>
         </div>
     </header>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
