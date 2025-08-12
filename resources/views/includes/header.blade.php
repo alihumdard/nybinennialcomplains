@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
     <style>
     header {
-        padding: 0 40px
+        padding: 0px 40px
     }
 
     header img {
@@ -128,7 +128,7 @@
 <body>
 
     <header class="bg-white border-bottom shadow-sm">
-        <div class="container d-flex justify-content-between align-items-center" style="max-width: 1200px;">
+        <div class="container d-flex justify-content-between align-items-center" style="max-width: 1200px; max-height: 80px;">
             <a href="{{ route('home') }}" class="d-flex align-items-center text-decoration-none">
                 <img src="/assets/images/logo.png" alt="Logo" class="logo-wider" />
             </a>
@@ -157,7 +157,7 @@
             <div class="d-flex align-items-center gap-3">
                 {{-- This link has been changed to a button that triggers the modal --}}
                 <button type="button" class="btn cta-btn d-none d-sm-block" data-bs-toggle="modal"
-                    data-bs-target="#dosIdRequiredModal">
+                    data-bs-target="#dosIdRequiredModal" style="background-color: #F5A81C; color: white;">
                     {{ __('FILE YOUR BIENNIAL STATEMENT NOW') }}
                 </button>
 
