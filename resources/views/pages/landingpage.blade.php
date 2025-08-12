@@ -34,86 +34,88 @@
     <!-- Header Section -->
 
     <!-- Hero Section -->
-    <section class="bg-gray-100 text-black py-3 md:py-4 px-4 text-center">
-        <div class="">
-            <h1 class="font-['Montserrat'] font-bold text-2xl mb-1">
-                {{ __('Biennial Statement Filing Required by NY State Law') }}</h1>
-            <p class="text-sm opacity-90 py-1">
-                {{ __('Avoid the administrative dissolution of your company stay compliant and in Good Standing with New York State.') }}
-            </p>
-            @if ($submission)
-            <a href="{{ route('checkout.with_data', $submission->dos_id) }}"
-                class="bg-[#F5A81C] hover:bg-[#e69500] text-white font-semibold py-2 px-5 rounded-md shadow-lg transition-all duration-300 transform hover:-translate-y-1 uppercase tracking-wide">
-                {{ __('File Now - $125') }}
-            </a>
-            @else
-            <button type="button"
-                class="bg-[#F5A81C] hover:bg-[#e69500] text-white font-semibold text-sm py-2 px-3 mt-2 rounded-md shadow-lg transition-all duration-300 transform uppercase tracking-wide"
-                data-bs-toggle="modal" data-bs-target="#dosIdRequiredModal">
-                {{ __('FILE YOUR BIENNIAL STATEMENT NOW') }}
-            </button>
-            @endif
-        </div>
-    </section>
+   <section class="bg-gradient-to-r from-blue-800 via-blue-800 to-blue-900 text-white py-3 md:py-4 px-4 text-center">
+    <div>
+        <h1 class="font-['Montserrat'] font-bold text-2xl mb-1">
+            {{ __('Biennial Statement Filing Required by NY State Law') }}
+        </h1>
+        <p class="text-sm opacity-90 py-1">
+            {{ __('Avoid the administrative dissolution of your company stay compliant and in Good Standing with New York State.') }}
+        </p>
+        @if ($submission)
+        <a href="{{ route('checkout.with_data', $submission->dos_id) }}"
+            class="bg-[#F5A81C] hover:bg-[#e69500] text-white font-semibold py-2 px-5 rounded-md shadow-lg transition-all duration-300 transform hover:-translate-y-1 uppercase tracking-wide">
+            {{ __('File Now - $125') }}
+        </a>
+        @else
+        <button type="button"
+            class="bg-[#F5A81C] hover:bg-[#e69500] text-white font-semibold text-sm py-2 px-3 mt-2 rounded-md shadow-lg transition-all duration-300 transform uppercase tracking-wide"
+            data-bs-toggle="modal" data-bs-target="#dosIdRequiredModal">
+            {{ __('FILE YOUR BIENNIAL STATEMENT NOW') }}
+        </button>
+        @endif
+    </div>
+</section>
+
 
     <!-- Notice Container -->
-    <div class=" pb-3 md:py-4 px-4 bg-white">
-        <div class="mx-auto bg-white rounded-xl shadow-sm overflow-hidden mx-60">
-            <h4 class="font-['Montserrat'] font-bold text-md text-center py-3 md:text-xl text-red-600">
-                {{ __('NOTICE OF NON-COMPLIANCE WITH BIENNIAL STATEMENT') }}
-            </h4>
-            <div class="md:flex">
-                <!-- Image Section -->
-                <div class="md:flex-shrink-0 p-6 flex items-center justify-center md:w-[27%]">
-                    <img class="h-auto w-full max-w-sm object-cover rounded-lg" src="/assets/images/map1.jpg"
-                        alt="New York State Compliance Notice">
+ <div class="pb-3 md:py-4 px-4 bg-white">
+    <div class="mx-auto max-w-[1200px] bg-white rounded-xl shadow-sm overflow-hidden">
+        <h4 class="font-['Montserrat'] font-bold text-md text-center py-3 md:text-xl text-red-600">
+            {{ __('NOTICE OF NON-COMPLIANCE WITH BIENNIAL STATEMENT') }}
+        </h4>
+        <div class="md:flex">
+            <!-- Image Section -->
+            <div class="md:flex-shrink-0 p-6 flex items-center justify-center md:w-[47%]">
+                <img class="h-auto w-full max-w-sm object-cover rounded-lg" 
+                     src="/assets/images/map1.jpg"
+                     alt="New York State Compliance Notice">
+            </div>
+
+            <!-- Content Section -->
+            <div class="px-6 md:px-8">
+                <div class="bg-yellow-50 border-l-4 border-[#F5A81C] px-4 pt-1">
+                    <p class="font-semibold py-1 mb-2">
+                        {{ __('You Are Receiving This Notice Because Your Business Has Been Identified as Past Due.') }}
+                    </p>
                 </div>
 
+                <p class="text-gray-600 text-sm">
+                    {{ __(' According to public records maintained by the New York Department of State – Division of Corporations, your business has not submitted its required Biennial Statement.') }}
+                </p>
 
-                <!-- Content Section -->
-                <div class="px-6 md:px-8">
+                <p class="text-gray-600 my-2 text-sm">
+                    {{ __('To bring your business into compliance, the Biennial Statement must be filed immediately.') }}
+                </p>
 
-                    <div class="bg-yellow-50 border-l-4 border-[#F5A81C] px-4 pt-1">
-                        <p class="font-semibold py-1 mb-2">
-                            {{ __('You Are Receiving This Notice Because Your Business Has Been Identified as Past Due.') }}
-                        </p>
-                    </div>
+                <p class="text-gray-600 mb-2 text-sm">
+                    {{ __('Pursuant to Section 408 of the New York Business Corporation Law and Section 301(e) of the New York Limited Liability Company Law, all domestic and authorized foreign corporations and LLCs must file a Biennial Statement every two years with the New York Department of State.') }}
+                </p>
 
-                    <p class="text-gray-600 text-sm">
-                        {{ __(' According to public records maintained by the New York Department of State – Division of Corporations, your business has not submitted its required Biennial Statement.') }}
-                    </p>
+                <div class="bg-gray-50 border-l-4 border-[#004080] px-4 py-2 mb-2">
+                    <h5 class="font-['Montserrat'] font-semibold text-lg mb-2">
+                        {{ __('Failure to comply may result in:') }}
+                    </h5>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>{{ __('Risk of involuntary dissolution by the state') }}</li>
+                        <li>{{ __('Suspension of business entity status') }}</li>
+                        <li>{{ __('Loss of ability to receive legal and tax documents') }}</li>
+                        <li>{{ __('Loss of ability to conduct transactions, secure loans, or enter into contracts') }}</li>
+                    </ul>
+                </div>
 
-                    <p class="text-gray-600 my-2 text-sm">
-                        {{ __('To bring your business into compliance, the Biennial Statement must be filed immediately.') }}
-                    </p>
-
-                    <p class="text-gray-600 mb-2 text-sm">
-                        {{ __('Pursuant to Section 408 of the New York Business Corporation Law and Section 301(e) of the New York Limited Liability Company Law, all domestic and authorized foreign corporations and LLCs must file a Biennial Statement every two years with the New York Department of State.') }}
-                    </p>
-
-                    <div class="bg-gray-50 border-l-4 border-[#004080] px-4 py-2 mb-2 ">
-                        <h5 class="font-['Montserrat'] font-semibold text-lg mb-2">
-                            {{ __('Failure to comply may result in:') }}</h5>
-                        <ul class="list-disc pl-5 space-y-1">
-                            <li>{{ __('Risk of involuntary dissolution by the state') }}</li>
-                            <li>{{ __('Suspension of business entity status') }}</li>
-                            <li>{{ __('Loss of ability to receive legal and tax documents') }}</li>
-                            <li>{{ __('Loss of ability to conduct transactions, secure loans, or enter into contracts') }}
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="text-center md:text-left pt-1 pb-3">
-                        <button type="button"
-                            class="bg-[#F5A81C] hover:bg-[#e69500] text-white font-semibold py-2 px-6 rounded-md transition-all duration-300"
-                            data-bs-toggle="modal" data-bs-target="#dosIdRequiredModal">
-                            {{ __('FILE YOUR BIENNIAL STATEMENT NOW') }}
-                        </button>
-                    </div>
+                <div class="text-center md:text-left pt-1 pb-3">
+                    <button type="button"
+                        class="bg-[#F5A81C] hover:bg-[#e69500] text-white font-semibold py-2 px-6 rounded-md transition-all duration-300"
+                        data-bs-toggle="modal" data-bs-target="#dosIdRequiredModal">
+                        {{ __('FILE YOUR BIENNIAL STATEMENT NOW') }}
+                    </button>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
 
     <!-- How It Works Section -->
     <section class="bg-gradient-to-b from-white to-[#f8f9fa] pb-12 md:pb-10 pt-4 px-4">
