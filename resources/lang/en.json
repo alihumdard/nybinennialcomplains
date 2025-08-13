@@ -229,6 +229,22 @@
 
     "Thank you for your payment. Your biennial statement filing for the business below has been successfully processed.": "Thank you for your payment. Your biennial statement filing for the business below has been successfully processed.",
     "You will receive further updates from us in due course.": "You will receive further updates from us in due course.",
-    "Thanks,": "Thanks,"
+    "Thanks,": "Thanks,",
+    "what_is_biennial_statement_q": "What is a Biennial Statement?",
+    "what_is_biennial_statement_a": "A Biennial Statement is a legal document that must be filed every two years with the New York Department of State by all corporations and limited liability companies (LLCs) formed or authorized to do business in New York. It confirms your business’s address, CEO, and other basic information.",
+    "is_filing_required_q": "Is filing the Biennial Statement required?",
+    "is_filing_required_a": "Yes. Filing is required by law under Section 408 of the Business Corporation Law and Section 301(e) of the Limited Liability Company Law. Failure to file can result in your business being listed as inactive or noncompliant in public records.",
+    "how_do_i_know_due_q": "How do I know if my business is due to file?",
+    "how_do_i_know_due_a": "If you received a mailed notice with a QR code from us, your business is listed in public records as past due or currently due for Biennial Statement filing. You can also check your business's filing history at the official NY Department of State website.",
+    "what_is_included_fee_q": "What is included in the $125 service fee?",
+    "what_is_included_fee_a": "The $125 fee covers:<br>• Review and processing of your Biennial Statement<br>• Secure preparation and submission <br>• Email delivery of your official filing receipt<br>• Support and recordkeeping from our compliance team",
+    "certificate_good_standing_q": "Can I request a Certificate of Good Standing?",
+    "certificate_good_standing_a": "Yes. If your business is in compliance and up to date with filings, you may request an official Certificate of Good Standing for an additional $25. This document verifies that your business is legally authorized to operate in New York.",
+    "receive_certificate_by_mail_q": "Will I receive an official certificate by mail?",
+    "receive_certificate_by_mail_a": "No. The official filing receipt will be delivered to your email address within 48 business hours of submission.<br>If you would like a printed copy mailed to you, you may request this for an additional $25.", 
+    "after_submission_q": "What happens after I submit my payment and form?",
+    "after_submission_a": "We will review your submission and file your Biennial Statement. Once completed, we will email you the official receipt for your records.",
+    "contact_q": "Who can I contact if I have questions?",
+    "contact_a": "Please contact us at:<br>📧 Info@nybiennialcompliance.com <br>🕒 Monday–Friday, 9:00 AM – 5:00 PM EST"
 
 }

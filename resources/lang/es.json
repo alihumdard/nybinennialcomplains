@@ -222,5 +222,28 @@
     "Invalid DOS ID or DOS ID Not available. Please contact admin.": "DOS ID invalide ou non disponible. Veuillez contacter l'administrateur.",
     "Thank you for your payment. Your biennial statement filing for the business below has been successfully processed.": "Merci pour votre paiement. Le dépôt de votre déclaration biennale pour l'entreprise ci-dessous a été traité avec succès.",
     "You will receive further updates from us in due course.": "Vous recevrez d'autres mises à jour de notre part en temps voulu.",
-    "Thanks,": "Merci,"
+    "Thanks,": "Merci,",
+    "what_is_biennial_statement_q": "Qu'est-ce qu'une déclaration biennale ?",
+    "what_is_biennial_statement_a": "Une déclaration biennale est un document légal qui doit être déposé tous les deux ans auprès du Département d'État de New York par toutes les sociétés et sociétés à responsabilité limitée (LLC) constituées ou autorisées à exercer des activités dans l'État de New York. Elle confirme l'adresse de votre entreprise, son PDG et d'autres informations de base.",
+    
+    "is_filing_required_q": "Le dépôt de la déclaration biennale est-il obligatoire ?",
+    "is_filing_required_a": "Oui. Le dépôt est exigé par la loi en vertu de l'article 408 de la loi sur les sociétés commerciales (Business Corporation Law) et de l'article 301(e) de la loi sur les sociétés à responsabilité limitée (Limited Liability Company Law). Le défaut de dépôt peut entraîner l'inscription de votre entreprise comme inactive ou non conforme dans les registres publics.",
+    
+    "how_do_i_know_due_q": "Comment savoir si mon entreprise doit déposer ?",
+    "how_do_i_know_due_a": "Si vous avez reçu un avis par courrier avec un code QR de notre part, votre entreprise est inscrite dans les registres publics comme étant en retard ou actuellement tenue de déposer la déclaration biennale. Vous pouvez également vérifier l'historique de dépôt de votre entreprise sur le site officiel du Département d'État de New York.",
+    
+    "what_is_included_fee_q": "Que comprend les frais de service de 125 $ ?",
+    "what_is_included_fee_a": "Les frais de 125 $ comprennent :<br>• L'examen et le traitement de votre déclaration biennale<br>• La préparation et la soumission sécurisées<br>• L'envoi par e-mail de votre reçu officiel de dépôt<br>• L'assistance et la tenue de dossiers par notre équipe de conformité",
+    
+    "certificate_good_standing_q": "Puis-je demander un certificat de bonne réputation ?",
+    "certificate_good_standing_a": "Oui. Si votre entreprise est en conformité et à jour dans ses dépôts, vous pouvez demander un certificat officiel de bonne réputation pour un supplément de 25 $. Ce document atteste que votre entreprise est légalement autorisée à exercer ses activités dans l'État de New York.",
+    
+    "receive_certificate_by_mail_q": "Vais-je recevoir un certificat officiel par courrier ?",
+    "receive_certificate_by_mail_a": "Non. Le reçu officiel de dépôt sera envoyé à votre adresse e-mail dans un délai de 48 heures ouvrables.<br>Si vous souhaitez recevoir une copie imprimée par courrier, vous pouvez en faire la demande pour un supplément de 25 $. ",
+    
+    "after_submission_q": "Que se passe-t-il après avoir soumis mon paiement et mon formulaire ?",
+    "after_submission_a": "Nous examinerons votre soumission et déposerons votre déclaration biennale. Une fois terminée, nous vous enverrons par e-mail le reçu officiel pour vos dossiers.",
+    
+    "contact_q": "Qui puis-je contacter si j'ai des questions ?",
+    "contact_a": "Veuillez nous contacter à :<br>📧 Info@nybiennialcompliance.com <br>🕒 Lundi–Vendredi, 9h00 – 17h00 EST"
 }
