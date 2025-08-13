@@ -13,88 +13,87 @@
     @include('includes.script')
     @include('includes.header')
     <style>
-    body {
-        font-family: 'Segoe UI', sans-serif;
-        background-color: #f9f9fc;
-    }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f9f9fc;
+        }
 
-    .info-section-bg {
-        background-color: #f3f4f6;
-        color: #000;
-        padding: 2rem 1rem;
-        text-align: center;
-    }
+        .info-section-bg {
+            background-color: #f3f4f6;
+            color: #000;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
 
-    .info-section-bg h1 {
-        font-weight: 800;
-        font-size: 1.8rem;
-    }
+        .info-section-bg h1 {
+            font-weight: 800;
+            font-size: 1.8rem;
+        }
 
-    .info-section-bg p {
-        font-size: 1rem;
-        color: #4b5563;
-        margin-bottom: 0.5rem;
-    }
+        .info-section-bg p {
+            font-size: 1rem;
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
 
-    .custom-container {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
+        .custom-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    .faq-section {
-        padding: 60px 0 30px 0;
-    }
+        .faq-section {
+            padding: 60px 0 30px 0;
+        }
 
-    .accordion-item {
-        border: none;
-        border-radius: 12px;
-        background-color: white;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        margin-bottom: 1rem;
-    }
+        .accordion-item {
+            border: none;
+            border-radius: 12px;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1rem;
+        }
 
-    .accordion-button {
-        font-weight: 600;
-        font-size: 1rem;
-        background-color: white;
-        color: #333;
-        padding: 1.2rem 1.5rem;
-    }
+        .accordion-button {
+            font-weight: 600;
+            font-size: 1rem;
+            background-color: white;
+            color: #333;
+            padding: 1.2rem 1.5rem;
+        }
 
-    .accordion-button:not(.collapsed) {
-        background-color: #e7f1ff;
-        color: #0d6efd;
-    }
+        .accordion-button:not(.collapsed) {
+            background-color: #e7f1ff;
+            color: #0d6efd;
+        }
 
-    .accordion-body {
-        padding: 1.2rem 1.5rem;
-        color: #555;
-    }
+        .accordion-body {
+            padding: 1.2rem 1.5rem;
+            color: #555;
+        }
 
-    .how-it-works h3 {
-        font-weight: 600;
-        font-size: 1.2rem;
-    }
-    </style>
-    <style>
-    .step-card {
-        transition: all 0.3s ease-in-out;
-        border: 1px solid #eee;
-    }
+        .how-it-works h3 {
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
 
-    .step-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    }
+        .step-card {
+            transition: all 0.3s ease-in-out;
+            border: 1px solid #eee;
+        }
 
-    .step-card .display-4 {
-        transition: transform 0.3s ease;
-    }
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
 
-    .step-card:hover .display-4 {
-        transform: scale(1.1);
-        color: #004080 !important;
-    }
+        .step-card .display-4 {
+            transition: transform 0.3s ease;
+        }
+
+        .step-card:hover .display-4 {
+            transform: scale(1.1);
+            color: #004080 !important;
+        }
     </style>
 </head>
 
@@ -121,7 +120,8 @@
                             </div>
 
                             <h5 class="font-['Montserrat'] font-bold text-md mb-2">
-                                {{ __('Step 1: Submit Required Entity Information') }}</h5>
+                                {{ __('Step 1: Submit Required Entity Information') }}
+                            </h5>
                             <p class="text-gray-600">
                                 {{ __('Complete the form with your official New York business details. Takes 2 minutes.') }}
                             </p>
@@ -174,43 +174,51 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const faqs = [{
-                question: `{{ __('What exactly is a Biennial Statement?') }}`,
-                answer: `{!! addslashes(__("A Biennial Statement is a mandatory legal document...")) !!}`
-            },
-            {
-                question: `{{ __('What are the consequences if I fail to file?') }}`,
-                answer: `{!! addslashes(__("Failure to submit can lead to administrative dissolution...")) !!}`
-            },
-            {
-                question: `{{ __('How long does it take to process the filing?') }}`,
-                answer: `{{ addslashes(__("You’ll receive confirmation via email within 48 hours.")) }}`
-            },
-            {
-                question: `{{ __('Is your service officially recognized or affiliated with the state?') }}`,
-                answer: `{{ addslashes(__("We are a third-party filing service...")) }}`
-            },
-            {
-                question: `{{ __('What information do I need to provide?') }}`,
-                answer: `{{ addslashes(__("Legal name, DOS ID, business address, and officers or members.")) }}`
-            },
-            {
-                question: `{{ __('Can I file directly with the state?') }}`,
-                answer: `{{ addslashes(__("Yes, but our service ensures speed, accuracy, and compliance.")) }}`
-            }
-        ];
+        document.addEventListener("DOMContentLoaded", function() {
+            const faqs = [{
+                    question: `{{ __('what_is_biennial_statement_q') }}`,
+                    answer: `{!! addslashes(__('what_is_biennial_statement_a')) !!}`
+                },
+                {
+                    question: `{{ __('is_filing_required_q') }}`,
+                    answer: `{!! addslashes(__('is_filing_required_a')) !!}`
+                },
+                {
+                    question: `{{ __('how_do_i_know_due_q') }}`,
+                    answer: `{!! addslashes(__('how_do_i_know_due_a')) !!}`
+                },
+                {
+                    question: `{{ __('what_is_included_fee_q') }}`,
+                    answer: `{!! addslashes(__('what_is_included_fee_a')) !!}`
+                },
+                {
+                    question: `{{ __('certificate_good_standing_q') }}`,
+                    answer: `{!! addslashes(__('certificate_good_standing_a')) !!}`
+                },
+                {
+                    question: `{{ __('receive_certificate_by_mail_q') }}`,
+                    answer: `{!! addslashes(__('receive_certificate_by_mail_a')) !!}`
+                },
+                {
+                    question: `{{ __('after_submission_q') }}`,
+                    answer: `{!! addslashes(__('after_submission_a')) !!}`
+                },
+                {
+                    question: `{{ __('contact_q') }}`,
+                    answer: `{!! addslashes(__('contact_a')) !!}`
+                }
+            ];
 
-        const container = document.getElementById("faqAccordion");
-        container.innerHTML = "";
+            const container = document.getElementById("faqAccordion");
+            container.innerHTML = "";
 
-        faqs.forEach((faq, i) => {
-            const collapseId = `collapseFaq${i}`;
-            const headingId = `headingFaq${i}`;
+            faqs.forEach((faq, i) => {
+                const collapseId = `collapseFaq${i}`;
+                const headingId = `headingFaq${i}`;
 
-            const item = document.createElement("div");
-            item.className = "accordion-item";
-            item.innerHTML = `
+                const item = document.createElement("div");
+                item.className = "accordion-item";
+                item.innerHTML = `
                     <h2 class="accordion-header" id="${headingId}">
                         <button class="accordion-button collapsed" type="button"
                             data-bs-toggle="collapse"
@@ -225,9 +233,9 @@
                         <div class="accordion-body">${faq.answer}</div>
                     </div>
                 `;
-            container.appendChild(item);
+                container.appendChild(item);
+            });
         });
-    });
     </script>
 </body>
 
