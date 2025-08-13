@@ -136,7 +136,7 @@
                     <h5 class="font-['Montserrat'] font-bold text-md mb-2">
                         {{ __('Step 1: Submit Required Entity Information') }}</h5>
                     <p class="text-gray-600">
-                        {{ __('Complete the secure form with your official business details as registered with the New York Department of State. Estimated completion time: 2 minutes.') }}
+                        {{ __('Complete the form with your official New York business details. Takes 2 minutes.') }}
                     </p>
                 </div>
 
