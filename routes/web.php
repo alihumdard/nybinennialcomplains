@@ -56,3 +56,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/submissions/bulk-mail', [SubmissionActionsController::class, 'sendBulkMail'])->name('submissions.bulk-mail');
     });
 });
+// routes/web.php
+Route::get('/newtemplate', function () {
+    return view('pdf.newtemplate');
+});
