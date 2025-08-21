@@ -46,7 +46,7 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+    Route::match(['get', 'post'],'logout', [AuthController::class, 'logout'])->name('logout');
     Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'adminDashboard'])->name('dashboard');
         Route::get('/import', [ImportController::class, 'showForm'])->name('import.form');
