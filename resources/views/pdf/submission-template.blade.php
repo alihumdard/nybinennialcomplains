@@ -34,10 +34,11 @@
     }
 
     .header img {
-        height: 70px;
+        height: 80px;
         vertical-align: middle;
         /* text ke sath align kare */
         display: inline-block;
+        margin: 0px !important;
     }
 
     .header p {

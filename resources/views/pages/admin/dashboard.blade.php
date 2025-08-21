@@ -453,14 +453,14 @@
                                     class="badge bg-{{ $submission->is_paid ? 'paid' : 'unpaid' }}">{{ $submission->is_paid ? 'Paid' : 'Unpaid' }}</span>
                             </td>
                             <td>
-                                <div class="d-flex flex-wrap gap-2">
+                                <div class="d-flex flex-wrap gap-2 jsutify-content-center align-items-center">
                                     <a href="{{ route('admin.submissions.show', $submission->id) }}"
                                         class="btn btn-sm btn-outline-primary" title="View"><i
                                             class="bi bi-eye"></i></a>
                                     <a href="{{ route('submission.pdf', $submission->id) }}"
                                         class="btn btn-sm btn-outline-success" title="Download PDF"><i
                                             class="bi bi-file-earmark-pdf"></i></a>
-                                    <form class="action-form" method="POST"
+                                    <form class="action-form pt-3" method="POST"
                                         action="{{ route('admin.submission.send-mail', $submission->id) }}">
                                         @csrf
                                         <button type="submit" class="btn btn-sm btn-outline-warning"
