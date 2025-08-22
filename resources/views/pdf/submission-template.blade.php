@@ -142,16 +142,16 @@
 
     .field-group .field {
         display: inline-block;
-        width: 30%;
+        /* width: 30%; */
         /* padding-left: 5px; */
-        min-width: 120px;
+        /* min-width: 120px; */
         margin-bottom: 4px;
         vertical-align: top;
     }
 
     .fields {
         display: inline-block;
-        width: 97%;
+        width: 98%;
         /* padding-left: 20px; */
         min-width: 120px;
         margin-bottom: 4px;
@@ -210,18 +210,21 @@
 
     .input-row {
         margin-bottom: 8px;
+        margin-top: 4px;
     }
 
     .input-row label {
         /* font-size: 12px; */
         display: inline-block;
-        margin-right: 5px;
+        margin-right: 7px;
     }
 
     .input-row input {
         display: inline-block;
-        width: 80px;
+        width: 75px;
         padding: 4px;
+        ,
+        /* margin-left: 10px; */
         border: 1px solid #999;
         border-radius: 4px;
         /* font-size: 12px; */
@@ -229,8 +232,8 @@
     }
 
     .checkbox-row {
-        margin: 8px 0;
-        padding-top: 20px;
+        /* margin: 8px 0; */
+        padding-top: 10px;
     }
 
     .checkbox-rows {}
@@ -262,7 +265,7 @@
     }
 
     .underline-row {
-        margin-bottom: 3px;
+        /* margin-bottom: 3px; */
     }
 
     .underline-row label {
@@ -275,7 +278,7 @@
         border: none;
         border-bottom: 1px solid #333;
         outline: none;
-        padding: 3px 5px;
+        /* padding: 3px 5px; */
         /* font-size: 12px; */
         width: 70%;
         min-height: 22px;
@@ -342,7 +345,7 @@
     .form-field {
         display: inline-block;
         vertical-align: top;
-        width: 23%;
+        width: 23.3%;
         /* 4 fields = ~25% minus gaps */
         margin-right: 1%;
     }
@@ -360,7 +363,7 @@
         display: inline-block;
         vertical-align: top;
         margin-right: 15px;
-        width: 41%;
+        width: 41.5%;
         /* approx size, adjust as needed */
     }
 
@@ -389,7 +392,7 @@
         <!-- Notice Info -->
         <div class="grid-3">
             <div>
-                <b class="headings">{{ __('Notice Date') }}</b><br />
+                <b class="headings">Notice Date </b><br />
                 {{ date('m/d/Y') }}
             </div>
             <div>
@@ -435,7 +438,8 @@
                 <span><b>{{ __('Business Name:') }}</b> {{ $submission->business_name }}</span>
             </p>
             <span class="paragraphs">
-                ({{ __('Note: The business name cannot be changed on this form') }})<br />
+                <span
+                    style="font-weight: bold;">{{ __('Note: The business name cannot be changed on this form') }}</span><br />
                 {{ __('To change the business name, you must file a') }}
             </span>
             <b class="headings">{{ __('Certificate of Amendment') }}</b>
@@ -456,40 +460,40 @@
 
             <div class="ir-row">
                 <div class="ir-field">
-                    <label class="headings">{{ __('First name') }}</label>
+                    <label class="headings" style="font-weight: bold;">{{ __('First name') }}</label>
                     <input type="text" value="{{ $submission->ceo_name }}" />
                 </div>
                 <div class="ir-field ir-small">
-                    <label class="headings">{{ __('MI') }}</label>
+                    <label class="headings" style="font-weight: bold;">{{ __('MI') }}</label>
                     <input type="text" />
                 </div>
                 <div class="ir-field">
-                    <label class="headings">{{ __('Last Name') }}</label>
+                    <label class="headings" style="font-weight: bold;">{{ __('Last Name') }}</label>
                     <input type="text" />
                 </div>
             </div>
 
 
             <div class="fields">
-                <label class="headings">{{ __('Address Line 1') }}</label>
+                <label class="headings" style="font-weight: bold;">{{ __('Address Line 1') }}</label>
                 <input type="text" style="margin-bottom: 10px" value="{{ $submission->ceo_address_1 }}" />
             </div>
 
             <div class="form-row">
-                <div class="form-field">
-                    <label class="headings">{{ __('City') }}</label>
+                <div class="form-field" style="width: 40%;">
+                    <label class="headings" style="font-weight: bold;">{{ __('City') }}</label>
                     <input type="text" value="{{ $submission->ceo_city }}" />
                 </div>
-                <div class="form-field">
-                    <label class="headings">{{ __('State') }}</label>
+                <div class="form-field" style="width: 10%; padding: 0px 25px;">
+                    <label class="headings" style="font-weight: bold;">{{ __('State') }}</label>
                     <input type="text" value="{{ $submission->ceo_state }}" />
                 </div>
-                <div class="form-field">
-                    <label class="headings">{{ __('Zip code') }}</label>
+                <div class="form-field" style="width: 10%; padding-right: 20px;">
+                    <label class="headings" style="font-weight: bold;">{{ __('Zip code') }}</label>
                     <input type="text" value="{{ $submission->ceo_zip }}" />
                 </div>
                 <div class="form-field">
-                    <label class="headings">{{ __('Country') }}</label>
+                    <label class="headings" style="font-weight: bold;">{{ __('Country') }}</label>
                     <input type="text" value="{{ $submission->country ?? '' }}" />
                 </div>
             </div>
@@ -506,20 +510,20 @@
         </div>
 
         <div class="field-group" style="padding: 5px 0px">
-            <div class="field">
-                <label class="headings">{{ __('Address line 1') }}</label>
+            <div class="field" style="width: 40%;">
+                <label class="headings" style="font-weight: bold;">{{ __('Address line 1') }}</label>
                 <input type="text" value="{{ $submission->registered_agent_address_1 }}" />
             </div>
-            <div class="field small" style="padding-left: 15px;">
-                <label class="headings">{{ __('State') }}</label>
+            <div class="field small" style="padding-left: 15px; width: 20%;">
+                <label class="headings" style="font-weight: bold;">{{ __('State') }}</label>
                 <input type="text" value="{{ $submission->registered_agent_state }}" />
             </div>
-            <div class="field" style="padding-left: 15px;">
-                <label class="headings">{{ __('City') }}</label>
+            <div class="field" style="padding-left: 35px; width: 6%;">
+                <label class="headings" style="font-weight: bold;">{{ __('City') }}</label>
                 <input type="text" class="small" value="{{ $submission->registered_agent_city }}" />
             </div>
-            <div class="field small" style="">
-                <label class="headings">{{ __('Zip Code') }}</label>
+            <div class="field small" style="width: 10%; padding-left: 100px;">
+                <label class="headings" style="font-weight: bold;">{{ __('Zip Code') }}</label>
                 <input type="text" class="small" value="{{ $submission->registered_agent_zip }}" />
             </div>
         </div>
@@ -532,13 +536,16 @@
         </div>
 
         <div class="form-group">
-            <label for="directors" class="paragraphs" style="padding-bottom: 10px;">{{ __('Total number of board of directors:') }}</label>
+            <label for="directors" class="paragraphs"
+                style="padding-bottom: 10px;">{{ __('Total number of board of directors:') }}</label>
             <input type="text" id="directors" />
         </div>
         <div class="input-row">
             <label for="directors" class="paragraphs" style="padding-bottom: 10px;">
-                {{ __('Number of Directors on the Board of Directors that are Women:') }}
+                {{ __('Number of Directors on the Board') }}<br>
+                {{ __('of Directors that are Women:') }}
             </label>
+
             <input type="text" id="directors" />
         </div>
 
@@ -557,7 +564,7 @@
         <div>
             <span class="headings" style="font-weight: 600;">{{ __('Name Of signer:') }}</span>
             <div class="underline-row">
-                <label for="name" class="paragraphs">{{ __('(Print Name):') }}</label>
+                <label for="name" class="headings" style="font-weight: bold;">{{ __('(Print Name):') }}</label>
                 <input type="text" id="name" />
             </div>
         </div>
@@ -571,12 +578,12 @@
         </div>
 
         <div class="underline-row">
-            <label for="name" class="paragraphs">{{ __('Signature:') }}</label>
+            <label for="name" class="headings" style="font-weight: bold;">{{ __('Signature:') }}</label>
             <input type="text" id="name" />
         </div>
 
         <div class="date-container">
-            <div class="paragraphs date-label" class="">Date</div>
+            <div class="headings date-label" style="font-weight: bold;">Date</div>
             <div class="date-inputs">
                 <input type="text" class="date-input headings" maxlength="2" placeholder="{{ __('MM') }}" />
                 <span class="date-separator">/</span>
@@ -587,16 +594,21 @@
         </div>
 
         <div class="underline-row" style="padding-top: 5px">
-            <label for="name " class="paragraphs">{{ __('Email Address*:') }} </label>
+            <label for="name " class="headings" style="font-weight: bold;">{{ __('Email Address*:') }} </label>
             <input type="text" class="paragraphs" id="name" value="{{ $submission->email }}" />
         </div>
         <p style="margin-top: 5px;" class="paragraphs">
             <i>({{ __('This email will be used to send your filing confirmation and future notifications') }})</i>
         </p>
-
+        <div class="sections">
+            <div class="headings" style="padding-left: 3px 0px 3px 15px; font-weight: bold;">
+                {{ __('Submission Instructions ') }}
+            </div>
+        </div>
         <div class="last-box">
             <p style="">
-                <span style="font-weight: bold" class="headings">{{ __('Filing Fee:') }}</span><span class="paragraphs"> $125.00</span>
+                <span style="font-weight: bold" class="headings">{{ __('Filing Fee:') }}</span><span class="paragraphs">
+                    $125.00</span>
             </p>
             <p style="font-weight: bold" class="headings">
                 {{ __('Payment Methods Accepted:') }}
@@ -620,7 +632,34 @@
             <p class="paragraphs">
                 {{ __('You will receive a confirmation by mail or email within 24–48 business hours after your filing is processed.') }}
             </p>
+            <div>
+                <div>
+                    <p class="headings" style="font-weight: bold; margin-top: 10px;">
+                        {{ __('Expedited Electronic Submission:') }}
+                    </p>
+
+                    <div style="margin-top: 5px; white-space: nowrap;">
+                        <label for="directors" class="paragraphs"
+                            style="margin: 0; display: inline-block; vertical-align: middle;">
+                            {{ __('For faster processing, scan the QR code below') }}<br>
+                            {{ __('to keep your form and payment online') }}
+                        </label>
+
+                        <div style="display: inline-block; vertical-align: middle; margin-left: 35px;">
+                            @if ($qrCode)
+                            <img src="data:image/svg+xml;base64,{{ $qrCode }}" alt="{{ __('QR Code') }}"
+                                style="width: 70px; height: 70px;">
+                            @endif
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
         </div>
+        <p class="paragraphs">This is a provate Compliance assistance service and is not affiliated with the New York
+            Department of state or any givernment agency. Filling may also be completed directly with the Department of
+            state . Fees charged by the service include state filling fees and additional</p>
     </div>
 </body>
 
