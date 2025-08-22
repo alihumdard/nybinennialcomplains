@@ -33,15 +33,23 @@
         /* image aur text ek hi line pe rahen */
     }
 
+    .headings {
+        font-size: 10px;
+    }
+
+    .paragraphs {
+        font-size: 9px;
+    }
+
     .header img {
-        height: 70px;
+        height: 80px;
         vertical-align: middle;
         /* text ke sath align kare */
         display: inline-block;
     }
 
     .header p {
-        font-size: 16px;
+        /* font-size: 16px; */
         font-weight: bold;
         margin: 0 0 0 10px;
         /* thoda gap image aur text ke darmiyan */
@@ -51,7 +59,7 @@
 
 
     .info-text {
-        font-size: 10px;
+        /* font-size: 10px; */
         text-align: center;
         margin-bottom: 5px;
     }
@@ -62,13 +70,13 @@
         width: 100%;
         border: 1px solid black;
         margin: 5px 0;
-        font-size: 12px;
+        /* font-size: 12px; */
         border-collapse: collapse;
     }
 
     .grid-3 div {
         display: table-cell;
-        border-right: 1px solid black;
+        /* border-right: 1px solid black; */
         padding: 5px;
         text-align: center;
     }
@@ -85,7 +93,8 @@
 
     .para {
         font-weight: bold;
-        margin-bottom: 3px;
+        margin: 0px;
+        margin-bottom: 5px;
     }
 
     .info-boxx {
@@ -110,7 +119,7 @@
         border: 1px solid black;
         background: #dfdede;
         padding: 6px;
-        font-size: 12px;
+        /* font-size: 12px; */
         margin-top: 5px;
     }
 
@@ -121,7 +130,7 @@
     }
 
     .info {
-        font-size: 10px;
+        /* font-size: 10px; */
         padding-left: 15px;
     }
 
@@ -142,7 +151,7 @@
 
     .fields {
         display: inline-block;
-        width: 80%;
+        width: 97%;
         /* padding-left: 20px; */
         min-width: 120px;
         margin-bottom: 4px;
@@ -155,7 +164,7 @@
 
     .field-group label {
         display: block;
-        font-size: 11px;
+        /* font-size: 11px; */
         margin-bottom: 1px;
     }
 
@@ -166,7 +175,7 @@
         padding: 4px;
         border: 1px solid #999;
         border-radius: 2px;
-        font-size: 11px;
+        /* font-size: 11px; */
         min-height: 22px;
     }
 
@@ -174,7 +183,7 @@
         border: 1px solid black;
         background: #dfdede;
         padding: 6px 6px 6px 15px;
-        font-size: 12px;
+        /* font-size: 12px; */
         margin-top: 8px;
     }
 
@@ -184,7 +193,7 @@
     }
 
     .form-group label {
-        font-size: 12px;
+        /* font-size: 12px; */
         display: inline-block;
         margin-right: 5px;
     }
@@ -195,7 +204,7 @@
         padding: 4px;
         border: 1px solid #999;
         border-radius: 4px;
-        font-size: 12px;
+        /* font-size: 12px; */
         min-height: 22px;
     }
 
@@ -204,7 +213,7 @@
     }
 
     .input-row label {
-        font-size: 12px;
+        /* font-size: 12px; */
         display: inline-block;
         margin-right: 5px;
     }
@@ -215,7 +224,7 @@
         padding: 4px;
         border: 1px solid #999;
         border-radius: 4px;
-        font-size: 12px;
+        /* font-size: 12px; */
         min-height: 22px;
     }
 
@@ -224,16 +233,32 @@
         padding-top: 20px;
     }
 
-    .checkbox-row input[type="checkbox"] {
-        width: 14px;
-        height: 14px;
+    .checkbox-rows {}
+
+    .checkbox-rows input[type="checkbox"] {
+        width: 10px;
+        height: 10px;
         margin-right: 4px;
+        border: none;
+    }
+
+    .checkbox-rows p {
+        display: inline-block;
+        margin: 0;
+        /* font-size: 12px; */
+    }
+
+    .checkbox-row input[type="checkbox"] {
+        width: 10px;
+        height: 10 px;
+        margin-right: 4px;
+        border: none;
     }
 
     .checkbox-row p {
         display: inline-block;
         margin: 0;
-        font-size: 12px;
+        /* font-size: 12px; */
     }
 
     .underline-row {
@@ -241,7 +266,7 @@
     }
 
     .underline-row label {
-        font-size: 12px;
+        /* font-size: 12px; */
         display: inline-block;
         margin-right: 5px;
     }
@@ -251,7 +276,7 @@
         border-bottom: 1px solid #333;
         outline: none;
         padding: 3px 5px;
-        font-size: 12px;
+        /* font-size: 12px; */
         width: 70%;
         min-height: 22px;
     }
@@ -261,7 +286,7 @@
     }
 
     .date-label {
-        font-size: 13px;
+        /* font-size: 13px; */
         font-weight: 500;
         margin-right: 8px;
         color: #333;
@@ -278,13 +303,13 @@
         border: none;
         border-bottom: 2px solid #333;
         text-align: center;
-        font-size: 11px;
+        /* font-size: 11px; */
         outline: none;
     }
 
     .date-separator {
         margin: 0 4px;
-        font-size: 14px;
+        /* font-size: 14px; */
         color: #333;
         user-select: none;
     }
@@ -306,7 +331,46 @@
 
     .footer-address span {
         display: block;
-        font-size: 12px;
+        /* font-size: 12px; */
+    }
+
+    .form-row {
+        white-space: nowrap;
+        /* line break roke ga */
+    }
+
+    .form-field {
+        display: inline-block;
+        vertical-align: top;
+        width: 23%;
+        /* 4 fields = ~25% minus gaps */
+        margin-right: 1%;
+    }
+
+    .form-field:last-child {
+        margin-right: 0;
+    }
+
+    .ir-row {
+        white-space: nowrap;
+        /* line break prevent karega */
+    }
+
+    .ir-field {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 15px;
+        width: 41%;
+        /* approx size, adjust as needed */
+    }
+
+    .ir-small {
+        width: 10%;
+        /* MI chhota box */
+    }
+
+    .ir-field:last-child {
+        margin-right: 0;
     }
     </style>
 </head>
@@ -318,35 +382,38 @@
             <img src="{{ public_path('logo.png') }}" alt="Logo" style="width:100px;">
             <p>{{ __('Biennial Statement Filing Form') }}</p>
         </div>
-        <div class="info-text">
+        <div class="info-text paragraphs">
             {{ __('Please review the information below for accuracy. If any information is incorrect or need to be updated cross out the information and write the correct or updated information.') }}
         </div>
 
         <!-- Notice Info -->
         <div class="grid-3">
             <div>
-                <b>{{ __('Notice Date') }}</b><br />
+                <b class="headings">{{ __('Notice Date') }}</b><br />
                 {{ date('m/d/Y') }}
             </div>
             <div>
-                <b>{{ __('DOS ID Number') }}</b><br />
+                <b class="headings">{{ __('DOS ID Number') }}</b><br />
                 {{ $submission->dos_id }}
             </div>
             <div>
-                <b>{{ __('Formation Date') }}</b><br />
+                <b class="headings">{{ __('Formation Date') }}</b><br />
                 {{ \Carbon\Carbon::parse($submission->initial_dos_filing_date)->format('m/d/Y') }}
             </div>
         </div>
 
         <!-- Business Address -->
         <div class="info-box">
-            <p class="para">{{ __('Business Address') }}</p>
-            {{ $submission->business_name }}<br />
-            {{ $submission->dos_process_address_1 }}<br />
-            @if($submission->dos_process_address_2)
-            {{ $submission->dos_process_address_2 }}<br>
-            @endif
-            {{ $submission->dos_process_city }}, {{ $submission->dos_process_state }} {{ $submission->dos_process_zip }}
+            <p class="para headings">{{ __('Business Address') }}</p>
+            <span class="paragraphs">
+                {{ $submission->business_name }}<br />
+                {{ $submission->dos_process_address_1 }}<br />
+                @if($submission->dos_process_address_2)
+                {{ $submission->dos_process_address_2 }}<br>
+                @endif
+                {{ $submission->dos_process_city }}, {{ $submission->dos_process_state }}
+                {{ $submission->dos_process_zip }}
+            </span>
         </div>
 
         <!-- Instructions & QR Code -->
@@ -357,190 +424,200 @@
                     style="width: 80px; height: 80px;">
                 @endif
             </div>
-            {{ __('Fill out the information below as accurately as possible.') }}<br />
-            ◇ <b>{{ __('Prefer to complete this electronically?') }}</b><br />
-            {{ __('Scan the QR code to complete the form online.') }}
-            <p class="padding">
+            <span class="paragraphs">
+                {{ __('Fill out the information below as accurately as possible.') }}<br />
+            </span>
+            <b><span class="headings">{{ __('Prefer to complete this electronically?') }}</span></b><br />
+            <span class="paragraphs">
+                {{ __('Scan the QR code to complete the form online.') }}
+            </span>
+            <p class="padding headings">
                 <span><b>{{ __('Business Name:') }}</b> {{ $submission->business_name }}</span>
             </p>
-            <span>
+            <span class="paragraphs">
                 ({{ __('Note: The business name cannot be changed on this form') }})<br />
                 {{ __('To change the business name, you must file a') }}
-                <b>{{ __('Certificate of Amendment') }}</b>
             </span>
+            <b class="headings">{{ __('Certificate of Amendment') }}</b>
         </div>
 
         <!-- CEO Info -->
         <div class="section">
             <div class="sections">
-                <div class="section-title">
+                <div class="section-title headings">
                     {{ __('Chief Executive Officer’s Name and Business Address') }}
                 </div>
-                <span class="info">
+                <span class="info paragraphs">
                     {{ __('Enter the full name and home or business address of the person who runs the company.') }}<br />
-                  <span class="info">  {{ __('Do not write the name of the company here — it must be an individual.') }}</span>
+                    <span class="info">
+                        {{ __('Do not write the name of the company here — it must be an individual.') }}</span>
                 </span>
             </div>
 
-            <div class="field-group">
-                <div class="field" style="">
-                    <label>{{ __('First name') }}</label>
+            <div class="ir-row">
+                <div class="ir-field">
+                    <label class="headings">{{ __('First name') }}</label>
                     <input type="text" value="{{ $submission->ceo_name }}" />
                 </div>
-                <div class="field small" style="padding-left: 15px;">
-                    <label>{{ __('MI') }}</label>
-                    <input type="text" class="small" />
+                <div class="ir-field ir-small">
+                    <label class="headings">{{ __('MI') }}</label>
+                    <input type="text" />
                 </div>
-                <div class="field" style="padding-left: 15px;">
-                    <label>{{ __('Last Name') }}</label>
+                <div class="ir-field">
+                    <label class="headings">{{ __('Last Name') }}</label>
                     <input type="text" />
                 </div>
             </div>
 
+
             <div class="fields">
-                <label style="font-size: 13px">{{ __('Address Line 1') }}</label>
+                <label class="headings">{{ __('Address Line 1') }}</label>
                 <input type="text" style="margin-bottom: 10px" value="{{ $submission->ceo_address_1 }}" />
             </div>
 
-            <div class="field-group">
-                <div class="field" style="">
-                    <label>{{ __('City') }}</label>
+            <div class="form-row">
+                <div class="form-field">
+                    <label class="headings">{{ __('City') }}</label>
                     <input type="text" value="{{ $submission->ceo_city }}" />
                 </div>
-                <div class="field small" style="padding-left: 15px;">
-                    <label>{{ __('State') }}</label>
-                    <input type="text" class="small" value="{{ $submission->ceo_state }}" />
+                <div class="form-field">
+                    <label class="headings">{{ __('State') }}</label>
+                    <input type="text" value="{{ $submission->ceo_state }}" />
                 </div>
-                <div class="field" style="padding-left: 15px;">
-                    <label>{{ __('Zip code') }}</label>
+                <div class="form-field">
+                    <label class="headings">{{ __('Zip code') }}</label>
                     <input type="text" value="{{ $submission->ceo_zip }}" />
                 </div>
-                <div class="field" style="">
-                    <label>{{ __('Country') }}</label>
+                <div class="form-field">
+                    <label class="headings">{{ __('Country') }}</label>
                     <input type="text" value="{{ $submission->country ?? '' }}" />
                 </div>
             </div>
+
         </div>
 
         <!-- Service Address -->
         <div class="service-box">
-            <b>{{ __('Service of Process Address') }}</b><br />
-            ({{ __('Where legal documents can be sent. Must be a U.S. Street address — no P.O. Boxes.') }})<br />
-            {{ __('If same as business address, write “Same.”') }}
+            <b class="headings">{{ __('Service of Process Address') }}</b><br />
+            <span class="paragraphs">
+                ({{ __('Where legal documents can be sent. Must be a U.S. Street address — no P.O. Boxes.') }})<br />
+                {{ __('If same as business address, write “Same.”') }}
+            </span>
         </div>
 
         <div class="field-group" style="padding: 5px 0px">
             <div class="field">
-                <label>{{ __('Address line 1') }}</label>
+                <label class="headings">{{ __('Address line 1') }}</label>
                 <input type="text" value="{{ $submission->registered_agent_address_1 }}" />
             </div>
             <div class="field small" style="padding-left: 15px;">
-                <label>{{ __('State') }}</label>
+                <label class="headings">{{ __('State') }}</label>
                 <input type="text" value="{{ $submission->registered_agent_state }}" />
             </div>
             <div class="field" style="padding-left: 15px;">
-                <label>{{ __('City') }}</label>
+                <label class="headings">{{ __('City') }}</label>
                 <input type="text" class="small" value="{{ $submission->registered_agent_city }}" />
             </div>
             <div class="field small" style="">
-                <label>{{ __('Zip Code') }}</label>
+                <label class="headings">{{ __('Zip Code') }}</label>
                 <input type="text" class="small" value="{{ $submission->registered_agent_zip }}" />
             </div>
         </div>
 
         <div class="sections">
-            <div class="section-title">{{ __('Board of Directors Information') }}</div>
-            <span class="info">
+            <div class="section-title headings">{{ __('Board of Directors Information') }}</div>
+            <span class="info paragraphs">
                 {{ __('A board of directors is a group of people responsible for overseeing and guiding a company’s major decisions.') }}
             </span>
         </div>
 
         <div class="form-group">
-            <label for="directors">{{ __('Total number of board of directors:') }}</label>
+            <label for="directors" class="paragraphs" style="padding-bottom: 10px;">{{ __('Total number of board of directors:') }}</label>
             <input type="text" id="directors" />
         </div>
         <div class="input-row">
-            <label for="directors">
+            <label for="directors" class="paragraphs" style="padding-bottom: 10px;">
                 {{ __('Number of Directors on the Board of Directors that are Women:') }}
             </label>
             <input type="text" id="directors" />
         </div>
 
         <div class="sections">
-            <div class="section-titles">{{ __('Signer’s declaration') }}</div>
+            <div class="headings" style="padding-left: 15px; font-weight: bold;">{{ __('Signer’s declaration') }}</div>
         </div>
 
         <div class="checkbox-row">
             <input type="checkbox" id="confirm" />
-            <p>
+            <p class="paragraphs">
                 {{ __('I confirm that the information provided is true and correct, and that I am') }}<br />
                 {{ __('authorized to sign and submit this Biennial Statement.') }}
             </p>
         </div>
 
         <div>
-            <span style="font-weight: 600; font-size: 14px">{{ __('Name Of signer:') }}</span>
+            <span class="headings" style="font-weight: 600;">{{ __('Name Of signer:') }}</span>
             <div class="underline-row">
-                <label for="name">{{ __('(Print Name):') }}</label>
+                <label for="name" class="paragraphs">{{ __('(Print Name):') }}</label>
                 <input type="text" id="name" />
             </div>
         </div>
 
         <div>
-            <span style="font-weight: 600; font-size: 14px">{{ __('Signer’s Capacity*') }}</span>
-            <span>({{ __('e.g., CEO, President') }}): </span>
+            <span class="headings" style="font-weight: 600;">{{ __('Signer’s Capacity*') }}</span>
+            <span class="paragraphs">({{ __('e.g., CEO, President') }}): </span>
             <div class="underline-row">
                 <input type="text" id="name" />
             </div>
         </div>
 
         <div class="underline-row">
-            <label for="name">{{ __('Signature:') }}</label>
+            <label for="name" class="paragraphs">{{ __('Signature:') }}</label>
             <input type="text" id="name" />
         </div>
 
         <div class="date-container">
-            <div class="date-label">Date:</div>
+            <div class="paragraphs date-label" class="">Date</div>
             <div class="date-inputs">
-                <input type="text" class="date-input" maxlength="2" placeholder="{{ __('MM') }}" />
+                <input type="text" class="date-input headings" maxlength="2" placeholder="{{ __('MM') }}" />
                 <span class="date-separator">/</span>
-                <input type="text" class="date-input" maxlength="2" placeholder="{{ __('DD') }}" />
+                <input type="text" class="date-input headings" maxlength="2" placeholder="{{ __('DD') }}" />
                 <span class="date-separator">/</span>
-                <input type="text" class="date-input" maxlength="4" placeholder="{{ __('YYYY') }}" />
+                <input type="text" class="date-input headings" maxlength="4" placeholder="{{ __('YYYY') }}" />
             </div>
         </div>
 
         <div class="underline-row" style="padding-top: 5px">
-            <label for="name">{{ __('Email Address*:') }} </label>
-            <input type="text" id="name" value="{{ $submission->email }}" />
+            <label for="name " class="paragraphs">{{ __('Email Address*:') }} </label>
+            <input type="text" class="paragraphs" id="name" value="{{ $submission->email }}" />
         </div>
-        <p style="margin-top: 5px;">
+        <p style="margin-top: 5px;" class="paragraphs">
             <i>({{ __('This email will be used to send your filing confirmation and future notifications') }})</i>
         </p>
 
         <div class="last-box">
-            <p style="font-size: 14px">
-                <span style="font-weight: bold">{{ __('Filing Fee:') }}</span> $125.00
+            <p style="">
+                <span style="font-weight: bold" class="headings">{{ __('Filing Fee:') }}</span><span class="paragraphs"> $125.00</span>
             </p>
-            <p style="font-size: 14px; font-weight: bold">
+            <p style="font-weight: bold" class="headings">
                 {{ __('Payment Methods Accepted:') }}
             </p>
-            <div class="checkbox-row">
+            <div class=" checkbox-rows">
                 <input type="checkbox" id="confirm" />
-                <p>{{ __('Check or Money Order (Payable to: New York Biennial Compliance)') }}</p>
+                <p class="paragraphs" style="padding-bottom: 10px;">
+                    {{ __('Check or Money Order (Payable to: New York Biennial Compliance)') }}</p>
             </div>
-            <p style="font-size: 14px; font-weight: bold">
+            <p style="font-weight: bold" class="headings">
                 {{ __('Mail Completed Form and Payment of $125.00 To:') }}
             </p>
-            <p style="font-size: 14px; font-weight: bold">
+            <p style="font-weight: bold" class="headings">
                 {{ __('New York Biennial Compliance.') }}
             </p>
-            <div class="footer-address">
+            <div class="footer-address paragraphs">
                 <span>69 State Street, Suite 1300 #2017</span>
                 <span>Albany, NY 12207</span>
             </div>
-            <p style="font-size: 14px; font-weight: bold; margin-top: 10px;">{{ __('Processing Time:') }}</p>
-            <p>
+            <p class="headings" style=" font-weight: bold; margin-top: 10px;">{{ __('Processing Time:') }}</p>
+            <p class="paragraphs">
                 {{ __('You will receive a confirmation by mail or email within 24–48 business hours after your filing is processed.') }}
             </p>
         </div>
