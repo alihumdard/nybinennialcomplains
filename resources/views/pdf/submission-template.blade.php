@@ -152,7 +152,7 @@
 
     .fields {
         display: inline-block;
-        width: 98%;
+        width: 98.2%;
         /* padding-left: 20px; */
         min-width: 120px;
         margin-bottom: 4px;
@@ -222,10 +222,10 @@
 
     .input-row input {
         display: inline-block;
-        width: 75px;
+        width: 73px;
         padding: 4px;
-        ,
-        /* margin-left: 10px; */
+        
+        margin-left: 3.5px;
         border: 1px solid #999;
         border-radius: 4px;
         /* font-size: 12px; */
@@ -364,7 +364,7 @@
         display: inline-block;
         vertical-align: top;
         margin-right: 15px;
-        width: 41.5%;
+        /* width: 41.5%; */
         /* approx size, adjust as needed */
     }
 
@@ -460,15 +460,15 @@
             </div>
 
             <div class="ir-row">
-                <div class="ir-field">
+                <div class="ir-field" style=" width: 40%;">
                     <label class="headings" style="font-weight: bold;">{{ __('First name') }}</label>
                     <input type="text" value="{{ $submission->ceo_name }}" />
                 </div>
-                <div class="ir-field ir-small">
+                <div class="ir-field ir-small" style=" padding-left: 17px;">
                     <label class="headings" style="font-weight: bold;">{{ __('MI') }}</label>
                     <input type="text" />
                 </div>
-                <div class="ir-field">
+                <div class="ir-field" style="width: 38.5%; padding-left: 16px;">
                     <label class="headings" style="font-weight: bold;">{{ __('Last Name') }}</label>
                     <input type="text" />
                 </div>
@@ -489,7 +489,7 @@
                     <label class="headings" style="font-weight: bold;">{{ __('State') }}</label>
                     <input type="text" value="{{ $submission->ceo_state }}" />
                 </div>
-                <div class="form-field" style="width: 10%; padding-right: 20px;">
+                <div class="form-field" style="width: 10%; padding-right: 23px;">
                     <label class="headings" style="font-weight: bold;">{{ __('Zip code') }}</label>
                     <input type="text" value="{{ $submission->ceo_zip }}" />
                 </div>
@@ -515,15 +515,15 @@
                 <label class="headings" style="font-weight: bold;">{{ __('Address line 1') }}</label>
                 <input type="text" value="{{ $submission->registered_agent_address_1 }}" />
             </div>
-            <div class="field small" style="padding-left: 15px; width: 20%;">
+            <div class="field small" style="padding-left: 33px; width: 10%;">
                 <label class="headings" style="font-weight: bold;">{{ __('State') }}</label>
                 <input type="text" value="{{ $submission->registered_agent_state }}" />
             </div>
-            <div class="field" style="padding-left: 35px; width: 6%;">
+            <div class="field" style="padding-left: 33px; width: 9.6%;">
                 <label class="headings" style="font-weight: bold;">{{ __('City') }}</label>
                 <input type="text" class="small" value="{{ $submission->registered_agent_city }}" />
             </div>
-            <div class="field small" style="width: 10%; padding-left: 100px;">
+            <div class="field small" style="width: 23.3%; padding-left: 33px;">
                 <label class="headings" style="font-weight: bold;">{{ __('Zip Code') }}</label>
                 <input type="text" class="small" value="{{ $submission->registered_agent_zip }}" />
             </div>
@@ -547,7 +547,7 @@
                 {{ __('of Directors that are Women:') }}
             </label>
 
-            <input type="text" id="directors" />
+            <input type="text"  id="directors" />
         </div>
 
         <div class="sections">
