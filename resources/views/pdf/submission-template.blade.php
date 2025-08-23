@@ -61,7 +61,7 @@
     .info-text {
         /* font-size: 10px; */
         text-align: center;
-        margin-bottom: 5px;
+        /* margin-bottom: 5px; */
     }
 
     /* ✅ Grid replaced with table layout */
@@ -223,7 +223,7 @@
         display: inline-block;
         width: 73px;
         padding: 4px;
-        
+
         margin-left: 3.5px;
         border: 1px solid #999;
         border-radius: 4px;
@@ -236,14 +236,24 @@
         padding-top: 10px;
     }
 
-    .checkbox-rows {}
+
+
+    .checkbox-rows {
+        display: flex;
+        align-items: center;
+    }
 
     .checkbox-rows input[type="checkbox"] {
-        width: 10px;
-        height: 10px;
-        margin-right: 4px;
+        width: 14px;
+        /* thoda clear dikhne ke liye size bara kar sakte ho */
+        height: 14px;
+        margin: 0;
+        /* ✅ sab margin remove */
+        padding: 0;
+        /* ✅ sab padding remove */
         border: none;
     }
+
 
     .checkbox-rows p {
         display: inline-block;
@@ -447,7 +457,7 @@
 
         <!-- CEO Info -->
         <div class="section">
-            <div class="sections">
+            <div class="sections" style="padding: 6px 0px;">
                 <div class="section-title headings">
                     {{ __('Chief Executive Officer’s Name and Business Address') }}
                 </div>
@@ -460,40 +470,40 @@
 
             <div class="ir-row">
                 <div class="ir-field" style=" width: 40%;">
-                    <label class="headings" style="font-weight: bold;">{{ __('First name') }}</label>
+                    <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('First name') }}</label>
                     <input type="text" value="{{ $submission->ceo_name }}" />
                 </div>
                 <div class="ir-field ir-small" style=" padding-left: 17px;">
-                    <label class="headings" style="font-weight: bold;">{{ __('MI') }}</label>
+                    <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('MI') }}</label>
                     <input type="text" />
                 </div>
                 <div class="ir-field" style="width: 38.5%; padding-left: 16px;">
-                    <label class="headings" style="font-weight: bold;">{{ __('Last Name') }}</label>
+                    <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('Last Name') }}</label>
                     <input type="text" />
                 </div>
             </div>
 
 
             <div class="fields">
-                <label class="headings" style="font-weight: bold;">{{ __('Address Line 1') }}</label>
+                <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('Address Line 1') }}</label>
                 <input type="text" style="margin-bottom: 10px" value="{{ $submission->ceo_address_1 }}" />
             </div>
 
             <div class="form-row">
                 <div class="form-field" style="width: 40%;">
-                    <label class="headings" style="font-weight: bold;">{{ __('City') }}</label>
+                    <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('City') }}</label>
                     <input type="text" value="{{ $submission->ceo_city }}" />
                 </div>
                 <div class="form-field" style="width: 10%; padding: 0px 25px;">
-                    <label class="headings" style="font-weight: bold;">{{ __('State') }}</label>
+                    <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('State') }}</label>
                     <input type="text" value="{{ $submission->ceo_state }}" />
                 </div>
                 <div class="form-field" style="width: 10%; padding-right: 23px;">
-                    <label class="headings" style="font-weight: bold;">{{ __('Zip code') }}</label>
+                    <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('Zip code') }}</label>
                     <input type="text" value="{{ $submission->ceo_zip }}" />
                 </div>
                 <div class="form-field">
-                    <label class="headings" style="font-weight: bold;">{{ __('Country') }}</label>
+                    <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('Country') }}</label>
                     <input type="text" value="{{ $submission->country ?? '' }}" />
                 </div>
             </div>
@@ -501,7 +511,7 @@
         </div>
 
         <!-- Service Address -->
-        <div class="service-box">
+        <div class="service-box" style="padding-top: 2px;">
             <b class="headings">{{ __('Service of Process Address') }}</b><br />
             <span class="paragraphs">
                 ({{ __('Where legal documents can be sent. Must be a U.S. Street address — no P.O. Boxes.') }})<br />
@@ -511,29 +521,30 @@
 
         <div class="field-group" style="padding: 5px 0px">
             <div class="field" style="width: 40%;">
-                <label class="headings" style="font-weight: bold;">{{ __('Address line 1') }}</label>
+                <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('Address line 1') }}</label>
                 <input type="text" value="{{ $submission->registered_agent_address_1 }}" />
             </div>
             <div class="field small" style="padding-left: 33px; width: 10%;">
-                <label class="headings" style="font-weight: bold;">{{ __('State') }}</label>
+                <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('State') }}</label>
                 <input type="text" value="{{ $submission->registered_agent_state }}" />
             </div>
-            <div class="field" style="padding-left: 33px; width: 9.6%;">
-                <label class="headings" style="font-weight: bold;">{{ __('City') }}</label>
+            <div class="field" style="padding-left: 32px; width: 9.6%;">
+                <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('City') }}</label>
                 <input type="text" class="small" value="{{ $submission->registered_agent_city }}" />
             </div>
             <div class="field small" style="width: 23.3%; padding-left: 33px;">
-                <label class="headings" style="font-weight: bold;">{{ __('Zip Code') }}</label>
+                <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('Zip Code') }}</label>
                 <input type="text" class="small" value="{{ $submission->registered_agent_zip }}" />
             </div>
         </div>
 
-        <div class="sections">
-            <div class="section-title headings">{{ __('Board of Directors Information') }}</div>
-            <span class="info paragraphs">
-                {{ __('A board of directors is a group of people responsible for overseeing and guiding a company’s major decisions.') }}
+        <div class="service-box" style="padding-top: 2px;">
+            <b class="headings">{{ __('Board of Directors Information') }}</b><br />
+            <span class="paragraphs">
+                ({{ __('A board of directors is a group of people responsible for overseeing and guiding a company’s major decisions.') }})<br />
             </span>
         </div>
+
 
         <div class="form-group">
             <label for="directors" class="paragraphs"
@@ -546,10 +557,10 @@
                 {{ __('of Directors that are Women:') }}
             </label>
 
-            <input type="text"  id="directors" />
+            <input type="text" id="directors" />
         </div>
 
-        <div class="sections">
+        <div class="sections" style="padding: 6px 0px;">
             <div class="headings" style="padding-left: 15px; font-weight: bold;">{{ __('Signer’s declaration') }}</div>
         </div>
 
@@ -565,7 +576,7 @@
             <span class="headings" style="font-weight: 600;">{{ __('Name Of signer:') }}</span>
             <div class="underline-row">
                 <label for="name" class="headings" style="font-weight: bold;">{{ __('(Print Name):') }}</label>
-                <input type="text" id="name" />
+                <input style="width: 71.5%;" type="text" id="name" />
             </div>
         </div>
 
@@ -573,13 +584,13 @@
             <span class="headings" style="font-weight: 600;">{{ __('Signer’s Capacity*') }}</span>
             <span class="paragraphs">({{ __('e.g., CEO, President') }}): </span>
             <div class="underline-row">
-                <input type="text" id="name" />
+                <input style="width: 81.5%;" type="text" id="name" />
             </div>
         </div>
 
         <div class="underline-row">
             <label for="name" class="headings" style="font-weight: bold;">{{ __('Signature:') }}</label>
-            <input type="text" id="name" />
+            <input style="width: 73.5%;" type="text" id="name" />
         </div>
 
         <div class="date-container">
@@ -610,14 +621,16 @@
                 <span style="font-weight: bold" class="headings">{{ __('Filing Fee:') }}</span><span class="paragraphs">
                     $125.00</span>
             </p>
-            <p style="font-weight: bold" class="headings">
+            <p style="font-weight: bold;" class="headings">
                 {{ __('Payment Methods Accepted:') }}
             </p>
-            <div class=" checkbox-rows">
+            <div class="checkbox-rows">
                 <input type="checkbox" id="confirm" />
-                <p class="paragraphs" style="padding-bottom: 10px;">
-                    {{ __('Check or Money Order (Payable to: New York Biennial Compliance)') }}</p>
+                <p class="paragraphs" style="padding-bottom: 5px; margin:0;">
+                    {{ __('Check or Money Order (Payable to: New York Biennial Compliance)') }}
+                </p>
             </div>
+
             <p style="font-weight: bold" class="headings">
                 {{ __('Mail Completed Form and Payment of $125.00 To:') }}
             </p>
