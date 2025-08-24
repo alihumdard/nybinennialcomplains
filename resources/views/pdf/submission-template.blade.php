@@ -26,7 +26,9 @@
     }
 
     .header {
-        text-align: center;
+        /* text-align: center; */
+        padding-left: 50px;
+        line-clamp: initial;
         /* pura content center ho */
         /* margin-bottom: 5px; */
         white-space: nowrap;
@@ -42,7 +44,8 @@
     }
 
     .header img {
-        height: 80px;
+
+        height: 100px;
         vertical-align: middle;
         /* text ke sath align kare */
         display: inline-block;
@@ -50,19 +53,20 @@
     }
 
     .header p {
-        /* font-size: 16px; */
-        font-weight: bold;
+        font-size: 20px;
+        /* font-weight: 100; */
         margin: 0 0 0 10px;
         /* thoda gap image aur text ke darmiyan */
         display: inline-block;
+        margin: 0px 20px;
         vertical-align: middle;
     }
 
 
     .info-text {
-        /* font-size: 10px; */
-        text-align: center;
-        /* margin-bottom: 5px; */
+        font-size: 15px;
+        /* text-align: center; */
+        margin-bottom: 3px;
     }
 
     /* ✅ Grid replaced with table layout */
@@ -392,11 +396,11 @@
 <body>
     <div class="form-container">
         <!-- Header -->
-        <div class="header">
-            <img src="{{ public_path('logo.png') }}" alt="Logo" style="width:100px;">
-            <p>{{ __('Biennial Statement Filing Form') }}</p>
+        <div class="header" style=" margin: 0px !important; padding: 0px 50px">
+            <img src="{{ public_path('logo.png') }}" alt="Logo" style="width: 100px; height 50px; margin: 0px !important; padding: 0px !important;">
+            <p style="margin: 0px !important; padding: 0px !important;">{{ __('Biennial Statement Filing Form') }}</p>
         </div>
-        <div class="info-text paragraphs">
+        <div style="padding: 0px 20px; margin-top: 0px !important;" class="info-text paragraphs">
             {{ __('Please review the information below for accuracy. If any information is incorrect or need to be updated cross out the information and write the correct or updated information.') }}
         </div>
 
@@ -404,15 +408,15 @@
         <div class="grid-3">
             <div>
                 <b class="headings">Notice Date </b><br />
-                {{ date('m/d/Y') }}
+               <span class="paragraphs"> {{ date('m/d/Y') }}</span>
             </div>
             <div>
                 <b class="headings">{{ __('DOS ID Number') }}</b><br />
-                {{ $submission->dos_id }}
+                <span class="paragraphs">{{ $submission->dos_id }}</span>
             </div>
             <div>
                 <b class="headings">{{ __('Formation Date') }}</b><br />
-                {{ \Carbon\Carbon::parse($submission->initial_dos_filing_date)->format('m/d/Y') }}
+                <span class="paragraphs">{{ \Carbon\Carbon::parse($submission->initial_dos_filing_date)->format('m/d/Y') }}</span>
             </div>
         </div>
 
