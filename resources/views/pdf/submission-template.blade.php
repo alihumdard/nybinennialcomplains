@@ -97,7 +97,8 @@
     .para {
         font-weight: bold;
         margin: 0px;
-        margin-bottom: 5px;
+        margin-bottom: 18px;
+        margin-top: 10px;
     }
 
     .info-boxx {
@@ -408,15 +409,15 @@
 
         <!-- Notice Info -->
         <div class="grid-3">
-            <div>
+            <div style="padding-bottom: 27px; line-height: 1;">
                 <b class="headings">Notice Date </b><br />
                 <span class="paragraphs"> {{ date('m/d/Y') }}</span>
             </div>
-            <div>
+            <div style="padding-bottom: 27px; line-height: 1;">
                 <b class="headings">{{ __('DOS ID Number') }}</b><br />
                 <span class="paragraphs">{{ $submission->dos_id }}</span>
             </div>
-            <div>
+            <div style="padding-bottom: 27px; line-height: 1;">
                 <b class="headings">{{ __('Formation Date') }}</b><br />
                 <span
                     class="paragraphs">{{ \Carbon\Carbon::parse($submission->initial_dos_filing_date)->format('m/d/Y') }}</span>
@@ -432,8 +433,8 @@
                 @if($submission->dos_process_address_2)
                 {{ $submission->dos_process_address_2 }}<br>
                 @endif
-                {{ $submission->dos_process_city }}, {{ $submission->dos_process_state }}
-                {{ $submission->dos_process_zip }}
+                <!-- {{ $submission->dos_process_city }}, {{ $submission->dos_process_state }}
+                {{ $submission->dos_process_zip }} -->
             </span>
         </div>
 
@@ -461,7 +462,7 @@
             </p>
             <span class="paragraphs">
                 <span
-                    style="font-weight: bold;">{{ __('Note: The business name cannot be changed on this form') }}</span><br />
+                    style="font-weight: bold;">({{ __('Note: The business name cannot be changed on this form') }})</span><br />
                 {{ __('To change the business name, you must file a') }}
             </span>
             <b class="headings">{{ __('Certificate of Amendment') }}</b>
@@ -617,10 +618,10 @@
             <input style="width: 73.5%;" type="text" id="name" />
         </div>
 
-        <div class="underline-row" style="padding-top: 5px">
+        <!-- <div class="underline-row" style="padding-top: 5px">
             <label for="name " class="headings" style="font-weight: bold;">{{ __('Email Address*:') }} </label>
             <input type="text" class="paragraphs" id="name" value="{{ $submission->email }}" />
-        </div>
+        </div> -->
         <p style="margin-top: 5px;" class="paragraphs">
             <i>({{ __('This email will be used to send your filing confirmation and future notifications') }})</i>
         </p>
@@ -644,18 +645,19 @@
                 </p>
             </div>
 
-            <p style="font-weight: bold" class="headings">
+            <p style="font-weight: bold; margin: 0; padding: 0;" class="headings">
                 {{ __('Mail Completed Form and Payment of $125.00 To:') }}
             </p>
-            <p style="font-weight: bold" class="headings">
+            <p style="font-weight: bold; margin: 0; padding: 1px 0px;" class="headings">
                 {{ __('New York Biennial Compliance.') }}
             </p>
-            <div class="footer-address paragraphs">
-                <span>69 State Street, Suite 1300 #2017</span>
+            <div class="footer-address paragraphs" style="margin: 0; padding: 0;">
+                <span>69 State Street, Suite 1300 #2017</span><br />
                 <span>Albany, NY 12207</span>
             </div>
-            <p class="headings" style=" font-weight: bold; margin-top: 10px;">{{ __('Processing Time:') }}</p>
-            <p class="paragraphs">
+
+            <p class="headings" style=" font-weight: bold; margin: 10px 0px 0px 0px; padding: 0;">{{ __('Processing Time:') }}</p>
+            <p class="paragraphs" style="padding: 0; margin: 0;">
                 {{ __('You will receive a confirmation by mail or email within 24–48 business hours after your filing is processed.') }}
             </p>
             <div>
@@ -664,7 +666,7 @@
                         {{ __('Expedited Electronic Submission:') }}
                     </p>
 
-                    <div style="margin-top: 5px; white-space: nowrap;">
+                    <div style="margin-top: 5px; white-space: nowrap; " >
                         <label for="directors" class="paragraphs"
                             style="margin: 0; display: inline-block; vertical-align: middle;">
                             {{ __('For faster processing, scan the QR code below') }}<br>
