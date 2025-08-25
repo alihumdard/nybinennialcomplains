@@ -25,15 +25,6 @@
         background: #fff;
     }
 
-    .header {
-        /* text-align: center; */
-        padding-left: 50px;
-        line-clamp: initial;
-        /* pura content center ho */
-        /* margin-bottom: 5px; */
-        white-space: nowrap;
-        /* image aur text ek hi line pe rahen */
-    }
 
     .headings {
         font-size: 10px;
@@ -43,30 +34,38 @@
         font-size: 9px;
     }
 
-    .header img {
+    .header {
+        padding: 0 80px;
+        margin: 0 !important;
+        white-space: nowrap;
+    }
 
+    .header img {
+        width: 100px;
         height: 100px;
+        /* colon : lagao */
         vertical-align: middle;
         /* text ke sath align kare */
         display: inline-block;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     .header p {
         font-size: 20px;
-        /* font-weight: 100; */
-        margin: 0 0 0 10px;
-        /* thoda gap image aur text ke darmiyan */
         display: inline-block;
-        margin: 0px 20px;
+        margin: 0 0 0 15px;
+        /* sirf thoda gap logo aur text me */
         vertical-align: middle;
     }
 
-
     .info-text {
         font-size: 15px;
-        /* text-align: center; */
-        margin-bottom: 3px;
+        margin: 0 !important;
+        /* yahan margin hata do */
+        padding: 0px 20px;
     }
+
 
     /* ✅ Grid replaced with table layout */
     .grid-3 {
@@ -284,7 +283,7 @@
 
     .underline-row label {
         /* font-size: 12px; */
-        display: inline-block;
+        display: inline;
         margin-right: 5px;
     }
 
@@ -300,6 +299,8 @@
 
     .date-container {
         padding-bottom: 3px;
+        margin: 0% !important;
+        padding: 0% !important;
     }
 
     .date-label {
@@ -338,7 +339,7 @@
 
     .last-box {
         border: 2px solid black;
-        padding: 8px;
+        padding: 0px 8px 8px 8px;
         margin-top: 8px;
     }
 
@@ -395,19 +396,21 @@
 <body>
     <div class="form-container">
         <!-- Header -->
-        <div class="header" style=" margin: 0px !important; padding: 0px 50px">
-            <img src="{{ public_path('logo.png') }}" alt="Logo" style="width: 100px; height 50px; margin: 0px !important; padding: 0px !important;">
-            <p style="margin: 0px !important; padding: 0px !important;">{{ __('Biennial Statement Filing Form') }}</p>
+        <div class="header">
+            <img src="{{ public_path('logo.png') }}" alt="Logo">
+            <p>{{ __('Biennial Statement Filing Form') }}</p>
         </div>
-        <div style="padding: 0px 20px; margin-top: 0px !important;" class="info-text paragraphs">
+
+        <div class="info-text paragraphs">
             {{ __('Please review the information below for accuracy. If any information is incorrect or need to be updated cross out the information and write the correct or updated information.') }}
         </div>
+
 
         <!-- Notice Info -->
         <div class="grid-3">
             <div>
                 <b class="headings">Notice Date </b><br />
-               <span class="paragraphs"> {{ date('m/d/Y') }}</span>
+                <span class="paragraphs"> {{ date('m/d/Y') }}</span>
             </div>
             <div>
                 <b class="headings">{{ __('DOS ID Number') }}</b><br />
@@ -415,7 +418,8 @@
             </div>
             <div>
                 <b class="headings">{{ __('Formation Date') }}</b><br />
-                <span class="paragraphs">{{ \Carbon\Carbon::parse($submission->initial_dos_filing_date)->format('m/d/Y') }}</span>
+                <span
+                    class="paragraphs">{{ \Carbon\Carbon::parse($submission->initial_dos_filing_date)->format('m/d/Y') }}</span>
             </div>
         </div>
 
@@ -444,7 +448,11 @@
             <span class="paragraphs">
                 {{ __('Fill out the information below as accurately as possible.') }}<br />
             </span>
-            <b><span class="headings">{{ __('Prefer to complete this electronically?') }}</span></b><br />
+            <ul class="headings" style="margin:0; padding:0; list-style-position: inside;">
+                <li style="padding-top: 3px;"><b>Prefer to complete this electronically?</b></li>
+            </ul>
+
+
             <span class="paragraphs">
                 {{ __('Scan the QR code to complete the form online.') }}
             </span>
@@ -519,8 +527,8 @@
             <b class="headings">{{ __('Service of Process Address') }}</b><br />
             <span class="paragraphs">
                 ({{ __('Where legal documents can be sent. Must be a U.S. Street address — no P.O. Boxes.') }})<br />
-                {{ __('If same as business address, write “Same.”') }}
             </span>
+            <b class="headings"> {{ __('If same as business address, write “Same.”') }}</b>
         </div>
 
         <div class="field-group" style="padding: 5px 0px">
@@ -545,7 +553,7 @@
         <div class="service-box" style="padding-top: 2px;">
             <b class="headings">{{ __('Board of Directors Information') }}</b><br />
             <span class="paragraphs">
-                ({{ __('A board of directors is a group of people responsible for overseeing and guiding a company’s major decisions.') }})<br />
+                {{ __('A board of directors is a group of people responsible for overseeing and guiding a company’s major decisions.') }}<br />
             </span>
         </div>
 
@@ -577,14 +585,15 @@
         </div>
 
         <div>
-            <span class="headings" style="font-weight: 600;">{{ __('Name Of signer:') }}</span>
+            <span class="headings"
+                style="font-weight: 600; padding-bottom: 0px !important;">{{ __('Name Of signer:') }}</span>
             <div class="underline-row">
                 <label for="name" class="headings" style="font-weight: bold;">{{ __('(Print Name):') }}</label>
                 <input style="width: 71.5%;" type="text" id="name" />
             </div>
         </div>
 
-        <div>
+        <div style="padding-bottom: 20px;">
             <span class="headings" style="font-weight: 600;">{{ __('Signer’s Capacity*') }}</span>
             <span class="paragraphs">({{ __('e.g., CEO, President') }}): </span>
             <div class="underline-row">
@@ -592,13 +601,9 @@
             </div>
         </div>
 
-        <div class="underline-row">
-            <label for="name" class="headings" style="font-weight: bold;">{{ __('Signature:') }}</label>
-            <input style="width: 73.5%;" type="text" id="name" />
-        </div>
 
         <div class="date-container">
-            <div class="headings date-label" style="font-weight: bold;">Date</div>
+            <div class="headings date-label" style="font-weight: bold; padding-bottom: 5px;">Date</div>
             <div class="date-inputs">
                 <input type="text" class="date-input headings" maxlength="2" placeholder="{{ __('MM') }}" />
                 <span class="date-separator">/</span>
@@ -606,6 +611,10 @@
                 <span class="date-separator">/</span>
                 <input type="text" class="date-input headings" maxlength="4" placeholder="{{ __('YYYY') }}" />
             </div>
+        </div>
+        <div class="underline-row">
+            <label for="" class="headings" style="font-weight: bold;">Signature:</label>
+            <input style="width: 73.5%;" type="text" id="name" />
         </div>
 
         <div class="underline-row" style="padding-top: 5px">
@@ -621,7 +630,7 @@
             </div>
         </div>
         <div class="last-box">
-            <p style="">
+            <p style="padding-top: 0% !important;">
                 <span style="font-weight: bold" class="headings">{{ __('Filing Fee:') }}</span><span class="paragraphs">
                     $125.00</span>
             </p>
