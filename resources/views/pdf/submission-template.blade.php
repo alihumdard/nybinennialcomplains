@@ -47,8 +47,10 @@
         vertical-align: middle;
         /* text ke sath align kare */
         display: inline-block;
+
         margin: 0 !important;
         padding: 0 !important;
+
     }
 
     .header p {
