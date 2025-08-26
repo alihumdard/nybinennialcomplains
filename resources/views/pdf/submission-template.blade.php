@@ -103,7 +103,7 @@
 
     .info-boxx {
         padding: 1px;
-        margin-top: 5px;
+        margin-top: 17px;
         position: relative;
         padding-bottom: 5px;
         padding-left: 15px;
@@ -111,8 +111,8 @@
 
     .qr-code {
         float: right;
-        margin-top: 8px;
-        margin-right: 3px;
+        /* margin-top: 8px; */
+        margin-right: 200px;
     }
 
     .section {
@@ -120,6 +120,14 @@
     }
 
     .sections {
+        border: 1px solid black;
+        border-bottom: none;
+        background: #dfdede;
+        padding: 6px;
+        /* font-size: 12px; */
+        margin-top: 5px;
+    }
+     .sectionss {
         border: 1px solid black;
         background: #dfdede;
         padding: 6px;
@@ -158,7 +166,8 @@
         width: 98.2%;
         /* padding-left: 20px; */
         min-width: 120px;
-        margin-bottom: 4px;
+        /* margin-bottom: 4px; */
+        padding: 0;
         vertical-align: top;
     }
 
@@ -213,7 +222,7 @@
     }
 
     .input-row {
-        margin-bottom: 8px;
+        /* margin-bottom: 8px; */
         margin-top: 4px;
     }
 
@@ -361,7 +370,7 @@
     .form-field {
         display: inline-block;
         vertical-align: top;
-        width: 23.3%;
+        width: 20.3%;
         /* 4 fields = ~25% minus gaps */
         margin-right: 1%;
     }
@@ -384,7 +393,7 @@
     }
 
     .ir-small {
-        width: 10%;
+        width: 5%;
         /* MI chhota box */
     }
 
@@ -490,7 +499,7 @@
                     <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('MI') }}</label>
                     <input type="text" />
                 </div>
-                <div class="ir-field" style="width: 38.5%; padding-left: 16px;">
+                <div class="ir-field" style="width: 43.5%; padding-left: 16px;">
                     <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('Last Name') }}</label>
                     <input type="text" />
                 </div>
@@ -499,19 +508,19 @@
 
             <div class="fields">
                 <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('Address Line 1') }}</label>
-                <input type="text" style="margin-bottom: 10px" value="{{ $submission->ceo_address_1 }}" />
+                <input type="text" value="{{ $submission->ceo_address_1 }}" />
             </div>
 
-            <div class="form-row">
+            <div class="form-row" style="margin: 0 !important;">
                 <div class="form-field" style="width: 40%;">
                     <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('City') }}</label>
                     <input type="text" value="{{ $submission->ceo_city }}" />
                 </div>
-                <div class="form-field" style="width: 10%; padding: 0px 25px;">
+                <div class="form-field" style="width: 5%; padding: 0px 25px;">
                     <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('State') }}</label>
                     <input type="text" value="{{ $submission->ceo_state }}" />
                 </div>
-                <div class="form-field" style="width: 10%; padding-right: 23px;">
+                <div class="form-field" style="width: 18%; padding-right: 23px;">
                     <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('Zip code') }}</label>
                     <input type="text" value="{{ $submission->ceo_zip }}" />
                 </div>
@@ -533,19 +542,19 @@
         </div>
 
         <div class="field-group" style="padding: 5px 0px">
-            <div class="field" style="width: 40%;">
+            <div class="field" style="width: 45%;">
                 <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('Address line 1') }}</label>
                 <input type="text" value="{{ $submission->registered_agent_address_1 }}" />
             </div>
-            <div class="field small" style="padding-left: 33px; width: 10%;">
-                <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('State') }}</label>
-                <input type="text" value="{{ $submission->registered_agent_state }}" />
-            </div>
-            <div class="field" style="padding-left: 32px; width: 9.6%;">
+            <div class="field" style="padding-left: 32px; width: 15.6%;">
                 <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('City') }}</label>
                 <input type="text" class="small" value="{{ $submission->registered_agent_city }}" />
             </div>
-            <div class="field small" style="width: 23.3%; padding-left: 33px;">
+            <div class="field small" style="padding-left: 33px; width: 12%;">
+                <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('State') }}</label>
+                <input type="text" value="{{ $submission->registered_agent_state }}" />
+            </div>
+            <div class="field small" style="width: 8%; padding-left: 50px;">
                 <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('Zip Code') }}</label>
                 <input type="text" class="small" value="{{ $submission->registered_agent_zip }}" />
             </div>
@@ -573,7 +582,7 @@
             <input type="text" id="directors" />
         </div>
 
-        <div class="sections" style="padding: 6px 0px;">
+        <div class="sectionss" style="padding: 6px 0px;">
             <div class="headings" style="padding-left: 15px; font-weight: bold;">{{ __('Signer’s declaration') }}</div>
         </div>
 
@@ -656,32 +665,32 @@
                 <span>Albany, NY 12207</span>
             </div>
 
-            <p class="headings" style=" font-weight: bold; margin: 10px 0px 0px 0px; padding: 0;">{{ __('Processing Time:') }}</p>
+            <p class="headings" style=" font-weight: bold; margin: 10px 0px 0px 0px; padding: 0;">
+                {{ __('Processing Time:') }}</p>
             <p class="paragraphs" style="padding: 0; margin: 0;">
                 {{ __('You will receive a confirmation by mail or email within 24–48 business hours after your filing is processed.') }}
             </p>
             <div>
-                <div>
-                    <p class="headings" style="font-weight: bold; margin-top: 10px;">
-                        {{ __('Expedited Electronic Submission:') }}
-                    </p>
-
-                    <div style="margin-top: 5px; white-space: nowrap; " >
+                <div style="">
+                    <div style="display: inline-block; vertical-align: middle; margin: 0; padding: 0;">
                         <label for="directors" class="paragraphs"
-                            style="margin: 0; display: inline-block; vertical-align: middle;">
+                            style="margin: 0; padding: 0; display: inline-block; vertical-align: middle;">
+                            <span class="headings" style="font-weight: bold; margin-top: 10px; padding-bottom: 3px;">
+                                {{ __('Expedited Electronic Submission:') }}
+                            </span><br>
                             {{ __('For faster processing, scan the QR code below') }}<br>
                             {{ __('to keep your form and payment online') }}
                         </label>
-
-                        <div style="display: inline-block; vertical-align: middle; margin-left: 35px;">
-                            @if ($qrCode)
-                            <img src="data:image/svg+xml;base64,{{ $qrCode }}" alt="{{ __('QR Code') }}"
-                                style="width: 70px; height: 70px;">
-                            @endif
-                        </div>
                     </div>
 
+                    <div style="display: inline-block; vertical-align: middle; margin-left: 35px; margin-top: 15px;">
+                        @if ($qrCode)
+                        <img src="data:image/svg+xml;base64,{{ $qrCode }}" alt="{{ __('QR Code') }}"
+                            style="width: 65px; height: 60px;">
+                        @endif
+                    </div>
                 </div>
+
 
             </div>
         </div>
