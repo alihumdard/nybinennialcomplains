@@ -129,7 +129,8 @@
         /* font-size: 12px; */
         margin-top: 5px;
     }
-     .sectionss {
+
+    .sectionss {
         border: 1px solid black;
         background: #dfdede;
         padding: 6px;
@@ -351,8 +352,13 @@
 
     .last-box {
         border: 2px solid black;
-        padding: 0px 8px 8px 8px;
+        padding: 0 8px 8px 8px !important;
+        /* top padding hata di */
         margin-top: 8px;
+    }
+
+    .last-box p {
+        margin-top: 0 !important;
     }
 
     .footer-address {
@@ -564,7 +570,7 @@
 
         <div class="service-box" style="padding-top: 2px;">
             <b class="headings">{{ __('Board of Directors Information') }}</b><br />
-            <span class="paragraphs">
+            <span style="font-size: 15px;">
                 {{ __('A board of directors is a group of people responsible for overseeing and guiding a company’s major decisions.') }}<br />
             </span>
         </div>
@@ -575,16 +581,16 @@
                 style="padding-bottom: 10px;">{{ __('Total number of board of directors:') }}</label>
             <input type="text" id="directors" />
         </div>
-        <div class="input-row">
-            <label for="directors" class="paragraphs" style="padding-bottom: 10px;">
+        <div class="input-row" style="margin-top: 10px;">
+            <label for="directors" class="paragraphs" style="padding-bottom: 5px;">
                 {{ __('Number of Directors on the Board') }}<br>
                 {{ __('of Directors that are Women:') }}
             </label>
 
-            <input type="text" id="directors" />
+            <input style="" type="text" id="directors" />
         </div>
 
-        <div class="sectionss" style="padding: 6px 0px;">
+        <div class="sectionss" style="padding: px 0px; margin: 0;">
             <div class="headings" style="padding-left: 15px; font-weight: bold;">{{ __('Signer’s declaration') }}</div>
         </div>
 
@@ -595,62 +601,59 @@
                 {{ __('authorized to sign and submit this Biennial Statement.') }}
             </p>
         </div>
+        <div style="border: 2px dotted black; padding: 10px;">
+            <div style="margin-top: 5px;">
+                <span class="headings"
+                    style="font-weight: 600; padding-bottom: 0px !important;">{{ __('Name Of signer:') }}</span>
+                <div class="underline-row">
+                    <label for="name" class="headings" style="font-weight: bold;">{{ __('(Print Name):') }}</label>
+                    <input style="width: 71.5%;" type="text" id="name" />
+                </div>
+            </div>
 
-        <div>
-            <span class="headings"
-                style="font-weight: 600; padding-bottom: 0px !important;">{{ __('Name Of signer:') }}</span>
+            <div style="padding-bottom: 20px;">
+                <span class="headings" style="font-weight: 600;">{{ __('Signer’s Capacity*') }}</span>
+                <span class="paragraphs">({{ __('e.g., CEO, President') }}): </span>
+                <div class="underline-row">
+                    <input style="width: 81.5%;" type="text" id="name" />
+                </div>
+            </div>
+
+
+            <div class="date-container">
+                <div class="headings date-label" style="font-weight: bold; padding-bottom: 5px;">Date</div>
+                <div class="date-inputs">
+                    <input type="text" class="date-input headings" maxlength="2" placeholder="{{ __('MM') }}" />
+                    <span class="date-separator">/</span>
+                    <input type="text" class="date-input headings" maxlength="2" placeholder="{{ __('DD') }}" />
+                    <span class="date-separator">/</span>
+                    <input type="text" class="date-input headings" maxlength="4" placeholder="{{ __('YYYY') }}" />
+                </div>
+            </div>
             <div class="underline-row">
-                <label for="name" class="headings" style="font-weight: bold;">{{ __('(Print Name):') }}</label>
-                <input style="width: 71.5%;" type="text" id="name" />
+                <label for="" class="headings" style="font-weight: bold;">Signature:</label>
+                <input style="width: 73.5%;" type="text" id="name" />
             </div>
+            <p style="margin-top: 5px;" class="paragraphs">
+                <i>({{ __('This email will be used to send your filing confirmation and future notifications') }})</i>
+            </p>
         </div>
-
-        <div style="padding-bottom: 20px;">
-            <span class="headings" style="font-weight: 600;">{{ __('Signer’s Capacity*') }}</span>
-            <span class="paragraphs">({{ __('e.g., CEO, President') }}): </span>
-            <div class="underline-row">
-                <input style="width: 81.5%;" type="text" id="name" />
-            </div>
-        </div>
-
-
-        <div class="date-container">
-            <div class="headings date-label" style="font-weight: bold; padding-bottom: 5px;">Date</div>
-            <div class="date-inputs">
-                <input type="text" class="date-input headings" maxlength="2" placeholder="{{ __('MM') }}" />
-                <span class="date-separator">/</span>
-                <input type="text" class="date-input headings" maxlength="2" placeholder="{{ __('DD') }}" />
-                <span class="date-separator">/</span>
-                <input type="text" class="date-input headings" maxlength="4" placeholder="{{ __('YYYY') }}" />
-            </div>
-        </div>
-        <div class="underline-row">
-            <label for="" class="headings" style="font-weight: bold;">Signature:</label>
-            <input style="width: 73.5%;" type="text" id="name" />
-        </div>
-
-        <!-- <div class="underline-row" style="padding-top: 5px">
-            <label for="name " class="headings" style="font-weight: bold;">{{ __('Email Address*:') }} </label>
-            <input type="text" class="paragraphs" id="name" value="{{ $submission->email }}" />
-        </div> -->
-        <p style="margin-top: 5px;" class="paragraphs">
-            <i>({{ __('This email will be used to send your filing confirmation and future notifications') }})</i>
-        </p>
-        <div class="sections">
+        <div class="sectionss">
             <div class="headings" style="padding-left: 3px 0px 3px 15px; font-weight: bold;">
                 {{ __('Submission Instructions ') }}
             </div>
         </div>
-        <div class="last-box">
+        <div class="last-box" style="padding-top: 0% !important;">
             <p style="padding-top: 0% !important;">
-                <span style="font-weight: bold" class="headings">{{ __('Filing Fee:') }}</span><span class="paragraphs">
+                <span style="font-weight: bold; padding-top: 0% !important;"
+                    class="headings">{{ __('Filing Fee:') }}</span><span class="paragraphs">
                     $125.00</span>
             </p>
             <p style="font-weight: bold;" class="headings">
                 {{ __('Payment Methods Accepted:') }}
             </p>
             <div class="checkbox-rows">
-                <input type="checkbox" id="confirm" />
+                <input type="checkbox" id="confirm" checked />
                 <p class="paragraphs" style="padding-bottom: 5px; margin:0;">
                     {{ __('Check or Money Order (Payable to: New York Biennial Compliance)') }}
                 </p>
