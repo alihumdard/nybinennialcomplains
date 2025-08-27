@@ -295,7 +295,7 @@
 
     .underline-row label,
     .underline-row input {
-        vertical-align: bottom;
+        /* vertical-align: bottom; */
         /* center alignment */
         line-height: 1;
         /* extra space remove */
@@ -313,18 +313,18 @@
         border-bottom: 1px solid #333;
         outline: none;
         width: 70%;
-        min-height: 15px;
+        /* min-height: 15px; */
     }
 
     .underline-rows {
-        margin-bottom: 0px !important;
+        margin: 0px !important;
         white-space: nowrap;
         /* label aur input ek line me rahe */
     }
 
     .underline-rows label,
     .underline-rows input {
-        vertical-align: bottom;
+        /* vertical-align: bottom; */
         /* center alignment */
         line-height: 1;
         /* extra space remove */
@@ -342,7 +342,7 @@
         border-bottom: 1px solid #333;
         outline: none;
         width: 70%;
-        min-height: 5px;
+        /* min-height: 5px; */
     }
 
 
@@ -671,10 +671,10 @@
     <div style="border: 2px dotted black; padding: 5px 10px 5px 10px; margin: 100px 10px 0px 10px; ">
         <div style="margin-top: 0px;">
             <div class="headings"
-                style="font-weight: 600; padding-bottom: 0px !important;">{{ __('Name Of signer:') }}</div>
-            <div class="underline-rows" style="margin: 0px !important; padding: 0px !important;">
+                style="font-weight: 600;">{{ __('Name Of signer:') }}</div>
+            <div class="underline-rows" style="">
                 <label for="name" class="headings"
-                    style="font-weight: bold; margin: 0 !important; padding: 0 !important;">{{ __('(Print Name):') }}</label>
+                    style="font-weight: bold;">{{ __('(Print Name):') }}</label>
                 <input style="width: 41.5%;" type="text" id="name" />
             </div>
         </div>
@@ -703,10 +703,10 @@
             </div>
         </div>
           <div class="underline-row">
-            <label for="" class="headings" style="font-weight: bold; margin: 0px;">Email Address*: </label>
+            <label for="" class="headings" style="font-weight: bold;">Email Address*: </label>
             <input style="width: 43.5%;" type="text" id="name" />
         </div>
-        <p style="margin: 15px 0px 2px 0px;" class="paragraphs">
+        <p style="margin: 2px 0px 2px 0px;" class="paragraphs">
             <i>({{ __('This email will be used to send your filing confirmation and future notifications') }})</i>
         </p>
     </div>
