@@ -27,15 +27,15 @@
 
 
     .headings {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .paragraphs {
-        font-size: 9px;
+        font-size: 10px;
     }
 
     .header {
-        padding: 0 80px;
+        padding: 0 150px;
         margin: 0 !important;
         white-space: nowrap;
     }
@@ -501,15 +501,16 @@
         <!-- Business Address -->
         <div class="info-box">
             <p class="para headings">{{ __('Business Address') }}</p>
-            <span class="paragraphs">
+            <span class="paragraphs" style="display: block; line-height: 1.4; margin: 0; padding: 0;">
                 {{ $submission->business_name }}<br />
                 {{ $submission->dos_process_address_1 }}<br />
                 @if($submission->dos_process_address_2)
                 {{ $submission->dos_process_address_2 }}<br>
                 @endif
-                <!-- {{ $submission->dos_process_city }}, {{ $submission->dos_process_state }}
-                {{ $submission->dos_process_zip }} -->
+                {{ $submission->dos_process_city }}, {{ $submission->dos_process_state }},
+                {{ $submission->dos_process_zip }}
             </span>
+
         </div>
 
         <!-- Instructions & QR Code -->
@@ -657,24 +658,22 @@
         <input style="margin-bottom: 5px;" type="text" id="directors" />
     </div>
 
-    <div class="sectionss" style="margin: 0px 10px">
+    <div class="sectionss" style="margin: 130px 10px 0px 10px;">
         <div class="headings" style="padding-left: 15px; font-weight: bold;">{{ __('Signer’s declaration') }}</div>
     </div>
 
-    <div class="checkbox-row" style="margin: 0px 10px">
+    <div class="checkbox-row" style="margin: 0px 0px 0px 7px; padding-top: 5px;">
         <input type="checkbox" id="confirm" />
         <p class="paragraphs">
             {{ __('I confirm that the information provided is true and correct, and that I am') }}<br />
             {{ __('authorized to sign and submit this Biennial Statement.') }}
         </p>
     </div>
-    <div style="border: 2px dotted black; padding: 5px 10px 5px 10px; margin: 100px 10px 0px 10px; ">
+    <div style="border: 2px dotted black; padding: 5px 10px 5px 10px; margin: 5px 10px 0px 10px; ">
         <div style="margin-top: 0px;">
-            <div class="headings"
-                style="font-weight: 600;">{{ __('Name Of signer:') }}</div>
+            <div class="headings" style="font-weight: 600;">{{ __('Name Of signer:') }}</div>
             <div class="underline-rows" style="">
-                <label for="name" class="headings"
-                    style="font-weight: bold;">{{ __('(Print Name):') }}</label>
+                <label for="name" class="headings" style="font-weight: bold;">{{ __('(Print Name):') }}</label>
                 <input style="width: 41.5%;" type="text" id="name" />
             </div>
         </div>
@@ -702,7 +701,7 @@
                 <input type="text" class="date-input headings" maxlength="4" placeholder="{{ __('YYYY') }}" />
             </div>
         </div>
-          <div class="underline-row">
+        <div class="underline-row">
             <label for="" class="headings" style="font-weight: bold;">Email Address*: </label>
             <input style="width: 43.5%;" type="text" id="name" />
         </div>
