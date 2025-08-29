@@ -37,35 +37,35 @@
     .header {
         padding: 0 150px;
         margin: 0 !important;
-        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        /* vertically center */
+        gap: 15px;
+        /* logo aur text ka gap */
     }
 
     .header img {
         width: 100px;
         height: 100px;
-        /* colon : lagao */
-        vertical-align: middle;
-        /* text ke sath align kare */
-        display: inline-block;
-
         margin: 0 !important;
         padding: 0 !important;
-
+        display: block;
+        /* extra inline space hatao */
     }
 
     .header p {
         font-size: 20px;
-        display: inline-block;
-        margin: 0 0 0 15px;
-        /* sirf thoda gap logo aur text me */
-        vertical-align: middle;
+        margin: 0;
+        /* <p> ka default margin hatao */
+        line-height: 1;
+        /* extra height remove */
     }
 
     .info-text {
         font-size: 15px;
         margin: 0 !important;
-        /* yahan margin hata do */
-        padding: 0px 20px;
+        padding: 0 20px;
+        line-height: 1.2;
     }
 
 
@@ -99,8 +99,8 @@
     .para {
         font-weight: bold;
         margin: 0px;
-        margin-bottom: 18px;
-        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-top: 6px;
     }
 
     .info-boxx {
@@ -524,8 +524,11 @@
             <span class="paragraphs">
                 {{ __('Fill out the information below as accurately as possible.') }}<br />
             </span>
-            <ul class="headings" style="margin:0; padding:0; list-style-position: inside;">
-                <li style="padding-top: 3px;"><b>Prefer to complete this electronically?</b></li>
+            <ul class="headings" style="margin:0; padding:0; list-style:none;">
+                <li style="display:flex; align-items:center; gap:0;">
+                    <span style="margin-right:2px;">•</span>
+                    <b>Prefer to complete this electronically?</b>
+                </li>
             </ul>
 
 
