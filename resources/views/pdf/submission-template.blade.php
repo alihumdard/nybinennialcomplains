@@ -123,7 +123,7 @@
 
     .sections {
         border: 1px solid black;
-        border-bottom: none;
+        /* border-bottom: none; */
         background: #f6f2f2ff;
         padding: 6px;
         /* font-size: 12px; */
