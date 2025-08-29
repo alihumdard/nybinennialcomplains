@@ -27,15 +27,15 @@
 
 
     .headings {
-        font-size: 12px;
+        font-size: 15px;
     }
 
     .paragraphs {
-        font-size: 10px;
+        font-size: 13px;
     }
 
     .header {
-        padding: 0 150px;
+        padding: 0 160px;
         margin: 0 !important;
         display: flex;
         align-items: center;
