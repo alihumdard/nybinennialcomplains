@@ -27,45 +27,45 @@
 
 
     .headings {
-        font-size: 10px;
+        font-size: 15px;
     }
 
     .paragraphs {
-        font-size: 9px;
+        font-size: 13px;
     }
 
     .header {
-        padding: 0 80px;
+        padding: 0 160px;
         margin: 0 !important;
-        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        /* vertically center */
+        gap: 15px;
+        /* logo aur text ka gap */
     }
 
     .header img {
         width: 100px;
         height: 100px;
-        /* colon : lagao */
-        vertical-align: middle;
-        /* text ke sath align kare */
-        display: inline-block;
-
         margin: 0 !important;
         padding: 0 !important;
-
+        display: block;
+        /* extra inline space hatao */
     }
 
     .header p {
         font-size: 20px;
-        display: inline-block;
-        margin: 0 0 0 15px;
-        /* sirf thoda gap logo aur text me */
-        vertical-align: middle;
+        margin: 0;
+        /* <p> ka default margin hatao */
+        line-height: 1;
+        /* extra height remove */
     }
 
     .info-text {
         font-size: 15px;
         margin: 0 !important;
-        /* yahan margin hata do */
-        padding: 0px 20px;
+        padding: 0 20px;
+        line-height: 1.2;
     }
 
 
@@ -99,8 +99,8 @@
     .para {
         font-weight: bold;
         margin: 0px;
-        margin-bottom: 18px;
-        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-top: 6px;
     }
 
     .info-boxx {
@@ -123,15 +123,16 @@
 
     .sections {
         border: 1px solid black;
-        border-bottom: none;
-        background: #dfdede;
+        /* border-bottom: none; */
+        background: #f6f2f2ff;
         padding: 6px;
         /* font-size: 12px; */
         margin-top: 5px;
     }
-     .sectionss {
+
+    .sectionss {
         border: 1px solid black;
-        background: #dfdede;
+        background: #f6f2f2ff;
         padding: 6px;
         /* font-size: 12px; */
         margin-top: 5px;
@@ -165,12 +166,9 @@
 
     .fields {
         display: inline-block;
-        width: 98.2%;
-        /* padding-left: 20px; */
+        width: 100%;
         min-width: 120px;
-        /* margin-bottom: 4px; */
         padding: 0;
-        vertical-align: top;
     }
 
     .field-group .field.small {
@@ -196,7 +194,7 @@
 
     .service-box {
         border: 1px solid black;
-        background: #dfdede;
+        background: #f6f2f2ff;
         padding: 6px 6px 6px 15px;
         /* font-size: 12px; */
         margin-top: 8px;
@@ -239,7 +237,7 @@
         width: 73px;
         padding: 4px;
 
-        margin-left: 3.5px;
+        margin-left: 1px;
         border: 1px solid #999;
         border-radius: 4px;
         /* font-size: 12px; */
@@ -290,41 +288,82 @@
     }
 
     .underline-row {
-        /* margin-bottom: 3px; */
+        margin-bottom: 0px !important;
+        white-space: nowrap;
+        /* label aur input ek line me rahe */
+    }
+
+    .underline-row label,
+    .underline-row input {
+        /* vertical-align: bottom; */
+        /* center alignment */
+        line-height: 1;
+        /* extra space remove */
     }
 
     .underline-row label {
-        /* font-size: 12px; */
-        display: inline;
+        margin: 0 !important;
+        padding: 0 !important;
         margin-right: 5px;
+        font-weight: bold;
     }
 
     .underline-row input {
         border: none;
         border-bottom: 1px solid #333;
         outline: none;
-        /* padding: 3px 5px; */
-        /* font-size: 12px; */
         width: 70%;
-        min-height: 22px;
+        /* min-height: 15px; */
     }
+
+    .underline-rows {
+        margin: 0px !important;
+        white-space: nowrap;
+        /* label aur input ek line me rahe */
+    }
+
+    .underline-rows label,
+    .underline-rows input {
+        /* vertical-align: bottom; */
+        /* center alignment */
+        line-height: 1;
+        /* extra space remove */
+    }
+
+    .underline-rows label {
+        margin: 0 !important;
+        padding: 0 !important;
+        margin-right: 5px;
+        font-weight: bold;
+    }
+
+    .underline-rows input {
+        border: none;
+        border-bottom: 1px solid #333;
+        outline: none;
+        width: 70%;
+        /* min-height: 5px; */
+    }
+
 
     .date-container {
-        padding-bottom: 3px;
-        margin: 0% !important;
-        padding: 0% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        white-space: nowrap;
     }
 
-    .date-label {
-        /* font-size: 13px; */
-        font-weight: 500;
-        margin-right: 8px;
-        color: #333;
+    .date-label,
+    .date-inputs,
+    .date-input,
+    .date-separator {
+        vertical-align: middle;
+        line-height: 1;
         display: inline-block;
     }
 
     .date-inputs {
-        display: inline-block;
+        margin-left: 5px;
+        /* thoda gap label aur inputs ke beech */
     }
 
     .date-input {
@@ -333,12 +372,12 @@
         border: none;
         border-bottom: 2px solid #333;
         text-align: center;
-        /* font-size: 11px; */
         outline: none;
     }
 
+
     .date-separator {
-        margin: 0 4px;
+        margin: 0 !important;
         /* font-size: 14px; */
         color: #333;
         user-select: none;
@@ -351,12 +390,17 @@
 
     .last-box {
         border: 2px solid black;
-        padding: 0px 8px 8px 8px;
+        padding: 0 8px 8px 8px !important;
+        /* top padding hata di */
         margin-top: 8px;
     }
 
+    .last-box p {
+        margin-top: 0 !important;
+    }
+
     .footer-address {
-        margin-top: 5px;
+        /* margin-top: 5px; */
     }
 
     .footer-address span {
@@ -370,10 +414,9 @@
     }
 
     .form-field {
-        display: inline-block;
+        display: flex;
         vertical-align: top;
         width: 20.3%;
-        /* 4 fields = ~25% minus gaps */
         margin-right: 1%;
     }
 
@@ -384,23 +427,43 @@
     .ir-row {
         white-space: nowrap;
         /* line break prevent karega */
+        /* margin-bottom: 8px; */
+        /* rows ke beech spacing */
     }
 
     .ir-field {
-        display: inline-block;
-        vertical-align: top;
-        margin-right: 15px;
-        /* width: 41.5%; */
-        /* approx size, adjust as needed */
+        /* display: inline-block; */
+        display: flex;
+        flex-direction: column;
+        /* vertical-align: top; */
+        margin-right: 10px;
+        /* thoda gap */
+    }
+
+    .ir-large {
+        width: 43%;
+    }
+
+    .ir-field input {
+        width: 100%;
+        box-sizing: border-box;
+        /* padding/width issue fix */
     }
 
     .ir-small {
-        width: 5%;
-        /* MI chhota box */
+        width: 7%;
+        margin: 0px 10px;
+        /* MI box chhota hoga */
     }
 
     .ir-field:last-child {
         margin-right: 0;
+    }
+
+    #confirm {
+        accent-color: white;
+        border: 2px solid black;
+        /* background when checked */
     }
     </style>
 </head>
@@ -438,15 +501,16 @@
         <!-- Business Address -->
         <div class="info-box">
             <p class="para headings">{{ __('Business Address') }}</p>
-            <span class="paragraphs">
+            <span class="paragraphs" style="display: block; line-height: 1.4; margin: 0; padding: 0;">
                 {{ $submission->business_name }}<br />
                 {{ $submission->dos_process_address_1 }}<br />
                 @if($submission->dos_process_address_2)
                 {{ $submission->dos_process_address_2 }}<br>
                 @endif
-                <!-- {{ $submission->dos_process_city }}, {{ $submission->dos_process_state }}
-                {{ $submission->dos_process_zip }} -->
+                {{ $submission->dos_process_city }}, {{ $submission->dos_process_state }},
+                {{ $submission->dos_process_zip }}
             </span>
+
         </div>
 
         <!-- Instructions & QR Code -->
@@ -460,23 +524,26 @@
             <span class="paragraphs">
                 {{ __('Fill out the information below as accurately as possible.') }}<br />
             </span>
-            <ul class="headings" style="margin:0; padding:0; list-style-position: inside;">
-                <li style="padding-top: 3px;"><b>Prefer to complete this electronically?</b></li>
+            <ul class="headings" style="margin:0; padding:0; list-style:none;">
+                <li style="display:flex; align-items:center; gap:0;">
+                    <span style="margin-right:2px;">•</span>
+                    <b>Prefer to complete this electronically?</b>
+                </li>
             </ul>
 
 
             <span class="paragraphs">
                 {{ __('Scan the QR code to complete the form online.') }}
             </span>
-            <p class="padding headings">
+            <p class="headings" style="margin: 0 !important; padding-top: 15px;">
                 <span><b>{{ __('Business Name:') }}</b> {{ $submission->business_name }}</span>
             </p>
             <span class="paragraphs">
                 <span
-                    style="font-weight: bold;">({{ __('Note: The business name cannot be changed on this form') }})</span><br />
+                    style="">({{ __('Note: The business name cannot be changed on this form') }})</span><br />
                 {{ __('To change the business name, you must file a') }}
             </span>
-            <b class="headings">{{ __('Certificate of Amendment') }}</b>
+            <span class="headings">{{ __('Certificate of Amendment') }}</span>
         </div>
 
         <!-- CEO Info -->
@@ -492,131 +559,144 @@
                 </span>
             </div>
 
-            <div class="ir-row">
-                <div class="ir-field" style=" width: 40%;">
-                    <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('First name') }}</label>
+            <div class="ir-row" style="display: flex; padding-top: 10px; padding-bottom: 0 !important;">
+                <div class="ir-field ir-large" style="display: flex;">
+                    <label class="headings" style="font-weight: bold; padding-left: 2px;">
+                        {{ __('First name') }}
+                    </label>
                     <input type="text" value="{{ $submission->ceo_name }}" />
                 </div>
-                <div class="ir-field ir-small" style=" padding-left: 17px;">
-                    <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('MI') }}</label>
+
+                <div class="ir-field ir-small" style="padding: 0px 25px 0px 20px;">
+                    <label class="headings" style="font-weight: bold; padding-left: 2px;">
+                        {{ __('MI') }}
+                    </label>
                     <input type="text" />
                 </div>
-                <div class="ir-field" style="width: 43.5%; padding-left: 16px;">
-                    <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('Last Name') }}</label>
+
+                <div class="ir-field ir-large">
+                    <label class="headings" style="font-weight: bold; padding-left: 2px;">
+                        {{ __('Last Name') }}
+                    </label>
                     <input type="text" />
                 </div>
             </div>
-
-
-            <div class="fields">
-                <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('Address Line 1') }}</label>
-                <input type="text" value="{{ $submission->ceo_address_1 }}" />
-            </div>
-
-            <div class="form-row" style="margin: 0 !important;">
-                <div class="form-field" style="width: 40%;">
-                    <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('City') }}</label>
-                    <input type="text" value="{{ $submission->ceo_city }}" />
-                </div>
-                <div class="form-field" style="width: 5%; padding: 0px 25px;">
-                    <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('State') }}</label>
-                    <input type="text" value="{{ $submission->ceo_state }}" />
-                </div>
-                <div class="form-field" style="width: 18%; padding-right: 23px;">
-                    <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('Zip code') }}</label>
-                    <input type="text" value="{{ $submission->ceo_zip }}" />
-                </div>
-                <div class="form-field">
-                    <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('Country') }}</label>
-                    <input type="text" value="{{ $submission->country ?? '' }}" />
-                </div>
-            </div>
-
         </div>
 
-        <!-- Service Address -->
-        <div class="service-box" style="padding-top: 2px;">
-            <b class="headings">{{ __('Service of Process Address') }}</b><br />
-            <span class="paragraphs">
-                ({{ __('Where legal documents can be sent. Must be a U.S. Street address — no P.O. Boxes.') }})<br />
-            </span>
-            <b class="headings"> {{ __('If same as business address, write “Same.”') }}</b>
+
+        <div class="fields" style="padding: 0 !important;">
+            <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('Address Line 1') }}</label>
+            <input type="text" value="{{ $submission->ceo_address_1 }}" />
         </div>
 
-        <div class="field-group" style="padding: 5px 0px">
-            <div class="field" style="width: 45%;">
-                <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('Address line 1') }}</label>
-                <input type="text" value="{{ $submission->registered_agent_address_1 }}" />
-            </div>
-            <div class="field" style="padding-left: 32px; width: 15.6%;">
+        <div class="form-row" style="margin: 0 !important; display: flex; padding-top: 4px;">
+            <div class="form-field" style="width: 41.5%; display: flex; flex-direction: column;">
                 <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('City') }}</label>
-                <input type="text" class="small" value="{{ $submission->registered_agent_city }}" />
+                <input type="text" value="{{ $submission->ceo_city }}" />
             </div>
-            <div class="field small" style="padding-left: 33px; width: 12%;">
+            <div class="form-field"
+                style="width: 7%; padding: 0px 25px 0px 33px;  display: flex; flex-direction: column;">
                 <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('State') }}</label>
-                <input type="text" value="{{ $submission->registered_agent_state }}" />
+                <input type="text" value="{{ $submission->ceo_state }}" />
             </div>
-            <div class="field small" style="width: 8%; padding-left: 50px;">
-                <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('Zip Code') }}</label>
-                <input type="text" class="small" value="{{ $submission->registered_agent_zip }}" />
+            <div class="form-field" style="width: 15%; padding-right: 23px;  display: flex; flex-direction: column;">
+                <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('Zip code') }}</label>
+                <input type="text" value="{{ $submission->ceo_zip }}" />
+            </div>
+            <div class="form-field" style=" display: flex; flex-direction: column; padding-left: 15px;">
+                <label class="headings" style="font-weight: bold; padding-left: 2px; ">{{ __('Country') }}</label>
+                <input type="text" value="{{ $submission->country ?? '' }}" />
             </div>
         </div>
 
-        <div class="service-box" style="padding-top: 2px;">
-            <b class="headings">{{ __('Board of Directors Information') }}</b><br />
-            <span class="paragraphs">
-                {{ __('A board of directors is a group of people responsible for overseeing and guiding a company’s major decisions.') }}<br />
-            </span>
+    </div>
+
+    <!-- Service Address -->
+    <div class="service-box" style="padding-top: 2px; margin: 0px 10px;">
+        <b class="headings">{{ __('Service of Process Address') }}</b><br />
+        <span class="paragraphs">
+            ({{ __('Where legal documents can be sent. Must be a U.S. Street address — no P.O. Boxes.') }})<br />
+        </span>
+        <span class="headings"> {{ __('If same as business address, write “Same.”') }}</span>
+    </div>
+
+    <div class="field-group" style="padding: 5px 0px 5px 10px">
+        <div class="field" style="width: 45%;">
+            <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('Address line 1') }}</label>
+            <input type="text" value="{{ $submission->registered_agent_address_1 }}" />
         </div>
-
-
-        <div class="form-group">
-            <label for="directors" class="paragraphs"
-                style="padding-bottom: 10px;">{{ __('Total number of board of directors:') }}</label>
-            <input type="text" id="directors" />
+        <div class="field" style="padding-left: 32px; width: 15.6%;">
+            <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('City') }}</label>
+            <input type="text" class="small" value="{{ $submission->registered_agent_city }}" />
         </div>
-        <div class="input-row">
-            <label for="directors" class="paragraphs" style="padding-bottom: 10px;">
-                {{ __('Number of Directors on the Board') }}<br>
-                {{ __('of Directors that are Women:') }}
-            </label>
-
-            <input type="text" id="directors" />
+        <div class="field small" style="padding-left: 33px; width: 12%;">
+            <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('State') }}</label>
+            <input type="text" value="{{ $submission->registered_agent_state }}" />
         </div>
-
-        <div class="sectionss" style="padding: 6px 0px;">
-            <div class="headings" style="padding-left: 15px; font-weight: bold;">{{ __('Signer’s declaration') }}</div>
+        <div class="field small" style="width: 10%; padding-left: 42px;">
+            <label class="headings" style="font-weight: bold; padding-left: 2px;">{{ __('Zip Code') }}</label>
+            <input type="text" class="small" value="{{ $submission->registered_agent_zip }}" />
         </div>
+    </div>
 
-        <div class="checkbox-row">
-            <input type="checkbox" id="confirm" />
-            <p class="paragraphs">
-                {{ __('I confirm that the information provided is true and correct, and that I am') }}<br />
-                {{ __('authorized to sign and submit this Biennial Statement.') }}
-            </p>
-        </div>
+    <div class="service-box" style="padding-top: 2px; margin: 0px 10px;">
+        <b class="headings">{{ __('Board of Directors Information') }}</b><br />
+        <span style="font-size: 13px;">
+            {{ __('A board of directors is a group of people responsible for overseeing and guiding a company’s major decisions.') }}<br />
+        </span>
+    </div>
 
-        <div>
-            <span class="headings"
-                style="font-weight: 600; padding-bottom: 0px !important;">{{ __('Name Of signer:') }}</span>
-            <div class="underline-row">
+
+    <div class="form-group" style="margin: 10px 10px 0px 10px;">
+        <label for="directors" class="paragraphs"
+            style="padding-bottom: 10px;">{{ __('Total number of board of directors:') }}</label>
+        <input type="text" id="directors" />
+    </div>
+    <div class="input-row" style="margin: 0px 10px; padding-top: 10px;">
+        <label for="directors" class="paragraphs" style="margin-top: 4px;">
+            {{ __('Number of Directors on the Board') }}<br>
+            {{ __('of Directors that are Women:') }}
+        </label>
+
+        <input style="margin-bottom: 5px;" type="text" id="directors" />
+    </div>
+
+    <div class="sectionss" style="margin: 130px 10px 0px 10px;">
+        <div class="headings" style="padding-left: 15px; font-weight: bold;">{{ __('Signer’s declaration') }}</div>
+    </div>
+
+    <div class="checkbox-row" style="margin: 0px 0px 0px 7px; padding-top: 5px;">
+        <input type="checkbox" id="confirm" />
+        <p class="paragraphs">
+            {{ __('I confirm that the information provided is true and correct, and that I am') }}<br />
+            {{ __('authorized to sign and submit this Biennial Statement.') }}
+        </p>
+    </div>
+    <div style="border: 2px dotted black; padding: 5px 10px 5px 10px; margin: 5px 10px 0px 10px; ">
+        <div style="margin-top: 0px;">
+            <div class="headings" style="font-weight: 600;">{{ __('Name Of signer:') }}</div>
+            <div class="underline-rows" style="">
                 <label for="name" class="headings" style="font-weight: bold;">{{ __('(Print Name):') }}</label>
-                <input style="width: 71.5%;" type="text" id="name" />
+                <input style="width: 41.5%;" type="text" id="name" />
             </div>
         </div>
 
-        <div style="padding-bottom: 20px;">
+        <div style=" margin: 0 !important;">
             <span class="headings" style="font-weight: 600;">{{ __('Signer’s Capacity*') }}</span>
             <span class="paragraphs">({{ __('e.g., CEO, President') }}): </span>
             <div class="underline-row">
-                <input style="width: 81.5%;" type="text" id="name" />
+                <input style="width: 51%;" type="text" id="name" />
             </div>
         </div>
 
+        <div class="underline-row">
+            <label for="" class="headings" style="font-weight: bold; margin: 0px;">Signature:</label>
+            <input style="width: 43.5%;" type="text" id="name" />
+        </div>
 
-        <div class="date-container">
-            <div class="headings date-label" style="font-weight: bold; padding-bottom: 5px;">Date</div>
-            <div class="date-inputs">
+        <div class="date-container" style="">
+            <div class="headings date-label" style="font-weight: bold;">Date</div>
+            <div class="date-inputs" style="padding-top: 2px; margin: 0px;">
                 <input type="text" class="date-input headings" maxlength="2" placeholder="{{ __('MM') }}" />
                 <span class="date-separator">/</span>
                 <input type="text" class="date-input headings" maxlength="2" placeholder="{{ __('DD') }}" />
@@ -625,80 +705,72 @@
             </div>
         </div>
         <div class="underline-row">
-            <label for="" class="headings" style="font-weight: bold;">Signature:</label>
-            <input style="width: 73.5%;" type="text" id="name" />
+            <label for="" class="headings" style="font-weight: bold;">Email Address*: </label>
+            <input style="width: 43.5%;" type="text" id="name" />
         </div>
-
-        <!-- <div class="underline-row" style="padding-top: 5px">
-            <label for="name " class="headings" style="font-weight: bold;">{{ __('Email Address*:') }} </label>
-            <input type="text" class="paragraphs" id="name" value="{{ $submission->email }}" />
-        </div> -->
-        <p style="margin-top: 5px;" class="paragraphs">
+        <p style="margin: 2px 0px 2px 0px;" class="paragraphs">
             <i>({{ __('This email will be used to send your filing confirmation and future notifications') }})</i>
         </p>
-        <div class="sections">
-            <div class="headings" style="padding-left: 3px 0px 3px 15px; font-weight: bold;">
-                {{ __('Submission Instructions ') }}
-            </div>
+    </div>
+    <div class="sectionss" style="margin: 3px 10px;">
+        <div class="headings" style="padding-left: 3px 0px 3px 15px; font-weight: bold;">
+            {{ __('Submission Instructions ') }}
         </div>
-        <div class="last-box">
-            <p style="padding-top: 0% !important;">
-                <span style="font-weight: bold" class="headings">{{ __('Filing Fee:') }}</span><span class="paragraphs">
-                    $125.00</span>
+    </div>
+    <div class="last-box" style="padding-top: 0% !important; margin: 0px 10px;">
+        <p style="padding-top: 0% !important;">
+            <span style="font-weight: bold; padding-top: 0% !important;"
+                class="headings">{{ __('Filing Fee:') }}</span><span class="paragraphs">
+                $125.00</span>
+        </p>
+        <p style="font-weight: bold; margin: 0px !important;" class="headings">
+            {{ __('Payment Methods Accepted:') }}
+        </p>
+        <div class="checkbox-rows" style="padding-bottom: 10px;">
+            <input type="checkbox" id="confirm" checked />
+            <p class="paragraphs" style="padding-bottom: 2px; padding-left: 5px; margin:0;">
+                {{ __('Check or Money Order (Payable to: New York Biennial Compliance)') }}
             </p>
-            <p style="font-weight: bold;" class="headings">
-                {{ __('Payment Methods Accepted:') }}
-            </p>
-            <div class="checkbox-rows">
-                <input type="checkbox" id="confirm" />
-                <p class="paragraphs" style="padding-bottom: 5px; margin:0;">
-                    {{ __('Check or Money Order (Payable to: New York Biennial Compliance)') }}
-                </p>
-            </div>
+        </div>
 
-            <p style="font-weight: bold; margin: 0; padding: 0;" class="headings">
-                {{ __('Mail Completed Form and Payment of $125.00 To:') }}
-            </p>
-            <p style="font-weight: bold; margin: 0; padding: 1px 0px;" class="headings">
-                {{ __('New York Biennial Compliance.') }}
-            </p>
-            <div class="footer-address paragraphs" style="margin: 0; padding: 0;">
-                <span>69 State Street, Suite 1300 #2017</span><br />
-                <span>Albany, NY 12207</span>
-            </div>
+        <p style="font-weight: bold; margin: 0; padding: 0;" class="headings">
+            {{ __('Mail Completed Form and Payment of $125.00 To:') }}
+        </p>
+        <p style="font-weight: bold; margin: 0; padding: 1px 0px;" class="headings">
+            {{ __('New York Biennial Compliance.') }}
+        </p>
+        <div class="footer-address paragraphs" style="padding-bottom: 10px;">
+            <span>69 State Street, Suite 1300 #2017</span>Albany, NY 12207<br />
+        </div>
 
-            <p class="headings" style=" font-weight: bold; margin: 10px 0px 0px 0px; padding: 0;">
-                {{ __('Processing Time:') }}</p>
-            <p class="paragraphs" style="padding: 0; margin: 0;">
-                {{ __('You will receive a confirmation by mail or email within 24–48 business hours after your filing is processed.') }}
-            </p>
-            <div>
-                <div style="">
-                    <div style="display: inline-block; vertical-align: middle; margin: 0; padding: 0;">
-                        <label for="directors" class="paragraphs"
-                            style="margin: 0; padding: 0; display: inline-block; vertical-align: middle;">
-                            <span class="headings" style="font-weight: bold; margin-top: 10px; padding-bottom: 3px;">
-                                {{ __('Expedited Electronic Submission:') }}
-                            </span><br>
-                            {{ __('For faster processing, scan the QR code below') }}<br>
-                            {{ __('to keep your form and payment online') }}
-                        </label>
-                    </div>
-
-                    <div style="display: inline-block; vertical-align: middle; margin-left: 35px; margin-top: 15px;">
-                        @if ($qrCode)
-                        <img src="data:image/svg+xml;base64,{{ $qrCode }}" alt="{{ __('QR Code') }}"
-                            style="width: 65px; height: 60px;">
-                        @endif
-                    </div>
+        <p class="headings" style=" font-weight: bold; margin: 20px 0px 0px 0px; padding: 0;">
+            {{ __('Processing Time:') }}</p>
+        <p class="paragraphs" style="padding: 0; margin: 0;">
+            {{ __('You will receive a confirmation by mail or email within 24–48 business hours after your filing is processed.') }}
+        </p>
+        <div>
+            <div style="">
+                <div style="display: inline-block; vertical-align: middle; margin-top: 20px; padding: 0;">
+                    <label for="directors" class="paragraphs"
+                        style="margin: 0; padding: 0; display: inline-block; vertical-align: bottom;">
+                        <span class="headings" style="font-weight: bold; margin-top: 10px;">
+                            {{ __('Expedited Electronic Submission:') }}
+                        </span><br>
+                        {{ __('For faster processing, scan the QR code below') }}<br>
+                        {{ __('to keep your form and payment online') }}
+                    </label>
                 </div>
 
-
+                <div style="display: inline-block; vertical-align: middle; margin-left: 35px; margin-top: 15px;">
+                    @if ($qrCode)
+                    <img src="data:image/svg+xml;base64,{{ $qrCode }}" alt="{{ __('QR Code') }}"
+                        style="width: 65px; height: 60px;">
+                    @endif
+                </div>
             </div>
+
+
         </div>
-        <p class="paragraphs">This is a provate Compliance assistance service and is not affiliated with the New York
-            Department of state or any givernment agency. Filling may also be completed directly with the Department of
-            state . Fees charged by the service include state filling fees and additional</p>
     </div>
 </body>
 
