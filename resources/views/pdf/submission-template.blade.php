@@ -540,10 +540,10 @@
             </p>
             <span class="paragraphs">
                 <span
-                    style="font-weight: bold;">({{ __('Note: The business name cannot be changed on this form') }})</span><br />
+                    style="">({{ __('Note: The business name cannot be changed on this form') }})</span><br />
                 {{ __('To change the business name, you must file a') }}
             </span>
-            <b class="headings">{{ __('Certificate of Amendment') }}</b>
+            <span class="headings">{{ __('Certificate of Amendment') }}</span>
         </div>
 
         <!-- CEO Info -->
@@ -617,7 +617,7 @@
         <span class="paragraphs">
             ({{ __('Where legal documents can be sent. Must be a U.S. Street address — no P.O. Boxes.') }})<br />
         </span>
-        <b class="headings"> {{ __('If same as business address, write “Same.”') }}</b>
+        <span class="headings"> {{ __('If same as business address, write “Same.”') }}</span>
     </div>
 
     <div class="field-group" style="padding: 5px 0px 5px 10px">
@@ -641,7 +641,7 @@
 
     <div class="service-box" style="padding-top: 2px; margin: 0px 10px;">
         <b class="headings">{{ __('Board of Directors Information') }}</b><br />
-        <span style="font-size: 15px;">
+        <span style="font-size: 13px;">
             {{ __('A board of directors is a group of people responsible for overseeing and guiding a company’s major decisions.') }}<br />
         </span>
     </div>
@@ -771,11 +771,6 @@
 
 
         </div>
-    </div>
-    <p class="paragraphs" style="margin: 10px;">This is a provate Compliance assistance service and is not affiliated
-        with the New York
-        Department of state or any givernment agency. Filling may also be completed directly with the Department of
-        state . Fees charged by the service include state filling fees and additional</p>
     </div>
 </body>
 
