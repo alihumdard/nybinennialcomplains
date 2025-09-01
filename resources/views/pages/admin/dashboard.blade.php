@@ -404,12 +404,23 @@
                 </div>
             </form>
         </div>
-        <div class="d-flex justify-content-end mb-3">
-            <form method="POST" action="{{ route('admin.submissions.bulk-mail') }}" id="bulkMailForm">
+        <div class="d-flex justify-content-end align-items-center gap-3 mb-3">
+            <!-- Print Selected -->
+            <form method="POST" action="{{ route('submission.bulk.pdf') }}" class="bulkMailForm" target="_blank">
                 @csrf
-                <div id="bulkSubmissionIdsContainer"></div>
-                <button type="submit" class="btn btn-info" id="bulkMailBtn" disabled>{{ __('Send Mail to Selected') }} (<span
-                        id="selectedCount">0</span>)</button>
+                <div class="bulkSubmissionIdsContainer"></div>
+                <button type="submit" class="btn btn-info bulkMailBtn" disabled>
+                    {{ __('Print Selected') }} (<span class="selectedCount">0</span>)
+                </button>
+            </form>
+
+            <!-- Download Selected -->
+            <form method="POST" action="{{ route('submission.bulk.download.pdf') }}" class="bulkMailForm" target="_blank">
+                @csrf
+                <div class="bulkSubmissionIdsContainer"></div>
+                <button type="submit" class="btn btn-success bulkMailBtn" disabled>
+                    {{ __('Download Selected') }} (<span class="selectedCount">0</span>)
+                </button>
             </form>
         </div>
         <div class="card border-0">
@@ -459,8 +470,16 @@
                                         class="btn btn-sm btn-outline-primary" title="View"><i
                                             class="bi bi-eye"></i></a>
                                     <a href="{{ route('submission.pdf', $submission->id) }}"
-                                        class="btn btn-sm btn-outline-success" title="Download PDF"><i
-                                            class="bi bi-file-earmark-pdf"></i></a>
+                                        class="btn btn-sm btn-outline-success" title="Download PDF">
+                                        <i class="bi bi-file-earmark-pdf"></i>
+                                    </a>
+
+                                    <a href="{{ route('submission.pdf.view', $submission->id) }}"
+                                        target="_blank"
+                                        class="btn btn-sm btn-outline-primary" title="Print PDF">
+                                        <i class="bi bi-printer"></i>
+                                    </a>
+
                                     <form class="action-form pt-3" method="POST"
                                         action="{{ route('admin.submission.send-mail', $submission->id) }}">
                                         @csrf
@@ -491,37 +510,39 @@
 
 {{-- ✅ Add Bootstrap Bundle JS here to enable dropdown --}}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Language dropdown initialization
-        const dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
-        dropdownElementList.map(function(dropdownToggleEl) {
-            return new bootstrap.Dropdown(dropdownToggleEl);
-        });
-
         const selectAllCheckbox = document.getElementById('selectAllCheckbox');
         const rowCheckboxes = document.querySelectorAll('.row-checkbox');
-        const bulkMailBtn = document.getElementById('bulkMailBtn');
-        const selectedCountSpan = document.getElementById('selectedCount');
-        const bulkMailForm = document.getElementById('bulkMailForm');
-        const bulkSubmissionIdsContainer = document.getElementById('bulkSubmissionIdsContainer');
+
+        // Get collections of elements
+        const bulkMailBtns = document.querySelectorAll('.bulkMailBtn');
+        const selectedCountSpans = document.querySelectorAll('.selectedCount');
+        const bulkSubmissionIdsContainers = document.querySelectorAll('.bulkSubmissionIdsContainer');
 
         function updateSelectionState() {
             const selectedCheckboxes = document.querySelectorAll('.row-checkbox:checked');
             const count = selectedCheckboxes.length;
-            selectedCountSpan.textContent = count;
-            bulkMailBtn.disabled = count === 0;
 
-            bulkSubmissionIdsContainer.innerHTML = '';
-            selectedCheckboxes.forEach(cb => {
-                const input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = 'submission_ids[]';
-                input.value = cb.value;
-                bulkSubmissionIdsContainer.appendChild(input);
+            // Update counts on all buttons
+            selectedCountSpans.forEach(span => span.textContent = count);
+
+            // Enable/disable all buttons
+            bulkMailBtns.forEach(btn => btn.disabled = count === 0);
+
+            // Clear and repopulate hidden inputs in each form
+            bulkSubmissionIdsContainers.forEach(container => {
+                container.innerHTML = '';
+                selectedCheckboxes.forEach(cb => {
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = 'submission_ids[]';
+                    input.value = cb.value;
+                    container.appendChild(input);
+                });
             });
 
+            // Handle "select all" checkbox state
             if (rowCheckboxes.length > 0 && count === rowCheckboxes.length) {
                 selectAllCheckbox.checked = true;
             } else {
@@ -529,18 +550,23 @@
             }
         }
 
-        selectAllCheckbox.addEventListener('change', function() {
-            rowCheckboxes.forEach(checkbox => {
-                checkbox.checked = this.checked;
+        // Bind events
+        if (selectAllCheckbox) {
+            selectAllCheckbox.addEventListener('change', function() {
+                rowCheckboxes.forEach(checkbox => {
+                    checkbox.checked = this.checked;
+                });
+                updateSelectionState();
             });
-            updateSelectionState();
-        });
+        }
 
         rowCheckboxes.forEach(checkbox => {
             checkbox.addEventListener('change', updateSelectionState);
         });
 
+        // Initial run
         updateSelectionState();
     });
 </script>
+
 @endsection

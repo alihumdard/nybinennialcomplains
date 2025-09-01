@@ -21,6 +21,9 @@ Route::get('/checkout', [PageController::class, 'checkout'])->name('checkout');
 Route::get('/confirmation', [PageController::class, 'confirmation'])->name('confirmation');
 Route::get('/file-statement', [PageController::class, 'checkout'])->name('file.statement');
 Route::get('/submission/{submission}/pdf', [PDFController::class, 'download'])->name('submission.pdf');
+Route::get('/submission/{submission}/pdf-view', [PDFController::class, 'viewPdf'])->name('submission.pdf.view');
+Route::post('/submissions/bulk-print-pdf', [PDFController::class, 'printBulkPDF'])->name('submission.bulk.pdf');
+Route::post('/submissions/bulk-download-pdf', [PDFController::class, 'downloadBulkPDF'])->name('submission.bulk.download.pdf');
 Route::get('/checkout/{submission:dos_id}', [PageController::class, 'showCheckoutWithData'])->name('checkout.with_data');
 Route::post('/filing/{submission:dos_id}/process', [FilingController::class, 'processFiling'])->name('filing.process');
 
